@@ -35,7 +35,7 @@ const developerList = [
       name: 'Rohan Doshi',
       image: 'assets/images/Rohan.jpg',
       gitHubUrl: "https://github.com/RohanDoshi21",
-      linkedUrl: "",
+      linkedUrl: "https://www.linkedin.com/in/rohan-doshi21/",
       emailUrl: "rohan.doshi02@gmail.com",
       instagramUrl:"https://www.instagram.com/rohan.doshi02",
       color: Colors.transparent),
@@ -43,7 +43,7 @@ const developerList = [
       name: 'Dinesh Nehete',
       image: 'assets/images/Dinesh.jpeg',
       gitHubUrl: "https://github.com/dineshNehete",
-      linkedUrl: "",
+      linkedUrl: "https://www.linkedin.com/in/dinesh-nehete/",
       emailUrl: "dinesh.g.nehete@gmail.com",
       instagramUrl:"http://instagram.com/dinesh.nehete_/",
       color: Colors.transparent),
@@ -250,6 +250,25 @@ class _DevelopersState extends State<Developers> {
                                   ),
                                 ), 
 
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        height: 7,
+                                      ),
+                                      IconButton(
+                                            onPressed: (){
+                                              _launchURL(developerList[index].linkedUrl);
+                                            },
+                                            icon: Image.asset(
+                                              "assets/images/linkedin.png",
+                                              height: 50,
+
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                                 Expanded(
                                   child: Column(
                                     children: [
