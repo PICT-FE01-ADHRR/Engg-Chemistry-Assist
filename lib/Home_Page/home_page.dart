@@ -119,7 +119,7 @@ class _HomepageState extends State<Homepage> {
                     'Developers',
                     style: TextStyle(color: Colors.white),
                   ),
-                  onTap: () async {
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Developers()),
