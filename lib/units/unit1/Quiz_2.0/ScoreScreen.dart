@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './Data/QuizQuestionList.dart';
+import 'QuestionSet.dart';
 
 class ScoreScreen extends StatefulWidget {
   const ScoreScreen({Key? key}) : super(key: key);
@@ -94,7 +95,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                   Navigator.popUntil(
                     context,
                     (route) {
-                      return count++ == 4;
+                      return count++ == 5;
                     },
                   );
                 },
@@ -105,7 +106,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
               ),
               Expanded(
                 child: ListView.builder(
-                    itemCount: markedWrong.length,
+                    itemCount: markedWrong.length + skippedQues.length,
                     // itemCount: 5,
                     itemBuilder: (context, index) {
                       return DisplayWrongQuestions(
@@ -147,6 +148,12 @@ class DisplayWrongQuestions extends StatelessWidget {
   //     print(element);
   //   });
   // }
+  String displayMissedQuestions() {
+    if (!tappedMap.containsKey(itemIndex)) {
+      return questionList[itemIndex].question;
+    }
+    return "";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -170,6 +177,10 @@ class DisplayWrongQuestions extends StatelessWidget {
             width: deviceWidth,
             child: Column(
               children: [
+                // Text(
+                //   displayMissedQuestions(),
+                //   style: TextStyle(color: Colors.white),
+                // ),
                 Text(
                   // itemIndex.toString(),
                   // code for question display

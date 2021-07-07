@@ -1,3 +1,4 @@
+import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/QuestionList.dart';
 import 'package:flutter/material.dart';
 import 'QuestionSet.dart';
 import 'scorescreen.dart';
@@ -100,7 +101,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
                             context: context,
                             builder: (context) {
                               return CustomDialogBox(
-                                  title: " Quiz Completed",
+                                  // title: " Quiz Completed",
                                   description: "Press Submit Button ",
                                   buttonText: "Submit");
                               // return AlertDialog(
@@ -140,7 +141,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ScoreScreen()));
+                              builder: (context) => AttemptedList()));
                       // }
                     },
                     child: Container(
@@ -171,11 +172,8 @@ class _QuizScreen2State extends State<QuizScreen2> {
 }
 
 class CustomDialogBox extends StatelessWidget {
-  final String title, description, buttonText;
-  CustomDialogBox(
-      {required this.title,
-      required this.description,
-      required this.buttonText});
+  final String description, buttonText;
+  CustomDialogBox({required this.description, required this.buttonText});
 
   @override
   Widget build(BuildContext context) {
@@ -187,6 +185,8 @@ class CustomDialogBox extends StatelessWidget {
   }
 
   dialogContent(BuildContext context) {
+    var deviceHeight = MediaQuery.of(context).size.height;
+    var deviceWidth = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -205,16 +205,20 @@ class CustomDialogBox extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              Text(
-                title,
-                style: TextStyle(fontSize: 24),
-              ),
+              // Text(
+              //   title,
+              //   style: TextStyle(fontSize: 24),
+              // ),
               SizedBox(
                 height: 15,
               ),
-              Text(
-                description,
-                style: TextStyle(fontSize: 18),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: deviceHeight * 0.02),
+                alignment: Alignment.center,
+                child: Text(
+                  description,
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
               SizedBox(
                 height: 26,
@@ -225,7 +229,6 @@ class CustomDialogBox extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => ScoreScreen()));
-                    
                   },
                   child: Container(
                     alignment: Alignment.center,

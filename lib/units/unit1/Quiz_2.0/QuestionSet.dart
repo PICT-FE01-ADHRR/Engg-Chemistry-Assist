@@ -15,7 +15,7 @@ class QuestionSet extends StatefulWidget {
 
 class _QuestionSetState extends State<QuestionSet> {
   var qId;
-
+  bool isTapped = false;
   List<int> tapped = [];
   @override
   Widget build(BuildContext context) {
@@ -53,6 +53,7 @@ class _QuestionSetState extends State<QuestionSet> {
               // working
               // tapped.contains(index) ? Color(0xFFFF8303) : Colors.grey,
               press: () {
+                isTapped = true;
                 if (!tapped.contains(index)) {
                   this.setState(() {
                     tappedMap.remove(widget.itemIndex);
@@ -84,6 +85,9 @@ class _QuestionSetState extends State<QuestionSet> {
                     // });
                   }
                 }
+                print("***************");
+                print(tappedMap);
+                print("***************");
 
                 // Option.isAnswered = true;
                 //     markedCorrect.contains(itemNum.id)) {
@@ -126,8 +130,6 @@ class _OptionState extends State<Option> {
 
   @override
   Widget build(BuildContext context) {
-    // QuestionController _questionController = Get.put(QuestionController());
-
     return GestureDetector(
       onTap: widget.press,
       child: Container(
