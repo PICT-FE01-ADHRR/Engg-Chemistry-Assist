@@ -8,7 +8,6 @@ Future<void> main() async {
   await Firebase.initializeApp();
   runApp(MyApp());
 }
-//todo Merge code to main branch
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
