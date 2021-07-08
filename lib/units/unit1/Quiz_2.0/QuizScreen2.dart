@@ -67,6 +67,9 @@ class _QuizScreen2State extends State<QuizScreen2> {
                   // Working of previous Button
                   GestureDetector(
                     onTap: () {
+                      skippedQues.add(pageChanged);
+                      print("After previous");
+                      print(skippedQues);
                       if (pageChanged == 0) {
                         pageController.jumpToPage(gotoLastPage);
                       } else {
@@ -93,6 +96,10 @@ class _QuizScreen2State extends State<QuizScreen2> {
                   //Working of Next Button
                   GestureDetector(
                     onTap: () {
+                      skippedQues.add(pageChanged);
+                      print("After next");
+                      print(skippedQues);
+
                       if (pageChanged + 1 >= questionList.length) {
                         // pageController.jumpToPage(
                         //   gotoFirstPage,

@@ -54,6 +54,7 @@ class _QuestionSetState extends State<QuestionSet> {
               // tapped.contains(index) ? Color(0xFFFF8303) : Colors.grey,
               press: () {
                 isTapped = true;
+
                 if (!tapped.contains(index)) {
                   this.setState(() {
                     tappedMap.remove(widget.itemIndex);
@@ -71,9 +72,9 @@ class _QuestionSetState extends State<QuestionSet> {
                   qId = widget.itemNum.id;
                   markedWrong.add(qId);
                   markedWrongAnser["$qId"] = index + 1;
-                  print(markedWrongAnser);
-                  print(markedWrong);
-                  print("Wrong $markedWrong");
+                  // print(markedWrongAnser);
+                  // print(markedWrong);
+                  // print("Wrong $markedWrong");
                 }
 
                 if (markedWrong.contains(widget.itemNum.id)) {
@@ -85,9 +86,9 @@ class _QuestionSetState extends State<QuestionSet> {
                     // });
                   }
                 }
-                print("***************");
-                print(tappedMap);
-                print("***************");
+                // print("***************");
+                // print(tappedMap);
+                // print("***************");
 
                 // Option.isAnswered = true;
                 //     markedCorrect.contains(itemNum.id)) {
