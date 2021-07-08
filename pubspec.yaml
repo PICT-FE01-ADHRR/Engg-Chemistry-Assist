@@ -19,9 +19,10 @@ dependencies:
   firebase_auth: ^1.0.1
   google_sign_in: ^5.0.0
   back_button_interceptor: ^5.0.1
-  flutter_svg: ^0.22.0
   url_launcher: ^6.0.9
   mailto: ^2.0.0
+  cloud_firestore: ^2.3.0
+  # firebase_auth_ui: ^1.0.1
   
   
 
