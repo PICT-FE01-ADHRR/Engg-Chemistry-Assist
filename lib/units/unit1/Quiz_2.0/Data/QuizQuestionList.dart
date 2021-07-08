@@ -54,3 +54,4 @@ Set markedWrong = {};
 Set markedCorrect = {};
 Map markedWrongAnser = {};
 Map<int, int> tappedMap = {};
+Set skippedQues = {};
