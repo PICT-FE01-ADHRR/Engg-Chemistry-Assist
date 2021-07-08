@@ -1,3 +1,4 @@
+import 'package:engg_chemistry_study_assist/Database/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:engg_chemistry_study_assist/Home_Page/home_page.dart';
@@ -24,6 +25,7 @@ class Authentication {
     User? user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
+     
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => Homepage(
@@ -66,10 +68,20 @@ class Authentication {
           idToken: googleSignInAuthentication.idToken,
         );
 
+        // checks for a new user to create the test scores in the database to set to 0
+        // also it will send mail only once for a new user now 
+        // UserCredential authResult = await auth.signInWithCredential(credential);
+        // if (authResult.additionalUserInfo!.isNewUser){
+        //      addUser(0);
+        // }
+
         try {
           final UserCredential userCredential =
               await auth.signInWithCredential(credential);
-
+              if (userCredential.additionalUserInfo!.isNewUser){
+                addUser(0);
+                user!.sendEmailVerification();
+        }
           user = userCredential.user;
         } on FirebaseAuthException catch (e) {
           if (e.code == 'account-exists-with-different-credential') {

@@ -1,3 +1,4 @@
+import 'package:engg_chemistry_study_assist/Database/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 // import '../screens/user_info_screen.dart';
@@ -38,7 +39,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
 
                 //print(user!.emailVerified);
                 
-                user!.sendEmailVerification();
+                
                 setState(() {
                   _isSigningIn = false;
                 });
