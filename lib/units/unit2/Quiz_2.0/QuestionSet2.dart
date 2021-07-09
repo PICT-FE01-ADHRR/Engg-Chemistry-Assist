@@ -1,5 +1,6 @@
+import 'package:engg_chemistry_study_assist/units/unit2/Quiz_2.0/Data/QuizQuestionList2.dart';
 import 'package:flutter/material.dart';
-import './Data/QuizQuestionList.dart';
+import 'Data/QuizQuestionList2.dart';
 // import 'userAnswer.dart';
 
 // ignore: must_be_immutable
@@ -43,12 +44,12 @@ class _QuestionSetState extends State<QuestionSet> {
           ),
           SizedBox(height: 20 / 2),
           ...List.generate(
-            questionList[0].options.length,
+            questionListUnit2[0].options.length,
             (index) => Option(
               index1: index,
               text: widget.itemNum.options[index],
               rightanserimport: widget.itemNum.correctAns,
-              themecolor: tappedMap[widget.itemIndex] == index
+              themecolor: tappedMapUnit2[widget.itemIndex] == index
                   ? Color(0xFFFF8303)
                   : Colors.grey,
               // working
@@ -57,8 +58,8 @@ class _QuestionSetState extends State<QuestionSet> {
                 isTapped = true;
                 if (!tapped.contains(index)) {
                   this.setState(() {
-                    tappedMap.remove(widget.itemIndex);
-                    tappedMap[widget.itemIndex] = index;
+                    tappedMapUnit2.remove(widget.itemIndex);
+                    tappedMapUnit2[widget.itemIndex] = index;
                     // working
                     // tapped.clear();
                     // tapped.add(index);
@@ -67,32 +68,32 @@ class _QuestionSetState extends State<QuestionSet> {
                 // code when a box is clicked
                 if ((index + 1 == widget.itemNum.correctAns)) {
                   qId = widget.itemNum.id;
-                  markedCorrect.add(qId);
+                  markedCorrectUnit2.add(qId);
                 } else {
                   qId = widget.itemNum.id;
-                  markedWrong.add(qId);
-                  markedWrongAnser["$qId"] = index + 1;
-                  // print(markedWrongAnser);
-                  // print(markedWrong);
-                  // print("Wrong $markedWrong");
+                  markedWrongUnit2.add(qId);
+                  markedWrongAnserUnit2["$qId"] = index + 1;
+                  // print(markedWrongAnserUnit2);
+                  // print(markedWrongUnit2);
+                  // print("Wrong $markedWrongUnit2");
                 }
 
-                if (markedWrong.contains(widget.itemNum.id)) {
-                  if (markedCorrect.contains((widget.itemNum.id))) {
-                    markedWrong.remove(widget.itemNum.id);
-                    markedWrongAnser.remove("$qId");
+                if (markedWrongUnit2.contains(widget.itemNum.id)) {
+                  if (markedCorrectUnit2.contains((widget.itemNum.id))) {
+                    markedWrongUnit2.remove(widget.itemNum.id);
+                    markedWrongAnserUnit2.remove("$qId");
                     // this.setState(() {
                     //   tapped.remove("$qId");
                     // });
                   }
                 }
                 // print("***************");
-                // print(tappedMap);
+                // print(tappedMapUnit2);
                 // print("***************");
 
                 // Option.isAnswered = true;
-                //     markedCorrect.contains(itemNum.id)) {
-                //   markedCorrect.remove(itemNum.id);
+                //     markedCorrectUnit2.contains(itemNum.id)) {
+                //   markedCorrectUnit2.remove(itemNum.id);
                 // }
               },
             ),
