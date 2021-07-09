@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './NumericalSolver.dart';
+import 'NumericalSolver.dart';
 
 class NumericalPractice extends StatelessWidget {
   @override

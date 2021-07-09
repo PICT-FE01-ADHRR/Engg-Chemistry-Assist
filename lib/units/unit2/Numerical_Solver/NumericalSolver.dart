@@ -1,15 +1,66 @@
-//Code Written by Rohan Doshi
 import 'package:flutter/material.dart';
-import 'QuestionBankUnit2_1.dart';
-import 'QuestionBankUnit2_2.dart';
-// QuestionBankUnit1
+import 'HardnessCalculator.dart';
+
+// class NumericalSolver extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Numerical Solver'),
+//       ),
+//       body: Column(
+//         children: [
+//           Container(
+//             margin: EdgeInsets.only(top: 10, bottom: 10, right: 10, left: 10),
+//             width: double.infinity,
+//             color: Colors.blue,
+//             height: 50,
+//             child: ElevatedButton(
+//               child: Text(
+//                 'Hardness Calculator',
+//                 style: TextStyle(fontSize: 20.0),
+//               ),
+//               onPressed: () {
+//                 Navigator.push(
+//                   context,
+//                   MaterialPageRoute(builder: (context) => HardnessCalculator()),
+//                 );
+//               },
+//             ),
+//           ),
+//           Container(
+//             margin: EdgeInsets.only(bottom: 10, right: 10, left: 10),
+//             width: double.infinity,
+//             height: 50,
+//             color: Colors.blue,
+//             child: ElevatedButton(
+//               child: Text(
+//                 'Type 2 Numerical',
+//                 style: TextStyle(fontSize: 20.0),
+//                 textAlign: TextAlign.right,
+//               ),
+
+//               onPressed: () {
+//                 /*
+//                 Navigator.push(
+//                   context,
+//                   MaterialPageRoute(builder: (context) => ),
+//                 );
+//                 */
+//               },
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
 List functioncalls = [
-  QuestionBankCall1(),
-  QuestionBankCall2(),
+  HardnessCalculatorCall(),
 ];
 
-class QuestionBankUnit2 extends StatelessWidget {
+class NumericalSolver extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -18,7 +69,7 @@ class QuestionBankUnit2 extends StatelessWidget {
       appBar: AppBar(
         elevation: 20,
         shadowColor: Colors.black,
-        title: Text('Question Bank Unit 2'),
+        title: Text('Numerical Solver'),
         backgroundColor: Color(0xFF0a1931),
       ),
       body: Column(
@@ -52,7 +103,7 @@ class QuestionBankUnit2 extends StatelessWidget {
                 ),
                 ListView.builder(
                   itemBuilder: (context, index) => functioncalls[index],
-                  itemCount: functioncalls.length, 
+                  itemCount: functioncalls.length,
                 )
               ],
             ),
@@ -63,7 +114,7 @@ class QuestionBankUnit2 extends StatelessWidget {
   }
 }
 
-class QuestionBankCall1 extends StatelessWidget {
+class HardnessCalculatorCall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -81,7 +132,7 @@ class QuestionBankCall1 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => QuestionBankUnit21(),
+                    builder: (context) => HardnessCalculator(),
                   ),
                 );
               },
@@ -127,14 +178,14 @@ class QuestionBankCall1 extends StatelessWidget {
                   children: [
                     GestureDetector(
                       child: Text(
-                        "Question Bank 1",
+                        "Hardness Calculator",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => QuestionBankUnit21()),
+                              builder: (context) => HardnessCalculator()),
                         );
                       },
                     ),
@@ -148,7 +199,7 @@ class QuestionBankCall1 extends StatelessWidget {
     );
   }
 }
-
+/*
 class QuestionBankCall2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -168,7 +219,7 @@ class QuestionBankCall2 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => QuestionBankUnit22(),
+                    builder: (context) => QuestionBankUnit11(),
                   ),
                 );
               },
@@ -214,14 +265,14 @@ class QuestionBankCall2 extends StatelessWidget {
                   children: [
                     GestureDetector(
                       child: Text(
-                        "Question Bank 2",
+                        "Question Bank 2 ",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => QuestionBankUnit22()),
+                              builder: (context) => QuestionBankUnit11()),
                         );
                       },
                     ),
@@ -235,3 +286,4 @@ class QuestionBankCall2 extends StatelessWidget {
     );
   }
 }
+*/
