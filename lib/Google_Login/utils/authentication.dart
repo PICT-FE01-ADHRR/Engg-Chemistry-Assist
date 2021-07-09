@@ -25,7 +25,7 @@ class Authentication {
     User? user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
-     
+      user.sendEmailVerification();
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => Homepage(
@@ -78,6 +78,7 @@ class Authentication {
         try {
           final UserCredential userCredential =
               await auth.signInWithCredential(credential);
+              // user!.sendEmailVerification();
               if (userCredential.additionalUserInfo!.isNewUser){
                 addUser(0);
                 user!.sendEmailVerification();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Quiz_2.0/Data/QuizQuestionList2.dart';
 
-class QuestionBankCard extends StatelessWidget {
+class QuestionBankCardUnit2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -76,7 +76,7 @@ class QuestionBankCard extends StatelessWidget {
                                   child: Text(
                                     questionListUnit2[index].question,
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 22),
+                                        color: Colors.white, fontSize: 18),
                                   ),
                                 ),
                               ),

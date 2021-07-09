@@ -421,7 +421,7 @@ class CustomDialogBox2 extends StatelessWidget {
   dialogContent(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
 
-    var deviceWidth = MediaQuery.of(context).size.width;
+    // var deviceWidth = MediaQuery.of(context).size.width;
 
     // var deviceWidth = MediaQuery.of(context).size.width;
     return Stack(

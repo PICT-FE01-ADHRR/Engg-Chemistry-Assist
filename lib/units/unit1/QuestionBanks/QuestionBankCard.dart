@@ -76,7 +76,7 @@ class QuestionBankCard extends StatelessWidget {
                                   child: Text(
                                     questionList[index].question,
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 22),
+                                        color: Colors.white, fontSize: 18),
                                   ),
                                 ),
                               ),
