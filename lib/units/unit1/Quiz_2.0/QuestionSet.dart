@@ -17,6 +17,7 @@ class _QuestionSetState extends State<QuestionSet> {
   var qId;
   bool isTapped = false;
   List<int> tapped = [];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,7 +55,6 @@ class _QuestionSetState extends State<QuestionSet> {
               // tapped.contains(index) ? Color(0xFFFF8303) : Colors.grey,
               press: () {
                 isTapped = true;
-
                 if (!tapped.contains(index)) {
                   this.setState(() {
                     tappedMap.remove(widget.itemIndex);

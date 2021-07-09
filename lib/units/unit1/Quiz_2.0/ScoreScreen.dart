@@ -1,16 +1,36 @@
+import 'package:engg_chemistry_study_assist/units/unit1/unit1.dart';
 import 'package:flutter/material.dart';
 import './Data/QuizQuestionList.dart';
-import 'QuestionSet.dart';
 
 class ScoreScreen extends StatefulWidget {
-  const ScoreScreen({Key? key}) : super(key: key);
+  // const ScoreScreen({Key? key}) : super(key: key);
+  var score = markedCorrect.length;
+  // var score = 5;
 
   @override
   _ScoreScreenState createState() => _ScoreScreenState();
 }
 
-class _ScoreScreenState extends State<ScoreScreen> {
-  var score = markedCorrect.length;
+class _ScoreScreenState extends State<ScoreScreen>
+    with TickerProviderStateMixin {
+  @override
+  void initState() {
+    // ignore: todo
+    // TODO: implement initState
+    super.initState();
+  }
+
+  Text greetUser() {
+    if (widget.score > questionList.length * 0.8) {
+      var deviceHeight = MediaQuery.of(context).size.height;
+      var deviceWidth = MediaQuery.of(context).size.width;
+      return Text(
+        "Congratulations! ",
+        style: TextStyle(fontSize: deviceHeight * 0.035, color: Colors.white),
+      );
+    }
+    return Text("");
+  }
 
   // var score = 5;
   @override
@@ -39,7 +59,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
           backgroundColor: Colors.transparent,
           body: Column(
             children: [
-              SizedBox(height: deviceHeight * 0.2),
+              SizedBox(height: deviceHeight * 0.15),
               // Container(
               //   alignment: Alignment.center,
               //   height: deviceHeight * 0.065,
@@ -49,28 +69,41 @@ class _ScoreScreenState extends State<ScoreScreen> {
               //       style: TextStyle(
               //           color: Colors.white, fontSize: deviceHeight * 0.035)),
               // ),
-              Container(
-                alignment: Alignment.center,
-                height: deviceHeight * 0.2,
-                width: deviceWidth * 0.6,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(25)),
-                  gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [
-                        Color(0xFF0A1931).withOpacity(0.4),
-                        Color(0xFF161D6F).withOpacity(0.6),
-                        Color(0xFF5C33F6).withOpacity(0.2),
-                        Color(0xFFA239EA).withOpacity(0.5),
-                        Color(0xFF0A043C).withOpacity(0.8),
-                      ]),
-                ),
-                child: Text(
-                  "SCORE: $score/${questionList.length}",
-                  style: TextStyle(
-                      color: Colors.white, fontSize: deviceHeight * 0.035),
-                ),
+              Column(
+                children: [
+                  SizedBox(height: deviceHeight * 0.02),
+                  greetUser(),
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 500),
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: deviceHeight * 0.2,
+                      width: deviceWidth * 0.6,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(25)),
+                        gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xFF0A1931).withOpacity(0.4),
+                              Color(0xFF161D6F).withOpacity(0.6),
+                              Color(0xFF5C33F6).withOpacity(0.2),
+                              Color(0xFFA239EA).withOpacity(0.5),
+                              Color(0xFF0A043C).withOpacity(0.8),
+                            ]),
+                      ),
+                      child: Text(
+                        "SCORE: ${widget.score}/${questionList.length}",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: deviceHeight * 0.035),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: deviceHeight * 0.02,
+                  ),
+                ],
               ),
               SizedBox(
                 height: deviceHeight * 0.05,
@@ -92,12 +125,14 @@ class _ScoreScreenState extends State<ScoreScreen> {
                   markedCorrect.clear();
                   markedWrongAnser.clear();
                   // UserAnsweredData.deleteData();
-                  Navigator.popUntil(
-                    context,
-                    (route) {
-                      return count++ == 5;
-                    },
-                  );
+                  // Navigator.popUntil(
+                  //   context,
+                  //   (route) {
+                  //     // return count++ ==53;
+                  //     return count++ == 5;
+                  //   },
+                  // );
+                  Navigator.of(context).popUntil((route) => route.isFirst);
                 },
               ),
               Text(
@@ -106,14 +141,14 @@ class _ScoreScreenState extends State<ScoreScreen> {
               ),
               Expanded(
                 child: ListView.builder(
-                    itemCount: markedWrong.length + skippedQues.length,
+                    itemCount: markedWrong.length,
                     // itemCount: 5,
                     itemBuilder: (context, index) {
                       return DisplayWrongQuestions(
                         itemIndex: index,
                       );
                     }),
-              )
+              ),
             ],
           ),
         ),
@@ -148,12 +183,6 @@ class DisplayWrongQuestions extends StatelessWidget {
   //     print(element);
   //   });
   // }
-  String displayMissedQuestions() {
-    if (!tappedMap.containsKey(itemIndex)) {
-      return questionList[itemIndex].question;
-    }
-    return "";
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -190,55 +219,50 @@ class DisplayWrongQuestions extends StatelessWidget {
                 SizedBox(
                   height: 8,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      height: deviceHeight * 0.04,
-                      width: deviceHeight * 0.15,
-                      margin: EdgeInsets.only(left: deviceHeight * 0.02),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10)),
-                        color: Colors.red,
-                      ),
-                      child: Text(
-                        // itemIndex.toString(),
+                Container(
+                  alignment: Alignment.center,
+                  // height: deviceHeight * 0.04,
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(
+                      vertical: deviceHeight * 0.01,
+                      horizontal: deviceHeight * 0.015),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color: Colors.red,
+                  ),
+                  child: Text(
+                    // itemIndex.toString(),
+                    // code for wrong answer marked
 
-                        // code for wrong answer marked
+                    "Your Answer:  ${questionList[int.parse(_listkeys[itemIndex]) - 1].options[_listvalues[itemIndex] - 1]}",
 
-                        questionList[int.parse(_listkeys[itemIndex]) - 1]
-                            .options[_listvalues[itemIndex] - 1],
+                    // style: TextStyle(
+                    //     fontSize: deviceHeight * 0.019,
+                    //     color: Colors.black),
+                  ),
+                ),
+                SizedBox(
+                  height: deviceHeight * 0.015,
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  // height: deviceHeight * 0.04,
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(
+                      vertical: deviceHeight * 0.01,
+                      horizontal: deviceHeight * 0.015),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color: Colors.green,
+                  ),
+                  child: Text(
+                    // correct code for correct answer
+                    "Correct Ans:  ${questionList[int.parse(_listkeys[itemIndex]) - 1].options[correctAnswers - 1]}",
 
-                        // style: TextStyle(
-                        //     fontSize: deviceHeight * 0.019,
-                        //     color: Colors.black),
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      height: deviceHeight * 0.04,
-                      width: deviceHeight * 0.175,
-                      margin: EdgeInsets.only(right: deviceHeight * 0.02),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10)),
-                        color: Colors.green,
-                      ),
-                      child: Text(
-                        // correct code for correct answer
-                        questionList[int.parse(_listkeys[itemIndex]) - 1]
-                            .options[correctAnswers - 1],
-
-                        // style: TextStyle(
-                        //     fontSize: deviceHeight * 0.025,
-                        //     color: Colors.black),
-                      ),
-                    ),
-                  ],
+                    // style: TextStyle(
+                    //     fontSize: deviceHeight * 0.025,
+                    //     color: Colors.black),
+                  ),
                 ),
               ],
             ),
