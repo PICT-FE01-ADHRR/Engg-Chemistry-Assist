@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:engg_chemistry_study_assist/Database/database.dart';
 import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/QuestionList.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'QuestionSet.dart';
 import 'scorescreen.dart';
@@ -193,7 +196,7 @@ class CustomDialogBox extends StatelessWidget {
 
   dialogContent(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
-    var deviceWidth = MediaQuery.of(context).size.width;
+    // var deviceWidth = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -234,6 +237,23 @@ class CustomDialogBox extends StatelessWidget {
                 alignment: Alignment.bottomRight,
                 child: GestureDetector(
                   onTap: () {
+                    // final submission by the user
+                    // add database score check logic here
+                    var currectScore = markedCorrect.length;
+                    // FirebaseAuth auth = FirebaseAuth.instance;
+                    // String uid = auth.currentUser!.uid.toString();
+                    gethighSCoreFuncFirebase();
+                    // int highscoreDisplay = SetValues.getHighScore();
+                    // print(highscoreDisplay);
+                    // Stream documentStream = FirebaseFirestore.instance
+                    //     .collection('Users')
+                    //     .doc(uid)
+                    //     .snapshots();
+                    // ignore: unnecessary_statements
+                    // documentStream.toList()
+                    // print(documentStream);
+                    print(currectScore);
+
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => ScoreScreen()));
                   },
@@ -284,4 +304,27 @@ class CustomDialogBox extends StatelessWidget {
       ],
     );
   }
+}
+
+class SetValues {
+  static var highscore;
+  static void setHighScore(sethigh) {
+    highscore = sethigh;
+  }
+
+  static int getHighScore() {
+    return highscore;
+  }
+}
+
+void gethighSCoreFuncFirebase() {
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+  String uid = auth.currentUser!.uid.toString();
+
+  FirebaseFirestore.instance.collection("Users").doc(uid).get().then((value) {
+    // SetValues.setHighScore(value.data()!["Unit1Quiz"]);
+      print(value.data()!["Unit1Quiz"]);
+  });
+
 }
