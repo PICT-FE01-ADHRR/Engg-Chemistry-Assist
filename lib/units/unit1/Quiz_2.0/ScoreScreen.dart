@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './Data/QuizQuestionList.dart';
-import 'QuestionSet.dart';
+// import 'QuestionSet.dart';
 
 class ScoreScreen extends StatefulWidget {
   const ScoreScreen({Key? key}) : super(key: key);
@@ -106,7 +106,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
               ),
               Expanded(
                 child: ListView.builder(
-                    itemCount: markedWrong.length + skippedQues.length,
+                    itemCount: markedWrong.length,
                     // itemCount: 5,
                     itemBuilder: (context, index) {
                       return DisplayWrongQuestions(
