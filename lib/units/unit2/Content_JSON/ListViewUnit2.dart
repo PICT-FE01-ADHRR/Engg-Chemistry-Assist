@@ -1,26 +1,30 @@
 // import 'package:first_app/units/unit1/quiz.dart';
 // import 'package:flutter/material.dart';
-import '../studymaterial.dart';
-import '../QuestionBankUnit2.dart';
-import '../NumericalSolver.dart';
+import 'package:engg_chemistry_study_assist/units/unit1/QuestionBanks/QuestionBankCard.dart';
 
-class ListViewUnit1 {
+import '../Quiz_2.0/QuizScreen1Unit2.dart';
+
+import '../studymaterial.dart';
+import '../QuestionBanks/QuestionBankUnit2.dart';
+import '../Numerical_Solver/NumericalSolver.dart';
+
+class ListViewUnit2 {
   int id;
   String title;
 
-  ListViewUnit1({required this.id, required this.title});
+  ListViewUnit2({required this.id, required this.title});
 }
 
 List content = [
-  ListViewUnit1(id: 1, title: "Study Material"),
-  ListViewUnit1(id: 2, title: "Numerical Solver"),
-  ListViewUnit1(id: 3, title: "Question Bank"),
-  // ListViewUnit1(id: 4, title: "Quiz"),
+  ListViewUnit2(id: 1, title: "Study Material"),
+  // ListViewUnit2(id: 2, title: "Numerical Solver"),
+  ListViewUnit2(id: 3, title: "Question Bank"),
+  ListViewUnit2(id: 4, title: "Quiz"),
 ];
 
 List funcList = [
-  StudyMaterialUnit2(),
-  NumericalSolver(),
   QuestionBankUnit2(),
-  // QuizUnit1(),
+  // NumericalSolver(),
+  QuestionBankCard(),
+  QuizScreen1(),
 ];
