@@ -1,5 +1,7 @@
 // import 'package:first_app/units/unit1/quiz.dart';
 // import 'package:flutter/material.dart';
+import 'package:engg_chemistry_study_assist/units/unit1/QuestionBanks/QuestionBankCard.dart';
+
 import '../Quiz_2.0/QuizScreen1Unit2.dart';
 
 import '../studymaterial.dart';
@@ -15,14 +17,14 @@ class ListViewUnit2 {
 
 List content = [
   ListViewUnit2(id: 1, title: "Study Material"),
-  ListViewUnit2(id: 2, title: "Numerical Solver"),
+  // ListViewUnit2(id: 2, title: "Numerical Solver"),
   ListViewUnit2(id: 3, title: "Question Bank"),
   ListViewUnit2(id: 4, title: "Quiz"),
 ];
 
 List funcList = [
-  StudyMaterialUnit2(),
-  NumericalSolver(),
   QuestionBankUnit2(),
+  // NumericalSolver(),
+  QuestionBankCard(),
   QuizScreen1(),
 ];
