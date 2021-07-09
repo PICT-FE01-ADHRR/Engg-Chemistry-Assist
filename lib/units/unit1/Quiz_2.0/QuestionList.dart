@@ -1,8 +1,9 @@
 import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/Data/QuizQuestionList.dart';
 import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/QuizScreen2.dart';
-import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/ScoreScreen.dart';
+// import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/ScoreScreen.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class AttemptedList extends StatelessWidget {
   PageController pageController = PageController(initialPage: 0);
 
@@ -75,9 +76,15 @@ class AttemptedList extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => CustomDialogBox(
                                     description:
+<<<<<<< HEAD
                                         "Are you sure you want to submit? ",
                                     buttonText: "OK",
                                     button2Text: "Cancel",
+=======
+                                        "Are you sure you want to submit?",
+                                    buttonText: "YES",
+                                    button2Text: "NO",
+>>>>>>> main
                                   )));
                     } else {
                       Navigator.push(
@@ -126,6 +133,7 @@ class AttemptedList extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class DisplayAllQuestions extends StatelessWidget {
   int itemIndex;
   final VoidCallback goBackToQuestions;

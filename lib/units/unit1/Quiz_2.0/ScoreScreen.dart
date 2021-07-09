@@ -1,6 +1,10 @@
 import 'package:engg_chemistry_study_assist/units/unit1/unit1.dart';
 import 'package:flutter/material.dart';
 import './Data/QuizQuestionList.dart';
+<<<<<<< HEAD
+=======
+// import 'QuestionSet.dart';
+>>>>>>> main
 
 class ScoreScreen extends StatefulWidget {
   // const ScoreScreen({Key? key}) : super(key: key);
@@ -217,10 +221,11 @@ class DisplayWrongQuestions extends StatelessWidget {
                   questionList[int.parse(_listkeys[itemIndex]) - 1].question,
                 ),
                 SizedBox(
-                  height: 8,
+                  height: deviceHeight * 0.01,
                 ),
                 Container(
                   alignment: Alignment.center,
+<<<<<<< HEAD
                   // height: deviceHeight * 0.04,
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(
@@ -228,13 +233,29 @@ class DisplayWrongQuestions extends StatelessWidget {
                       horizontal: deviceHeight * 0.015),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
+=======
+                  padding: EdgeInsets.all(deviceHeight * 0.010),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
+>>>>>>> main
                     color: Colors.red,
                   ),
                   child: Text(
                     // itemIndex.toString(),
+<<<<<<< HEAD
                     // code for wrong answer marked
 
                     "Your Answer:  ${questionList[int.parse(_listkeys[itemIndex]) - 1].options[_listvalues[itemIndex] - 1]}",
+=======
+
+                    // code for wrong answer marked
+
+                    questionList[int.parse(_listkeys[itemIndex]) - 1]
+                        .options[_listvalues[itemIndex] - 1],
+>>>>>>> main
 
                     // style: TextStyle(
                     //     fontSize: deviceHeight * 0.019,
@@ -242,6 +263,7 @@ class DisplayWrongQuestions extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
+<<<<<<< HEAD
                   height: deviceHeight * 0.015,
                 ),
                 Container(
@@ -253,11 +275,28 @@ class DisplayWrongQuestions extends StatelessWidget {
                       horizontal: deviceHeight * 0.015),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
+=======
+                  height: deviceHeight * 0.01,
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(deviceHeight * 0.010),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
+>>>>>>> main
                     color: Colors.green,
                   ),
                   child: Text(
                     // correct code for correct answer
+<<<<<<< HEAD
                     "Correct Ans:  ${questionList[int.parse(_listkeys[itemIndex]) - 1].options[correctAnswers - 1]}",
+=======
+                    questionList[int.parse(_listkeys[itemIndex]) - 1]
+                        .options[correctAnswers - 1],
+>>>>>>> main
 
                     // style: TextStyle(
                     //     fontSize: deviceHeight * 0.025,

@@ -1,8 +1,16 @@
 import 'dart:async';
+<<<<<<< HEAD
 
 import 'QuestionList.dart';
 import 'ScoreScreen.dart';
+=======
+import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:engg_chemistry_study_assist/Database/database.dart';
+import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/QuestionList.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+>>>>>>> main
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'QuestionSet.dart';
 import './Data/QuizQuestionList.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -173,14 +181,15 @@ class _QuizScreen2State extends State<QuizScreen2> {
                   GestureDetector(
                     onTap: () {
                       fillSet();
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
                       if (pageChanged + 1 >= questionList.length) {
-                        // pageController.jumpToPage(
-                        //   gotoFirstPage,
-                        // );
                         showDialog(
                             context: context,
                             builder: (context) {
+<<<<<<< HEAD
                               return CustomDialogBox(
                                 // title: " Quiz Completed",
                                 description: "Press Submit Button ",
@@ -195,12 +204,21 @@ class _QuizScreen2State extends State<QuizScreen2> {
                               //         onPressed: () {}, child: Text("ok"))
                               //   ],
                               // );
+=======
+                              return CustomDialogBox2(
+                                description: "Press Submit Button",
+                                buttonText: "OK",
+                              );
+>>>>>>> main
                             });
                       }
                       //else {
-                      pageController.animateToPage(++pageChanged,
-                          duration: Duration(milliseconds: 250),
-                          curve: Curves.ease);
+                      if (pageChanged + 1 < questionList.length) {
+                        pageController.animateToPage(++pageChanged,
+                            duration: Duration(milliseconds: 250),
+                            curve: Curves.ease);
+                      }
+
                       // }
                     },
                     child: Container(
@@ -272,7 +290,7 @@ class CustomDialogBox extends StatelessWidget {
 
   dialogContent(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
-    var deviceWidth = MediaQuery.of(context).size.width;
+    // var deviceWidth = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -343,6 +361,25 @@ class CustomDialogBox extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
+<<<<<<< HEAD
+=======
+                      // final submission by the user
+                      // add database score check logic here
+                      var currectScore = markedCorrect.length;
+                      // FirebaseAuth auth = FirebaseAuth.instance;
+                      // String uid = auth.currentUser!.uid.toString();
+                      gethighSCoreFuncFirebase();
+                      // int highscoreDisplay = SetValues.getHighScore();
+                      // print(highscoreDisplay);
+                      // Stream documentStream = FirebaseFirestore.instance
+                      //     .collection('Users')
+                      //     .doc(uid)
+                      //     .snapshots();
+                      // ignore: unnecessary_statements
+                      // documentStream.toList()
+                      // print(documentStream);
+                      print(currectScore);
+>>>>>>> main
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -410,7 +447,11 @@ class CustomDialogBox2 extends StatelessWidget {
 
   dialogContent(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
+<<<<<<< HEAD
     var deviceWidth = MediaQuery.of(context).size.width;
+=======
+    // var deviceWidth = MediaQuery.of(context).size.width;
+>>>>>>> main
     return Stack(
       children: [
         Container(
@@ -429,10 +470,13 @@ class CustomDialogBox2 extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
+<<<<<<< HEAD
               // Text(
               //   title,
               //   style: TextStyle(fontSize: 24),
               // ),
+=======
+>>>>>>> main
               SizedBox(
                 height: 15,
               ),
@@ -447,7 +491,10 @@ class CustomDialogBox2 extends StatelessWidget {
               SizedBox(
                 height: 26,
               ),
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
               GestureDetector(
                 onTap: () {
                   Navigator.pop(context);
@@ -492,4 +539,122 @@ class CustomDialogBox2 extends StatelessWidget {
       ],
     );
   }
+}
+
+class CustomDialogBox3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      backgroundColor: Colors.transparent,
+      child: dialogContent(context),
+    );
+  }
+
+  dialogContent(BuildContext context) {
+    var deviceHeight = MediaQuery.of(context).size.height;
+    // var deviceWidth = MediaQuery.of(context).size.width;
+    return Stack(
+      children: [
+        Container(
+          padding: EdgeInsets.only(top: 100, bottom: 16, left: 16, right: 16),
+          decoration: BoxDecoration(
+            color: Color(0xFFF9F9F9).withOpacity(0.8),
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(17),
+            boxShadow: [
+              BoxShadow(color: Colors.black, offset: Offset(0.0, 16.0)),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                height: 30,
+              ),
+              // Text(
+              //   title,
+              //   style: TextStyle(fontSize: 24),
+              // ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: deviceHeight * 0.02),
+                alignment: Alignment.center,
+                child: Text(
+                  "heeo",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+              SizedBox(
+                height: 26,
+              ),
+
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ScoreScreen()));
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  height: deviceHeight * 0.055,
+                  width: deviceHeight * 0.1,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    // color: Colors.orange,
+                    gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [
+                          // Color(0xFF0A1931),
+                          Color(0xFF16222A),
+                          Color(0xFF161D6F),
+                          Color(0xFF3A6073),
+                          Color(0xFF150E56),
+                          // Color(0xFF0A043C),
+                        ]),
+                  ),
+                  child: Text(
+                    "heloo",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          top: 15,
+          left: 10,
+          right: 10,
+          child: Image.network(
+            "https://media.giphy.com/media/NPU9J1EPSdMCL82YF6/giphy.gif",
+            height: 100,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class SetValues {
+  static var highscore;
+  static void setHighScore(sethigh) {
+    highscore = sethigh;
+  }
+
+  static int getHighScore() {
+    return highscore;
+  }
+}
+
+void gethighSCoreFuncFirebase() {
+  FirebaseAuth auth = FirebaseAuth.instance;
+  String uid = auth.currentUser!.uid.toString();
+
+  FirebaseFirestore.instance.collection("Users").doc(uid).get().then((value) {
+    // SetValues.setHighScore(value.data()!["Unit1Quiz"]);
+    print(value.data()!["Unit1Quiz"]);
+  });
 }
