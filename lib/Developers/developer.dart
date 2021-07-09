@@ -47,6 +47,22 @@ const developerList = [
       emailUrl: "dinesh.g.nehete@gmail.com",
       instagramUrl:"http://instagram.com/dinesh.nehete_/",
       color: Colors.transparent),
+  const Developer(
+      name: 'Harsh Bhat',
+      image: 'assets/images/Harsh.jpeg',
+      gitHubUrl: "https://github.com/Harususan",
+      linkedUrl: "https://www.linkedin.com/in/harsh-bhat-40867320a/",
+      emailUrl: "harshbhat83@gmail.com",
+      instagramUrl:"https://www.instagram.com/_harusu_san_/",
+      color: Colors.transparent),
+  const Developer(
+      name: 'Rohit Bhise',
+      image: 'assets/images/Rohit.jpg',
+      gitHubUrl: "https://github.com/rohitbhise",
+      linkedUrl: "https://www.linkedin.com/in/rohit-bhise-803b07216/",
+      emailUrl: "rohitbhise2704@gmail.com",
+      instagramUrl:"https://www.instagram.com/rohitbhise2704/",
+      color: Colors.transparent),
 ];
 
 class Developers extends StatefulWidget {
