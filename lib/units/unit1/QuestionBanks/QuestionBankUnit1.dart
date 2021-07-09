@@ -69,14 +69,14 @@ class StudyMaterialCall1 extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-      height: 160,
+      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+      height: size.height * 0.2,
       child: Stack(
-        alignment: Alignment.center,
+        alignment: Alignment.bottomCenter,
         children: [
           Container(
-            width: size.width - 40,
-            height: 145,
+            width: size.width * 0.88,
+            height: size.height * 0.18,
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -87,8 +87,8 @@ class StudyMaterialCall1 extends StatelessWidget {
                 );
               },
               child: Container(
-                width: size.width - 30,
-                height: 145,
+                width: size.height * 0.18,
+                height: size.width * 0.923,
                 margin: EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -117,19 +117,19 @@ class StudyMaterialCall1 extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 40,
-            left: 20,
+            top: size.height * 0.0711,
+            left: 0,
             child: Container(
               // color: Colors.deepOrangeAccent,
               child: SizedBox(
-                height: 100,
-                width: size.width - 200,
+                height: size.height * 0.17,
+                width: size.width * 0.85,
                 child: Column(
                   children: [
                     GestureDetector(
                       child: Text(
                         "Study Material",
-                        style: TextStyle(fontSize: 23, color: Colors.white),
+                        style: TextStyle(fontSize: 25, color: Colors.white),
                       ),
                       onTap: () {
                         Navigator.push(
@@ -157,13 +157,13 @@ class QuestionBankCall1 extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-      height: 160,
+      height: size.height * 0.2,
       child: Stack(
-        alignment: Alignment.center,
+        alignment: Alignment.bottomCenter,
         children: [
           Container(
-            width: size.width - 40,
-            height: 145,
+            width: size.width * 0.88,
+            height: size.height * 0.18,
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -174,8 +174,8 @@ class QuestionBankCall1 extends StatelessWidget {
                 );
               },
               child: Container(
-                width: size.width - 30,
-                height: 145,
+                width: size.height * 0.18,
+                height: size.width * 0.923,
                 margin: EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -204,19 +204,19 @@ class QuestionBankCall1 extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 40,
-            left: 20,
+            top: size.height * 0.0711,
+            left: 0,
             child: Container(
               // color: Colors.deepOrangeAccent,
               child: SizedBox(
-                height: 100,
-                width: size.width - 200,
+                height: size.height * 0.17,
+                width: size.width * 0.85,
                 child: Column(
                   children: [
                     GestureDetector(
                       child: Text(
                         "MCQ Bank 1",
-                        style: TextStyle(fontSize: 23, color: Colors.white),
+                        style: TextStyle(fontSize: 25, color: Colors.white),
                       ),
                       onTap: () {
                         Navigator.push(
@@ -243,13 +243,13 @@ class QuestionBankCall2 extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-      height: 160,
+      height: size.height * 0.2,
       child: Stack(
-        alignment: Alignment.center,
+        alignment: Alignment.bottomCenter,
         children: [
           Container(
-            width: size.width - 40,
-            height: 145,
+            width: size.width * 0.88,
+            height: size.height * 0.18,
             child: GestureDetector(
               onTap: () {
                // print("Function Call 2");
@@ -261,8 +261,8 @@ class QuestionBankCall2 extends StatelessWidget {
                 );
               },
               child: Container(
-                width: size.width - 30,
-                height: 145,
+                width: size.height * 0.18,
+                height: size.width * 0.923,
                 margin: EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -291,19 +291,19 @@ class QuestionBankCall2 extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 40,
-            left: 20,
+            top: size.height * 0.0711,
+            left: 0,
             child: Container(
               // color: Colors.deepOrangeAccent,
               child: SizedBox(
-                height: 100,
-                width: size.width - 200,
+                height: size.height * 0.17,
+                width:  size.width * 0.85,
                 child: Column(
                   children: [
                     GestureDetector(
                       child: Text(
                         "MCQ Bank 2",
-                        style: TextStyle(fontSize: 23, color: Colors.white),
+                        style: TextStyle(fontSize: 25, color: Colors.white),
                       ),
                       onTap: () {
                         Navigator.push(

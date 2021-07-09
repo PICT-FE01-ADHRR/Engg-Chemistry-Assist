@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:engg_chemistry_study_assist/Database/database.dart';
+// import 'package:engg_chemistry_study_assist/Database/database.dart';
 import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/QuestionList.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -263,7 +263,7 @@ class CustomDialogBox extends StatelessWidget {
 
   dialogContent(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
-    var deviceWidth = MediaQuery.of(context).size.width;
+    // var deviceWidth = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -417,7 +417,7 @@ class CustomDialogBox2 extends StatelessWidget {
 
   dialogContent(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
-    var deviceWidth = MediaQuery.of(context).size.width;
+    // var deviceWidth = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -508,7 +508,7 @@ class CustomDialogBox3 extends StatelessWidget {
 
   dialogContent(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
-    var deviceWidth = MediaQuery.of(context).size.width;
+    // var deviceWidth = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
