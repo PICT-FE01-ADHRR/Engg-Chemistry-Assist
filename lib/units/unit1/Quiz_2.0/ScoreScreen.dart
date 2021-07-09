@@ -188,57 +188,53 @@ class DisplayWrongQuestions extends StatelessWidget {
                   questionList[int.parse(_listkeys[itemIndex]) - 1].question,
                 ),
                 SizedBox(
-                  height: 8,
+                  height: deviceHeight * 0.01,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      height: deviceHeight * 0.04,
-                      width: deviceHeight * 0.15,
-                      margin: EdgeInsets.only(left: deviceHeight * 0.02),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10)),
-                        color: Colors.red,
-                      ),
-                      child: Text(
-                        // itemIndex.toString(),
+                Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(deviceHeight * 0.010),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
+                    color: Colors.red,
+                  ),
+                  child: Text(
+                    // itemIndex.toString(),
 
-                        // code for wrong answer marked
+                    // code for wrong answer marked
 
-                        questionList[int.parse(_listkeys[itemIndex]) - 1]
-                            .options[_listvalues[itemIndex] - 1],
+                    questionList[int.parse(_listkeys[itemIndex]) - 1]
+                        .options[_listvalues[itemIndex] - 1],
 
-                        // style: TextStyle(
-                        //     fontSize: deviceHeight * 0.019,
-                        //     color: Colors.black),
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      height: deviceHeight * 0.04,
-                      width: deviceHeight * 0.175,
-                      margin: EdgeInsets.only(right: deviceHeight * 0.02),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10)),
-                        color: Colors.green,
-                      ),
-                      child: Text(
-                        // correct code for correct answer
-                        questionList[int.parse(_listkeys[itemIndex]) - 1]
-                            .options[correctAnswers - 1],
+                    // style: TextStyle(
+                    //     fontSize: deviceHeight * 0.019,
+                    //     color: Colors.black),
+                  ),
+                ),
+                SizedBox(
+                  height: deviceHeight * 0.01,
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(deviceHeight * 0.010),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
+                    color: Colors.green,
+                  ),
+                  child: Text(
+                    // correct code for correct answer
+                    questionList[int.parse(_listkeys[itemIndex]) - 1]
+                        .options[correctAnswers - 1],
 
-                        // style: TextStyle(
-                        //     fontSize: deviceHeight * 0.025,
-                        //     color: Colors.black),
-                      ),
-                    ),
-                  ],
+                    // style: TextStyle(
+                    //     fontSize: deviceHeight * 0.025,
+                    //     color: Colors.black),
+                  ),
                 ),
               ],
             ),

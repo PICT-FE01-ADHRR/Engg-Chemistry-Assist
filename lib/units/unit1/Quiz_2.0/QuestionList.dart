@@ -70,14 +70,25 @@ class AttemptedList extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => CustomDialogBox(
-                                description:
-                                    "Are you sure you want to submit? ",
-                                buttonText: "OK")));
+                    if (tappedMap.length == questionList.length) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CustomDialogBox(
+                                    description:
+                                        "Are you sure you want to submit?",
+                                    buttonText: "YES",
+                                    button2Text: "NO",
+                                  )));
+                    } else {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CustomDialogBox2(
+                                    description: "Complete the quiz first ",
+                                    buttonText: "Ok",
+                                  )));
+                    }
                   },
                   child: Container(
                     alignment: Alignment.center,
