@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:engg_chemistry_study_assist/Database/database.dart';
 import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/QuestionList.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'QuestionSet.dart';
 import 'scorescreen.dart';
 import './Data/QuizQuestionList.dart';
@@ -18,7 +20,61 @@ class _QuizScreen2State extends State<QuizScreen2> {
   PageController pageController = PageController(initialPage: 0);
   int pageChanged = 0;
   int gotoFirstPage = 0;
+  int timeToNavigate = questionList.length * 15;
+  // int timeToNavigate = 15;
   int gotoLastPage = questionList.length;
+
+  Timer? timer;
+  @override
+  void initState() {
+    // ignore: todo
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(Duration(seconds: questionList.length * 15), () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => ScoreScreen()));
+    });
+    _startTimer();
+  }
+
+  @override
+  void dispose() {
+    timer!.cancel();
+    _stopTimer();
+    super.dispose();
+  }
+
+  void _startTimer() {
+    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        if (timeToNavigate != 0) {
+          timeToNavigate--;
+          // print(timeToNavigate);
+        }
+      });
+    });
+  }
+
+  void _stopTimer() {
+    timeToNavigate = 0;
+  }
+
+  MaterialColor getTimerColor() {
+    if (timeToNavigate <= 10) {
+      return Colors.red;
+    } else {
+      return Colors.green;
+    }
+  }
+
+  void fillSet() {
+    // skippedQues.addAll()
+    for (var i = 0; i < questionList.length; i++) {
+      skippedQues.add(i);
+    }
+    print(skippedQues);
+  }
+
   @override
   Widget build(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
@@ -37,10 +93,31 @@ class _QuizScreen2State extends State<QuizScreen2> {
           body: Column(
             children: [
               SizedBox(
-                height: 125,
+                height: deviceHeight * 0.05,
+              ),
+              CircularPercentIndicator(
+                  radius: deviceHeight * 0.115,
+                  backgroundColor: Colors.deepPurpleAccent,
+                  progressColor: getTimerColor(),
+                  lineWidth: deviceWidth * 0.012,
+                  percent: timeToNavigate / (questionList.length * 15),
+                  center: Text(
+                    timeToNavigate.toString(),
+                    style: TextStyle(
+                        color: Colors.white, fontSize: deviceHeight * 0.028),
+                  )),
+              SizedBox(
+                height: deviceHeight * 0.015,
               ),
               Container(
-                child: Text("HI"),
+                child: Text(
+                  "Question - ${pageChanged + 1}",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: deviceHeight * 0.025),
+                ),
+              ),
+              SizedBox(
+                height: deviceHeight * 0.015,
               ),
               //Pages of the Quiz
               Expanded(
@@ -70,9 +147,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
                   // Working of previous Button
                   GestureDetector(
                     onTap: () {
-                      skippedQues.add(pageChanged);
-                      print("After previous");
-                      print(skippedQues);
+                      // fillSet();
                       if (pageChanged == 0) {
                         pageController.jumpToPage(gotoLastPage);
                       } else {
@@ -99,35 +174,24 @@ class _QuizScreen2State extends State<QuizScreen2> {
                   //Working of Next Button
                   GestureDetector(
                     onTap: () {
-                      skippedQues.add(pageChanged);
-                      print("After next");
-                      print(skippedQues);
-
+                      fillSet();
                       if (pageChanged + 1 >= questionList.length) {
-                        // pageController.jumpToPage(
-                        //   gotoFirstPage,
-                        // );
                         showDialog(
                             context: context,
                             builder: (context) {
-                              return CustomDialogBox(
-                                  // title: " Quiz Completed",
-                                  description: "Press Submit Button ",
-                                  buttonText: "Submit");
-                              // return AlertDialog(
-                              //   title: Text("Quiz Completed"),
-                              //   content: Text("Click Submit Button"),
-                              //   actions: [
-                              //     FlatButton(
-                              //         onPressed: () {}, child: Text("ok"))
-                              //   ],
-                              // );
+                              return CustomDialogBox2(
+                                description: "Press Submit Button",
+                                buttonText: "OK",
+                              );
                             });
                       }
                       //else {
-                      pageController.animateToPage(++pageChanged,
-                          duration: Duration(milliseconds: 250),
-                          curve: Curves.ease);
+                      if (pageChanged + 1 < questionList.length) {
+                        pageController.animateToPage(++pageChanged,
+                            duration: Duration(milliseconds: 250),
+                            curve: Curves.ease);
+                      }
+
                       // }
                     },
                     child: Container(
@@ -182,8 +246,11 @@ class _QuizScreen2State extends State<QuizScreen2> {
 }
 
 class CustomDialogBox extends StatelessWidget {
-  final String description, buttonText;
-  CustomDialogBox({required this.description, required this.buttonText});
+  final String description, buttonText, button2Text;
+  CustomDialogBox(
+      {required this.description,
+      required this.buttonText,
+      required this.button2Text});
 
   @override
   Widget build(BuildContext context) {
@@ -196,7 +263,7 @@ class CustomDialogBox extends StatelessWidget {
 
   dialogContent(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
-    // var deviceWidth = MediaQuery.of(context).size.width;
+    var deviceWidth = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -233,61 +300,87 @@ class CustomDialogBox extends StatelessWidget {
               SizedBox(
                 height: 26,
               ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: GestureDetector(
-                  onTap: () {
-                    // final submission by the user
-                    // add database score check logic here
-                    var currectScore = markedCorrect.length;
-                    // FirebaseAuth auth = FirebaseAuth.instance;
-                    // String uid = auth.currentUser!.uid.toString();
-                    gethighSCoreFuncFirebase();
-                    // int highscoreDisplay = SetValues.getHighScore();
-                    // print(highscoreDisplay);
-                    // Stream documentStream = FirebaseFirestore.instance
-                    //     .collection('Users')
-                    //     .doc(uid)
-                    //     .snapshots();
-                    // ignore: unnecessary_statements
-                    // documentStream.toList()
-                    // print(documentStream);
-                    print(currectScore);
-
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ScoreScreen()));
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 35,
-                    width: 75,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      // color: Colors.orange,
-                      gradient: LinearGradient(
-                          begin: Alignment.topRight,
-                          end: Alignment.bottomLeft,
-                          colors: [
-                            // Color(0xFF0A1931),
-                            Color(0xFF16222A),
-                            Color(0xFF161D6F),
-                            Color(0xFF3A6073),
-                            Color(0xFF150E56),
-                            // Color(0xFF0A043C),
-                          ]),
-                    ),
-                    child: Text(
-                      buttonText,
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: deviceHeight * 0.055,
+                      width: deviceHeight * 0.1,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        // color: Colors.orange,
+                        gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              // Color(0xFF0A1931),
+                              Color(0xFF16222A),
+                              Color(0xFF161D6F),
+                              Color(0xFF3A6073),
+                              Color(0xFF150E56),
+                              // Color(0xFF0A043C),
+                            ]),
+                      ),
+                      child: Text(
+                        button2Text,
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
                     ),
                   ),
-                ),
-                // child: TextButton(
-                //   onPressed: () {
-                //     Navigator.pop(context);
-                //   },
-                //   child: Text(buttonText),
-                // ),
+                  GestureDetector(
+                    onTap: () {
+                      // final submission by the user
+                      // add database score check logic here
+                      var currectScore = markedCorrect.length;
+                      // FirebaseAuth auth = FirebaseAuth.instance;
+                      // String uid = auth.currentUser!.uid.toString();
+                      gethighSCoreFuncFirebase();
+                      // int highscoreDisplay = SetValues.getHighScore();
+                      // print(highscoreDisplay);
+                      // Stream documentStream = FirebaseFirestore.instance
+                      //     .collection('Users')
+                      //     .doc(uid)
+                      //     .snapshots();
+                      // ignore: unnecessary_statements
+                      // documentStream.toList()
+                      // print(documentStream);
+                      print(currectScore);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ScoreScreen()));
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: deviceHeight * 0.055,
+                      width: deviceHeight * 0.1,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        // color: Colors.orange,
+                        gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              // Color(0xFF0A1931),
+                              Color(0xFF16222A),
+                              Color(0xFF161D6F),
+                              Color(0xFF3A6073),
+                              Color(0xFF150E56),
+                              // Color(0xFF0A043C),
+                            ]),
+                      ),
+                      child: Text(
+                        buttonText,
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -297,7 +390,201 @@ class CustomDialogBox extends StatelessWidget {
           left: 10,
           right: 10,
           child: Image.network(
-            "https://media.giphy.com/media/VYhKFysej1b0UMDnHa/giphy.gif",
+            "https://media.giphy.com/media/9aD5dIPVqmEy7U7Zqe/giphy.gif",
+            height: 100,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class CustomDialogBox2 extends StatelessWidget {
+  final String description, buttonText;
+  CustomDialogBox2({
+    required this.description,
+    required this.buttonText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      backgroundColor: Colors.transparent,
+      child: dialogContent(context),
+    );
+  }
+
+  dialogContent(BuildContext context) {
+    var deviceHeight = MediaQuery.of(context).size.height;
+    var deviceWidth = MediaQuery.of(context).size.width;
+    return Stack(
+      children: [
+        Container(
+          padding: EdgeInsets.only(top: 100, bottom: 16, left: 16, right: 16),
+          decoration: BoxDecoration(
+            color: Color(0xFFF9F9F9).withOpacity(0.8),
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(17),
+            boxShadow: [
+              BoxShadow(color: Colors.black, offset: Offset(0.0, 16.0)),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: deviceHeight * 0.02),
+                alignment: Alignment.center,
+                child: Text(
+                  description,
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+              SizedBox(
+                height: 26,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  height: deviceHeight * 0.055,
+                  width: deviceHeight * 0.1,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    // color: Colors.orange,
+                    gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [
+                          // Color(0xFF0A1931),
+                          Color(0xFF16222A),
+                          Color(0xFF161D6F),
+                          Color(0xFF3A6073),
+                          Color(0xFF150E56),
+                          // Color(0xFF0A043C),
+                        ]),
+                  ),
+                  child: Text(
+                    buttonText,
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          top: 15,
+          left: 10,
+          right: 10,
+          child: Image.network(
+            "https://media.giphy.com/media/NPU9J1EPSdMCL82YF6/giphy.gif",
+            height: 100,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class CustomDialogBox3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      backgroundColor: Colors.transparent,
+      child: dialogContent(context),
+    );
+  }
+
+  dialogContent(BuildContext context) {
+    var deviceHeight = MediaQuery.of(context).size.height;
+    var deviceWidth = MediaQuery.of(context).size.width;
+    return Stack(
+      children: [
+        Container(
+          padding: EdgeInsets.only(top: 100, bottom: 16, left: 16, right: 16),
+          decoration: BoxDecoration(
+            color: Color(0xFFF9F9F9).withOpacity(0.8),
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(17),
+            boxShadow: [
+              BoxShadow(color: Colors.black, offset: Offset(0.0, 16.0)),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                height: 30,
+              ),
+              // Text(
+              //   title,
+              //   style: TextStyle(fontSize: 24),
+              // ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: deviceHeight * 0.02),
+                alignment: Alignment.center,
+                child: Text(
+                  "heeo",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+              SizedBox(
+                height: 26,
+              ),
+
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ScoreScreen()));
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  height: deviceHeight * 0.055,
+                  width: deviceHeight * 0.1,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    // color: Colors.orange,
+                    gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [
+                          // Color(0xFF0A1931),
+                          Color(0xFF16222A),
+                          Color(0xFF161D6F),
+                          Color(0xFF3A6073),
+                          Color(0xFF150E56),
+                          // Color(0xFF0A043C),
+                        ]),
+                  ),
+                  child: Text(
+                    "heloo",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          top: 15,
+          left: 10,
+          right: 10,
+          child: Image.network(
+            "https://media.giphy.com/media/NPU9J1EPSdMCL82YF6/giphy.gif",
             height: 100,
           ),
         ),
@@ -318,13 +605,11 @@ class SetValues {
 }
 
 void gethighSCoreFuncFirebase() {
-
   FirebaseAuth auth = FirebaseAuth.instance;
   String uid = auth.currentUser!.uid.toString();
 
   FirebaseFirestore.instance.collection("Users").doc(uid).get().then((value) {
     // SetValues.setHighScore(value.data()!["Unit1Quiz"]);
-      print(value.data()!["Unit1Quiz"]);
+    print(value.data()!["Unit1Quiz"]);
   });
-
 }
