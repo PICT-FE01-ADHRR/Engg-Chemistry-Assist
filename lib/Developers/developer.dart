@@ -1,15 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-// import 'dart:async';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:mailto/mailto.dart';
-
-// const bottomBackgroundColor = Color(0xFFF1F2F7);
-// const marginSide = 14.0;
-// const leftItemSeparator = const SizedBox(
-//   width: 30,
-// );
-
 class Developer {
   final String name;
   final String image;

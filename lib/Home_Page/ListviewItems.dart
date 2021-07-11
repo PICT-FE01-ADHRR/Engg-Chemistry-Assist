@@ -1,3 +1,5 @@
+import '/units/Quiz_2.0/QuizScreen1Main.dart';
+
 import '../units/unit1/unit1.dart';
 import '../units/unit2/unit2.dart';
 import '../units/unit3/unit3.dart';
@@ -22,7 +24,16 @@ List itemsList = [
   ListdisplayText(
       func: "UT5", title: "Unit-5", chapter: "Spectroscopic Techniques"),
   ListdisplayText(func: "UT6", title: "Unit-6", chapter: "Corrosion Science"),
-  ListdisplayText(func: "QUIZ", title: "Quizes", chapter: "10-15 Mcqs On Unit"),
+  ListdisplayText(
+      func: "QUIZ", title: "Quizes", chapter: "MCQS on combined syllabus"),
 ];
 
-List funcList = [Unit1(), Unit2(), Unit3(), Unit4(), Unit5(), Unit6(), Unit6()];
+List funcList = [
+  Unit1(),
+  Unit2(),
+  Unit3(),
+  Unit4(),
+  Unit5(),
+  Unit6(),
+  QuizScreen1Main()
+];
