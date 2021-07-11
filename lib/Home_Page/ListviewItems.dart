@@ -1,4 +1,5 @@
 import 'package:engg_chemistry_study_assist/units/unit4/unit4.dart';
+import 'package:engg_chemistry_study_assist/units/unit5/unit5.dart';
 
 import '../units/unit1/unit1.dart';
 import '../units/unit2/unit2.dart';
@@ -19,6 +20,7 @@ List itemsList = [
   ListdisplayText(
       func: "UT3", title: "Unit-3", chapter: "Engineering Materials"),
   ListdisplayText(func: "UT4", title: "Unit-4", chapter: "Fuels"),
+  ListdisplayText(func: "UT5", title: "Unit-5", chapter: "We don't know !"),
   ListdisplayText(func: "QUIZ", title: "Quizes", chapter: "10-15 Mcqs On Unit"),
 ];
 
@@ -27,5 +29,5 @@ List funcList = [
   Unit2(),
   Unit3(),
   Unit4(),
-  Unit3(),
+  Unit5(),
 ];
