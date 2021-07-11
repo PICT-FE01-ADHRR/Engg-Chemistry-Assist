@@ -3,6 +3,7 @@ import '../units/unit2/unit2.dart';
 import '../units/unit3/unit3.dart';
 import '../units/unit4/unit4.dart';
 import '../units/unit5/unit5.dart';
+import '../units/unit6/unit6.dart';
 
 class ListdisplayText {
   String func;
@@ -24,4 +25,4 @@ List itemsList = [
   ListdisplayText(func: "QUIZ", title: "Quizes", chapter: "10-15 Mcqs On Unit"),
 ];
 
-List funcList = [Unit1(), Unit2(), Unit3(), Unit4(), Unit5(), Unit5()];
+List funcList = [Unit1(), Unit2(), Unit3(), Unit4(), Unit5(), Unit6(), Unit6()];
