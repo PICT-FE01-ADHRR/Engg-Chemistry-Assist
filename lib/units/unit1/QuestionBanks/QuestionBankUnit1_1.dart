@@ -1,4 +1,7 @@
 //Code Written by Rohan Doshi
+// import 'dart:io';
+// import 'dart:typed_data';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
@@ -8,11 +11,24 @@ class QuestionBankUnit11 extends StatefulWidget {
 }
 
 class _QuestionBankUnit11 extends State<QuestionBankUnit11> {
+  // final String _url =
+  //     'https://firebasestorage.googleapis.com/v0/b/chemistry-study-assist.appspot.com/o/QuestionBankUnit11.pdf?alt=media&token=349f894c-1dee-49c9-9f43-d5638c422118';
+  // late Uint8List _pdfBytes;
+  // // Downloads the PDF from the URL
+  // void downloadPDF() async {
+  //   final HttpClient client = HttpClient();
+  //   final HttpClientRequest request = await client.getUrl(Uri.parse(_url));
+  //   final HttpClientResponse response = await request.close();
+  //   _pdfBytes = await consolidateHttpClientResponseBytes(response);
+  //   setState(() {});
+  // }
+
   PdfViewerController _pdfViewerController = new PdfViewerController();
-  
+
   @override
   void initState() {
     _pdfViewerController = PdfViewerController();
+    // downloadPDF();
     super.initState();
   }
 
@@ -47,13 +63,27 @@ class _QuestionBankUnit11 extends State<QuestionBankUnit11> {
         ],
       ),
       body: Container(
-        child: SfPdfViewer.asset(
-          'assets/unit1/QuestionBankUnit11.pdf',
+
+        // child:
+
+        // ! Code to download only for the first time of loading the app 
+            // _pdfBytes == null
+            //     ? Center(child: CircularProgressIndicator())
+            //     : SfPdfViewer.memory(
+            //         _pdfBytes,
+            //         controller: _pdfViewerController,
+            //       ),
+
+        // 
+        child: SfPdfViewer.network(
+          'https://firebasestorage.googleapis.com/v0/b/chemistry-study-assist.appspot.com/o/QuestionBankUnit11.pdf?alt=media&token=349f894c-1dee-49c9-9f43-d5638c422118',
           controller: _pdfViewerController,
           onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
             print("FAIL");
           },
         ),
+
+
       ),
     );
   }

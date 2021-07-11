@@ -82,7 +82,7 @@ class StudyMaterialCall1 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => QuestionBankUnit11(),
+                    builder: (context) => StudyMaterialUnit1(),
                   ),
                 );
               },

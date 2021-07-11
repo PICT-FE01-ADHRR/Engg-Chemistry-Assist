@@ -1,4 +1,7 @@
 //Code Written by Rohan Doshi
+// import 'dart:io';
+// import 'dart:typed_data';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
@@ -9,10 +12,22 @@ class QuestionBankUnit12 extends StatefulWidget {
 
 class _QuestionBankUnit12 extends State<QuestionBankUnit12> {
   PdfViewerController _pdfViewerController = new PdfViewerController();
+  // final String _url =
+  //     'https://firebasestorage.googleapis.com/v0/b/chemistry-study-assist.appspot.com/o/QuestionBankUnit11.pdf?alt=media&token=349f894c-1dee-49c9-9f43-d5638c422118';
+  // late Uint8List _pdfBytes;
+  // // Downloads the PDF from the URL
+  // void downloadPDF() async {
+  //   final HttpClient client = HttpClient();
+  //   final HttpClientRequest request = await client.getUrl(Uri.parse(_url));
+  //   final HttpClientResponse response = await request.close();
+  //   _pdfBytes = await consolidateHttpClientResponseBytes(response);
+  //   setState(() {});
+  // }
   
   @override
   void initState() {
     _pdfViewerController = PdfViewerController();
+    // downloadPDF();
     super.initState();
   }
 
@@ -47,8 +62,8 @@ class _QuestionBankUnit12 extends State<QuestionBankUnit12> {
         ],
       ),
       body: Container(
-        child: SfPdfViewer.asset(
-          'assets/unit1/QuestionBankUnit12.pdf',
+        child: SfPdfViewer.network(
+          'https://firebasestorage.googleapis.com/v0/b/chemistry-study-assist.appspot.com/o/QuestionBankUnit11.pdf?alt=media&token=b1d78299-e7b6-43f7-b1c9-896f3df27154',
           controller: _pdfViewerController,
           onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
             print("FAIL");

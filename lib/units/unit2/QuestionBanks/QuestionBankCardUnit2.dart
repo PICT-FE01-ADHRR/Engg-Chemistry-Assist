@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Quiz_2.0/Data/QuizQuestionList2.dart';
+import '../Content_Data/QuizQuestionList2.dart';
 
 class QuestionBankCardUnit2 extends StatelessWidget {
   @override
