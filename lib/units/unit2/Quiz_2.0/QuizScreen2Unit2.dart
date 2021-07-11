@@ -6,9 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'QuestionSet2.dart';
-import 'Data/QuizQuestionList2.dart';
+import '../Content_Data/QuizQuestionList2.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-
 import 'ScoreScreenUnit2.dart';
 
 class QuizScreen2 extends StatefulWidget {

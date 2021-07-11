@@ -1,8 +1,10 @@
+// QuestionBankUnit1
+
 //Code Written by Rohan Doshi
 import 'package:flutter/material.dart';
 import 'studymaterial.dart';
-import 'QuestionBankUnit1_1.dart';
-import 'QuestionBankUnit1_2.dart';
+import 'QuestionBankUnit4_1.dart';
+import 'QuestionBankUnit4_2.dart';
 
 List functioncalls = [
   StudyMaterialCall1(),
@@ -10,7 +12,7 @@ List functioncalls = [
   QuestionBankCall2(),
 ];
 
-class QuestionBankUnit1 extends StatelessWidget {
+class QuestionBankUnit4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -19,7 +21,7 @@ class QuestionBankUnit1 extends StatelessWidget {
       appBar: AppBar(
         elevation: 20,
         shadowColor: Colors.black,
-        title: Text('Study Material Unit 1'),
+        title: Text('Study Material Unit 4'),
         backgroundColor: Color(0xFF0a1931),
       ),
       body: Column(
@@ -53,7 +55,7 @@ class QuestionBankUnit1 extends StatelessWidget {
                 ),
                 ListView.builder(
                   itemBuilder: (context, index) => functioncalls[index],
-                  itemCount: functioncalls.length, 
+                  itemCount: functioncalls.length,
                 )
               ],
             ),
@@ -82,7 +84,7 @@ class StudyMaterialCall1 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => StudyMaterialUnit1(),
+                    builder: (context) => StudyMaterialUnit4(),
                   ),
                 );
               },
@@ -135,7 +137,7 @@ class StudyMaterialCall1 extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => StudyMaterialUnit1()),
+                              builder: (context) => StudyMaterialUnit4()),
                         );
                       },
                     ),
@@ -149,7 +151,6 @@ class StudyMaterialCall1 extends StatelessWidget {
     );
   }
 }
-
 
 class QuestionBankCall1 extends StatelessWidget {
   @override
@@ -169,7 +170,7 @@ class QuestionBankCall1 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => QuestionBankUnit11(),
+                    builder: (context) => QuestionBankUnit41(),
                   ),
                 );
               },
@@ -222,7 +223,7 @@ class QuestionBankCall1 extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => QuestionBankUnit11()),
+                              builder: (context) => QuestionBankUnit41()),
                         );
                       },
                     ),
@@ -252,11 +253,11 @@ class QuestionBankCall2 extends StatelessWidget {
             height: size.height * 0.18,
             child: GestureDetector(
               onTap: () {
-               // print("Function Call 2");
+                // print("Function Call 2");
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => QuestionBankUnit12(),
+                    builder: (context) => QuestionBankUnit42(),
                   ),
                 );
               },
@@ -297,7 +298,7 @@ class QuestionBankCall2 extends StatelessWidget {
               // color: Colors.deepOrangeAccent,
               child: SizedBox(
                 height: size.height * 0.17,
-                width:  size.width * 0.85,
+                width: size.width * 0.85,
                 child: Column(
                   children: [
                     GestureDetector(
@@ -309,7 +310,7 @@ class QuestionBankCall2 extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => QuestionBankUnit12()),
+                              builder: (context) => QuestionBankUnit42()),
                         );
                       },
                     ),

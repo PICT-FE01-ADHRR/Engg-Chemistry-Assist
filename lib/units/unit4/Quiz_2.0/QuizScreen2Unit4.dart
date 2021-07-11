@@ -6,7 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'QuestionSet4.dart';
-import 'Data/QuizQuestionList4.dart';
+import '../Content_Data/QuizQuestionList4.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 import 'ScoreScreenUnit4.dart';

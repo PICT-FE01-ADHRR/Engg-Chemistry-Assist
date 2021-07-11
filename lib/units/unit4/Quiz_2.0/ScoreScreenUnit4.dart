@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Data/QuizQuestionList4.dart';
-// import 'QuestionSet.dart';
+import '../Content_Data/QuizQuestionList4.dart';
 
 // ignore: must_be_immutable
 class ScoreScreen extends StatefulWidget {
@@ -24,6 +23,7 @@ class _ScoreScreenState extends State<ScoreScreen>
   Text greetUser() {
     if (widget.score > questionListUnit4.length * 0.8) {
       var deviceHeight = MediaQuery.of(context).size.height;
+      // var deviceWidth = MediaQuery.of(context).size.width;
       return Text(
         "Congratulations! ",
         style: TextStyle(fontSize: deviceHeight * 0.035, color: Colors.white),
@@ -119,6 +119,7 @@ class _ScoreScreenState extends State<ScoreScreen>
                   style: TextStyle(fontSize: 20.0),
                 ),
                 onPressed: () {
+                  // var count = 0;
                   tappedMapUnit4.clear();
                   markedWrongUnit4.clear();
                   markedCorrectUnit4.clear();

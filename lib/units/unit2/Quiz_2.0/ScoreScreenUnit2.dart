@@ -1,8 +1,9 @@
-import '../unit2.dart';
+// import '../unit2.dart';
 import 'package:flutter/material.dart';
-import 'Data/QuizQuestionList2.dart';
+import '../Content_Data/QuizQuestionList2.dart';
 // import 'QuestionSet.dart';
 
+// ignore: must_be_immutable
 class ScoreScreen extends StatefulWidget {
   // const ScoreScreen({Key? key}) : super(key: key);
   var score = markedCorrectUnit2.length;
@@ -24,7 +25,7 @@ class _ScoreScreenState extends State<ScoreScreen>
   Text greetUser() {
     if (widget.score > questionListUnit2.length * 0.8) {
       var deviceHeight = MediaQuery.of(context).size.height;
-      var deviceWidth = MediaQuery.of(context).size.width;
+      // var deviceWidth = MediaQuery.of(context).size.width;
       return Text(
         "Congratulations! ",
         style: TextStyle(fontSize: deviceHeight * 0.035, color: Colors.white),
@@ -120,7 +121,7 @@ class _ScoreScreenState extends State<ScoreScreen>
                   style: TextStyle(fontSize: 20.0),
                 ),
                 onPressed: () {
-                  var count = 0;
+                  // var count = 0;
                   tappedMapUnit2.clear();
                   markedWrongUnit2.clear();
                   markedCorrectUnit2.clear();

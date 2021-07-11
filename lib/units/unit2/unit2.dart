@@ -1,7 +1,5 @@
-// // written by Dinesh
 import 'package:flutter/material.dart';
-// // import './studymaterial.dart';
-import 'Content_JSON/ListViewUnit2.dart';
+import 'Content_Data/ListViewUnit2.dart';
 
 class Unit2 extends StatelessWidget {
   @override

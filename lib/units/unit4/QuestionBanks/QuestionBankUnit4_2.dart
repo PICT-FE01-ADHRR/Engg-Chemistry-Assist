@@ -2,12 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class StudyMaterialUnit1 extends StatefulWidget {
+class QuestionBankUnit42 extends StatefulWidget {
   @override
-  _StudyMaterialUnit1State createState() => _StudyMaterialUnit1State();
+  _QuestionBankUnit42 createState() => _QuestionBankUnit42();
 }
 
-class _StudyMaterialUnit1State extends State<StudyMaterialUnit1> {
+class _QuestionBankUnit42 extends State<QuestionBankUnit42> {
   PdfViewerController _pdfViewerController = new PdfViewerController();
 
   @override
@@ -19,13 +19,12 @@ class _StudyMaterialUnit1State extends State<StudyMaterialUnit1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF0a1931),
       appBar: AppBar(
         elevation: 20,
-        title: Text(
-          "Study Material",
-          //style: TextStyle(fontSize: 25),
-        ),
+        shadowColor: Colors.black,
         backgroundColor: Color(0xFF0a1931),
+        title: Text("Question Bank 2"),
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -49,8 +48,7 @@ class _StudyMaterialUnit1State extends State<StudyMaterialUnit1> {
       ),
       body: Container(
         child: SfPdfViewer.asset(
-          'assets/unit1/StudyMaterialUnit1.pdf',
-          
+          'assets/unit4/QuestionBankUnit42.pdf',
           controller: _pdfViewerController,
           onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
             print("FAIL");
