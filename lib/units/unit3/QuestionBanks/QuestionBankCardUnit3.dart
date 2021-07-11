@@ -1,7 +1,8 @@
+import 'package:engg_chemistry_study_assist/units/unit3/Content_Data/QuizQuestionList3.dart';
 import 'package:flutter/material.dart';
-import '../Content_Data/QuizQuestionList2.dart';
+// import '../Content_Data/QuizQuestionList.dart';
 
-class QuestionBankCardUnit2 extends StatelessWidget {
+class QuestionBankCardUnit3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -28,7 +29,7 @@ class QuestionBankCardUnit2 extends StatelessWidget {
               ]),
         ),
         child: ListView.builder(
-          itemCount: questionListUnit2.length,
+          itemCount: questionListUnit3.length,
           itemBuilder: (context, index) {
             return Container(
               // color: Colors.lightBlue[100],
@@ -74,7 +75,7 @@ class QuestionBankCardUnit2 extends StatelessWidget {
                                 child: Container(
                                   // alignment: Alignment(0.0, 2.5),
                                   child: Text(
-                                    questionListUnit2[index].question,
+                                    questionListUnit3[index].question,
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 18),
                                   ),
@@ -98,7 +99,7 @@ class QuestionBankCardUnit2 extends StatelessWidget {
                                       child: Column(
                                         children: [
                                           Text(
-                                            questionListUnit2[index].options[0],
+                                            questionListUnit3[index].options[0],
                                             style: TextStyle(fontSize: 15),
                                           )
                                         ],
@@ -108,7 +109,7 @@ class QuestionBankCardUnit2 extends StatelessWidget {
                                       child: Column(
                                         children: [
                                           Text(
-                                              questionListUnit2[index]
+                                              questionListUnit3[index]
                                                   .options[1],
                                               style: TextStyle(fontSize: 15))
                                         ],
@@ -132,7 +133,7 @@ class QuestionBankCardUnit2 extends StatelessWidget {
                                       child: Column(
                                         children: [
                                           Text(
-                                            questionListUnit2[index].options[2],
+                                            questionListUnit3[index].options[2],
                                             style: TextStyle(fontSize: 15),
                                           )
                                         ],
@@ -142,7 +143,7 @@ class QuestionBankCardUnit2 extends StatelessWidget {
                                       child: Column(
                                         children: [
                                           Text(
-                                              questionListUnit2[index]
+                                              questionListUnit3[index]
                                                   .options[3],
                                               style: TextStyle(fontSize: 15))
                                         ],
@@ -164,8 +165,8 @@ class QuestionBankCardUnit2 extends StatelessWidget {
                                 ),
                                 children: [
                                   TextSpan(
-                                    text: questionListUnit2[index].options[
-                                        questionListUnit2[index].correctAns -
+                                    text: questionListUnit3[index].options[
+                                        questionListUnit3[index].correctAns -
                                             1],
                                     style: TextStyle(
                                       fontSize: size.height * 0.0252,

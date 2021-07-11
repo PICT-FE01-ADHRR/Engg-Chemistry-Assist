@@ -2,7 +2,7 @@
 
 //Code Written by Rohan Doshi
 import 'package:flutter/material.dart';
-import '../studymaterial.dart';
+import 'studymaterial.dart';
 import 'QuestionBankUnit2_1.dart';
 import 'QuestionBankUnit2_2.dart';
 

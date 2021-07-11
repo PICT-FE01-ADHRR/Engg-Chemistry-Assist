@@ -1,11 +1,12 @@
-import '../unit2.dart';
+// import '../unit3.dart';
 import 'package:flutter/material.dart';
-import 'Data/QuizQuestionList2.dart';
+import '../Content_Data/QuizQuestionList3.dart';
 // import 'QuestionSet.dart';
 
+// ignore: must_be_immutable
 class ScoreScreen extends StatefulWidget {
   // const ScoreScreen({Key? key}) : super(key: key);
-  var score = markedCorrectUnit2.length;
+  var score = markedCorrectUnit3.length;
   // var score = 5;
 
   @override
@@ -22,9 +23,9 @@ class _ScoreScreenState extends State<ScoreScreen>
   }
 
   Text greetUser() {
-    if (widget.score > questionListUnit2.length * 0.8) {
+    if (widget.score > questionListUnit3.length * 0.8) {
       var deviceHeight = MediaQuery.of(context).size.height;
-      var deviceWidth = MediaQuery.of(context).size.width;
+      // var deviceWidth = MediaQuery.of(context).size.width;
       return Text(
         "Congratulations! ",
         style: TextStyle(fontSize: deviceHeight * 0.035, color: Colors.white),
@@ -94,7 +95,7 @@ class _ScoreScreenState extends State<ScoreScreen>
                             ]),
                       ),
                       child: Text(
-                        "SCORE: ${widget.score}/${questionListUnit2.length}",
+                        "SCORE: ${widget.score}/${questionListUnit3.length}",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: deviceHeight * 0.035),
@@ -120,11 +121,11 @@ class _ScoreScreenState extends State<ScoreScreen>
                   style: TextStyle(fontSize: 20.0),
                 ),
                 onPressed: () {
-                  var count = 0;
-                  tappedMapUnit2.clear();
-                  markedWrongUnit2.clear();
-                  markedCorrectUnit2.clear();
-                  markedWrongAnserUnit2.clear();
+                  // var count = 0;
+                  tappedMapUnit3.clear();
+                  markedWrongUnit3.clear();
+                  markedCorrectUnit3.clear();
+                  markedWrongAnserUnit3.clear();
                   // UserAnsweredData.deleteData();
                   // Navigator.popUntil(
                   //   context,
@@ -142,7 +143,7 @@ class _ScoreScreenState extends State<ScoreScreen>
               ),
               Expanded(
                 child: ListView.builder(
-                    itemCount: markedWrongUnit2.length,
+                    itemCount: markedWrongUnit3.length,
                     // itemCount: 5,
                     itemBuilder: (context, index) {
                       return DisplayWrongQuestions(
@@ -171,13 +172,13 @@ class DisplayWrongQuestions extends StatelessWidget {
 
   // })
 
-  final _listvalues = markedWrongAnserUnit2.values.toList();
-  final _listkeys = markedWrongAnserUnit2.keys.toList();
+  final _listvalues = markedWrongAnserUnit3.values.toList();
+  final _listkeys = markedWrongAnserUnit3.keys.toList();
 
   // void getWrongIndex() {
   //   // for (var num in temp) {
   //   //   print(num - 1);
-  //   //   // print(questionListUnit2[num - 1].question);
+  //   //   // print(questionListUnit3[num - 1].question);
   //   // }
 
   //   temp.forEach((element) {
@@ -188,7 +189,7 @@ class DisplayWrongQuestions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final correctAnswers =
-        questionListUnit2[int.parse(_listkeys[itemIndex]) - 1].correctAns;
+        questionListUnit3[int.parse(_listkeys[itemIndex]) - 1].correctAns;
     var deviceWidth = MediaQuery.of(context).size.width;
     var deviceHeight = MediaQuery.of(context).size.height;
     return Container(
@@ -215,7 +216,8 @@ class DisplayWrongQuestions extends StatelessWidget {
                   // itemIndex.toString(),
                   // code for question display
 
-                  questionListUnit2[int.parse(_listkeys[itemIndex]) - 1].question,
+                  questionListUnit3[int.parse(_listkeys[itemIndex]) - 1]
+                      .question,
                 ),
                 SizedBox(
                   height: deviceHeight * 0.01,
@@ -235,8 +237,7 @@ class DisplayWrongQuestions extends StatelessWidget {
 
                     // code for wrong answer marked
 
-                    "Your Answer: ${questionListUnit2[int.parse(_listkeys[itemIndex]) - 1]
-                        .options[_listvalues[itemIndex] - 1]}",
+                    "Your Answer: ${questionListUnit3[int.parse(_listkeys[itemIndex]) - 1].options[_listvalues[itemIndex] - 1]}",
 
                     // style: TextStyle(
                     //     fontSize: deviceHeight * 0.019,
@@ -258,8 +259,7 @@ class DisplayWrongQuestions extends StatelessWidget {
                   ),
                   child: Text(
                     // correct code for correct answer
-                   "Correct Answer:  ${questionListUnit2[int.parse(_listkeys[itemIndex]) - 1]
-                        .options[correctAnswers - 1]}",
+                    "Correct Answer:  ${questionListUnit3[int.parse(_listkeys[itemIndex]) - 1].options[correctAnswers - 1]}",
 
                     // style: TextStyle(
                     //     fontSize: deviceHeight * 0.025,

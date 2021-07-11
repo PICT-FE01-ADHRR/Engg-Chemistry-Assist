@@ -1,8 +1,7 @@
 import '../units/unit1/unit1.dart';
 import '../units/unit2/unit2.dart';
 import '../units/unit3/unit3.dart';
-import '../Flashcards/flashcards.dart';
-// add relatives paths afterwards
+import '../units/unit4/unit4.dart';
 
 class ListdisplayText {
   String func;
@@ -19,8 +18,12 @@ List itemsList = [
       func: "UT3", title: "Unit-3", chapter: "Engineering Materials"),
   ListdisplayText(func: "UT4", title: "Unit-4", chapter: "Fuels"),
   ListdisplayText(func: "QUIZ", title: "Quizes", chapter: "10-15 Mcqs On Unit"),
-  ListdisplayText(func: "CARDS", title: "Flashcards", chapter: ""),
-  
 ];
 
-List funcList = [Unit1(), Unit2(), Unit3(), Unit3(), Unit3(), FlashCard()];
+List funcList = [
+  Unit1(),
+  Unit2(),
+  Unit3(),
+  Unit4(),
+  Unit3(),
+];

@@ -1,6 +1,6 @@
 // written by Rohan 
 import 'package:flutter/material.dart';
-import './Content_JSON/ListViewFlashCards.dart';
+import 'ListViewFlashCards.dart';
 
 class FlashCard extends StatelessWidget {
   @override

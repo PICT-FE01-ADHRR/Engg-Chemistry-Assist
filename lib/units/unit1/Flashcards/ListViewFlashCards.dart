@@ -1,9 +1,3 @@
-// import 'package:first_app/units/unit1/quiz.dart';
-// import 'package:flutter/material.dart';
-// import '../studymaterial.dart';
-// import '../QuestionBankUnit1.dart';
-// import '../NumericalPractice.dart';
-
 class FlashCardListJSON {
   int id;
   String title;
@@ -40,10 +34,3 @@ List content = [
       id: 7,
       title: "Sodium Zeolite is actually the hydrated sodium alumino silicate"),
 ];
-
-// List funcList = [
-//   StudyMaterialUnit1(),
-//   NumericalPractice(),
-//   QuestionBankUnit1(),
-//   QuizUnit1(),
-// ];

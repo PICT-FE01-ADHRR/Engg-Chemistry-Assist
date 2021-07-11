@@ -25,7 +25,7 @@ class Authentication {
     User? user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
-      user.sendEmailVerification();
+      // user.sendEmailVerification();
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => Homepage(
@@ -79,11 +79,11 @@ class Authentication {
           final UserCredential userCredential =
               await auth.signInWithCredential(credential);
               // user!.sendEmailVerification();
+              user = userCredential.user;
               if (userCredential.additionalUserInfo!.isNewUser){
                 addUser(0);
                 user!.sendEmailVerification();
         }
-          user = userCredential.user;
         } on FirebaseAuthException catch (e) {
           if (e.code == 'account-exists-with-different-credential') {
             ScaffoldMessenger.of(context).showSnackBar(
