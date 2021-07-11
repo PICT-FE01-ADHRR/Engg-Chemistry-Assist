@@ -2,12 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class StudyMaterialUnit3 extends StatefulWidget {
+class StudyMaterialUnit6 extends StatefulWidget {
   @override
-  _StudyMaterialUnit3State createState() => _StudyMaterialUnit3State();
+  _StudyMaterialUnit6State createState() => _StudyMaterialUnit6State();
 }
 
-class _StudyMaterialUnit3State extends State<StudyMaterialUnit3> {
+class _StudyMaterialUnit6State extends State<StudyMaterialUnit6> {
   PdfViewerController _pdfViewerController = new PdfViewerController();
 
   @override
@@ -49,7 +49,7 @@ class _StudyMaterialUnit3State extends State<StudyMaterialUnit3> {
       ),
       body: Container(
         child: SfPdfViewer.asset(
-          'assets/unit3/StudyMaterialUnit3.pdf',
+          'assets/unit2/StudyMaterialUnit2.pdf',
           controller: _pdfViewerController,
           onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
             print("FAIL");

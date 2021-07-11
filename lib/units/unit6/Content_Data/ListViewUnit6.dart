@@ -1,6 +1,6 @@
 import '../Quiz_2.0/QuizScreen1Unit6.dart';
-import '../QuestionBanks/QuestionBankCardUnit3.dart';
-import '../QuestionBanks/QuestionBankUnit3.dart';
+import '../QuestionBanks/QuestionBankCardUnit6.dart';
+import '../QuestionBanks/QuestionBankUnit6.dart';
 
 class ListViewUnit3 {
   int id;
@@ -17,8 +17,8 @@ List content = [
 ];
 
 List funcList = [
-  QuestionBankUnit3(),
+  QuestionBankUnit6(),
   // NumericalSolver(),
-  QuestionBankCardUnit3(),
+  QuestionBankCardUnit6(),
   QuizScreen1(),
 ];
