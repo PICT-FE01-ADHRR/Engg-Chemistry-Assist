@@ -44,7 +44,7 @@ flutter:
   assets:
     - assets/images/
     - assets/
-    - assets/unit1/
+    # - assets/unit1/
     - assets/unit2/
     - assets/unit3/
     - assets/unit4/
