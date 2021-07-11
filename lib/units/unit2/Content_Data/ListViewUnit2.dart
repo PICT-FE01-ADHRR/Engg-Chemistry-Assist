@@ -1,9 +1,8 @@
-// import 'package:first_app/units/unit1/quiz.dart';
-// import 'package:flutter/material.dart';
+
 import '../QuestionBanks/QuestionBankCardUnit2.dart';
 import '../Quiz_2.0/QuizScreen1Unit2.dart';
 import '../QuestionBanks/QuestionBankUnit2.dart';
-// import '../Numerical_Solver/NumericalSolver.dart';
+
 class ListViewUnit2 {
   int id;
   String title;

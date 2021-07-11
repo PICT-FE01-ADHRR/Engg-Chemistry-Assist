@@ -1,4 +1,4 @@
-import 'Data/QuizQuestionList3.dart';
+import '../Content_Data/QuizQuestionList3.dart';
 
 import '../Quiz_2.0/QuizScreen2Unit3.dart';
 // import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/ScoreScreen.dart';

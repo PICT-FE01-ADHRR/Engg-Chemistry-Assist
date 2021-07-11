@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Data/QuizQuestionList3.dart';
+import '../Content_Data/QuizQuestionList3.dart';
 // import 'userAnswer.dart';
 
 // ignore: must_be_immutable

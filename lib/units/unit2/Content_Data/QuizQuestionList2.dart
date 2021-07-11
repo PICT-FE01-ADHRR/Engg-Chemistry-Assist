@@ -18,7 +18,7 @@ class QuizQuestionUnit2 {
 List questionListUnit2 = [
   QuizQuestionUnit2(
       id: 1,
-      question: "Hello what is my Name?",
+      question: "Unit2 QUIZ",
       options: ["Zeolite process", "Ion Exchange", "Filtration", "Osmosis"],
       correctAns: 3),
   QuizQuestionUnit2(

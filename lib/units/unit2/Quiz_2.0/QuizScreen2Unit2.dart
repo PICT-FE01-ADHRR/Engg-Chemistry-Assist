@@ -8,8 +8,7 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'QuestionSet2.dart';
 import '../Content_Data/QuizQuestionList2.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-
-import 'ScoreScreenUnit2dart';
+import 'ScoreScreenUnit2.dart';
 
 class QuizScreen2 extends StatefulWidget {
   const QuizScreen2({Key? key}) : super(key: key);
