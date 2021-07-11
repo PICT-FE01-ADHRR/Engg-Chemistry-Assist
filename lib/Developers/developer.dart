@@ -37,7 +37,7 @@ const developerList = [
       gitHubUrl: "https://github.com/RohanDoshi21",
       linkedUrl: "https://www.linkedin.com/in/rohan-doshi21/",
       emailUrl: "rohan.doshi02@gmail.com",
-      instagramUrl:"https://www.instagram.com/rohan.doshi02",
+      instagramUrl: "https://www.instagram.com/rohan.doshi02",
       color: Colors.transparent),
   const Developer(
       name: 'Dinesh Nehete',
@@ -45,7 +45,7 @@ const developerList = [
       gitHubUrl: "https://github.com/dineshNehete",
       linkedUrl: "https://www.linkedin.com/in/dinesh-nehete/",
       emailUrl: "dinesh.g.nehete@gmail.com",
-      instagramUrl:"http://instagram.com/dinesh.nehete_/",
+      instagramUrl: "http://instagram.com/dinesh.nehete_/",
       color: Colors.transparent),
   const Developer(
       name: 'Harsh Bhat',
@@ -53,7 +53,7 @@ const developerList = [
       gitHubUrl: "https://github.com/Harususan",
       linkedUrl: "https://www.linkedin.com/in/harsh-bhat-40867320a/",
       emailUrl: "harshbhat83@gmail.com",
-      instagramUrl:"https://www.instagram.com/_harusu_san_/",
+      instagramUrl: "https://www.instagram.com/_harusu_san_/",
       color: Colors.transparent),
   const Developer(
       name: 'Rohit Bhise',
@@ -61,7 +61,7 @@ const developerList = [
       gitHubUrl: "https://github.com/rohitbhise",
       linkedUrl: "https://www.linkedin.com/in/rohit-bhise-803b07216/",
       emailUrl: "rohitbhise2704@gmail.com",
-      instagramUrl:"https://www.instagram.com/rohitbhise2704/",
+      instagramUrl: "https://www.instagram.com/rohitbhise2704/",
       color: Colors.transparent),
 ];
 
@@ -106,10 +106,11 @@ class _DevelopersState extends State<Developers> {
           'Developers',
           style: TextStyle(fontSize: 25),
         ),
-        backgroundColor: Color(0xFF0a1931),
+        // color: Color(0xFF21096e),
+        backgroundColor: Color(0xFF21096e),
       ),
       body: Container(
-        color: Color(0xFF0a1931),
+        color: Color(0xFF21096e),
         child: builder(),
       ),
     );
@@ -156,18 +157,18 @@ class _DevelopersState extends State<Developers> {
                         Container(
                           decoration: BoxDecoration(
                               // image: DecorationImage(
-                                  // image:
-                                  //     NetworkImage("add you image URL here "),
-                                  // fit: BoxFit.cover)
-                                  ),
+                              // image:
+                              //     NetworkImage("add you image URL here "),
+                              // fit: BoxFit.cover)
+                              ),
                           child: Container(
                             width: double.infinity,
                             height: 150,
                             child: Container(
                               alignment: Alignment(0.0, 2.5),
                               child: CircleAvatar(
-                                backgroundImage:  AssetImage(
-                                    developerList[index].image),
+                                backgroundImage:
+                                    AssetImage(developerList[index].image),
                                 radius: 60.0,
                               ),
                             ),
@@ -233,54 +234,15 @@ class _DevelopersState extends State<Developers> {
                                         height: 7,
                                       ),
                                       IconButton(
-                                            onPressed: (){
-                                              _launchURL(developerList[index].gitHubUrl);
-                                            },
-                                            icon: Image.asset(
-                                                "assets/images/github.png",
-                                              // color: Colors.white,
-                                              height: 50,
-                                            ),),
-                                    ],
-                                  ),
-                                ),
-
-                                Expanded(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        height: 7,
-                                      ),
-                                      IconButton(
-                                            onPressed: (){
-                                              _launchURL(developerList[index].instagramUrl);
-                                            },
-                                            icon: Image.asset(
-                                              "assets/images/instagram.png",
-                                              // color: Colors.white,
-                                              height: 50,
-
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ), 
-
-                                Expanded(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        height: 7,
-                                      ),
-                                      IconButton(
-                                            onPressed: (){
-                                              _launchURL(developerList[index].linkedUrl);
-                                            },
-                                            icon: Image.asset(
-                                              "assets/images/linkedin.png",
-                                              height: 50,
-
-                                            ),
+                                        onPressed: () {
+                                          _launchURL(
+                                              developerList[index].gitHubUrl);
+                                        },
+                                        icon: Image.asset(
+                                          "assets/images/github.png",
+                                          // color: Colors.white,
+                                          height: 50,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -292,14 +254,53 @@ class _DevelopersState extends State<Developers> {
                                         height: 7,
                                       ),
                                       IconButton(
-                                            onPressed: (){
-                                              launchMailto(developerList[index].emailUrl);
-                                            },
-                                            icon: Image.asset(
-                                              "assets/images/gmail.png",
-                                              height: 50,
-
-                                            ),
+                                        onPressed: () {
+                                          _launchURL(developerList[index]
+                                              .instagramUrl);
+                                        },
+                                        icon: Image.asset(
+                                          "assets/images/instagram.png",
+                                          // color: Colors.white,
+                                          height: 50,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        height: 7,
+                                      ),
+                                      IconButton(
+                                        onPressed: () {
+                                          _launchURL(
+                                              developerList[index].linkedUrl);
+                                        },
+                                        icon: Image.asset(
+                                          "assets/images/linkedin.png",
+                                          height: 50,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        height: 7,
+                                      ),
+                                      IconButton(
+                                        onPressed: () {
+                                          launchMailto(
+                                              developerList[index].emailUrl);
+                                        },
+                                        icon: Image.asset(
+                                          "assets/images/gmail.png",
+                                          height: 50,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -311,7 +312,6 @@ class _DevelopersState extends State<Developers> {
                         SizedBox(
                           height: 50,
                         ),
-                        
                       ],
                     ),
                   ],
@@ -325,16 +325,16 @@ class _DevelopersState extends State<Developers> {
   }
 
   _launchURL(String url) {
-       launch(url);
+    launch(url);
   }
 
-  launchMailto(String email)  {
+  launchMailto(String email) {
     final mailtoLink = Mailto(
       to: [email],
       cc: [],
       subject: 'App Review',
       body: "",
     );
-     launch('$mailtoLink');
+    launch('$mailtoLink');
   }
 }
