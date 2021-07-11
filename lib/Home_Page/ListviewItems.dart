@@ -2,6 +2,7 @@ import '../units/unit1/unit1.dart';
 import '../units/unit2/unit2.dart';
 import '../units/unit3/unit3.dart';
 import '../units/unit4/unit4.dart';
+import '../units/unit5/unit5.dart';
 
 class ListdisplayText {
   String func;
@@ -17,13 +18,10 @@ List itemsList = [
   ListdisplayText(
       func: "UT3", title: "Unit-3", chapter: "Engineering Materials"),
   ListdisplayText(func: "UT4", title: "Unit-4", chapter: "Fuels"),
+  ListdisplayText(
+      func: "UT5", title: "Unit-5", chapter: "Spectroscopic Techniques"),
+  ListdisplayText(func: "UT6", title: "Unit-6", chapter: "Corrosion Science"),
   ListdisplayText(func: "QUIZ", title: "Quizes", chapter: "10-15 Mcqs On Unit"),
 ];
 
-List funcList = [
-  Unit1(),
-  Unit2(),
-  Unit3(),
-  Unit4(),
-  Unit3(),
-];
+List funcList = [Unit1(), Unit2(), Unit3(), Unit4(), Unit5(), Unit5()];
