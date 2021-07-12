@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Content_Data/QuizQuestionList.dart';
+import 'Data/QuizQuestionListMain.dart';
 // import 'userAnswer.dart';
 
 // ignore: must_be_immutable
@@ -43,12 +43,12 @@ class _QuestionSetState extends State<QuestionSet> {
           ),
           SizedBox(height: 20 / 2),
           ...List.generate(
-            questionList[0].options.length,
+            questionListMain[0].options.length,
             (index) => Option(
               index1: index,
               text: widget.itemNum.options[index],
               rightanserimport: widget.itemNum.correctAns,
-              themecolor: tappedMap[widget.itemIndex] == index
+              themecolor: tappedMapMain[widget.itemIndex] == index
                   ? Color(0xFFFF8303)
                   : Colors.grey,
               // working
@@ -57,8 +57,8 @@ class _QuestionSetState extends State<QuestionSet> {
                 isTapped = true;
                 if (!tapped.contains(index)) {
                   this.setState(() {
-                    tappedMap.remove(widget.itemIndex);
-                    tappedMap[widget.itemIndex] = index;
+                    tappedMapMain.remove(widget.itemIndex);
+                    tappedMapMain[widget.itemIndex] = index;
                     // working
                     // tapped.clear();
                     // tapped.add(index);
@@ -67,32 +67,32 @@ class _QuestionSetState extends State<QuestionSet> {
                 // code when a box is clicked
                 if ((index + 1 == widget.itemNum.correctAns)) {
                   qId = widget.itemNum.id;
-                  markedCorrect.add(qId);
+                  markedCorrectMain.add(qId);
                 } else {
                   qId = widget.itemNum.id;
-                  markedWrong.add(qId);
-                  markedWrongAnser["$qId"] = index + 1;
-                  // print(markedWrongAnser);
-                  // print(markedWrong);
-                  // print("Wrong $markedWrong");
+                  markedWrongMain.add(qId);
+                  markedWrongAnserMain["$qId"] = index + 1;
+                  // print(markedWrongAnserMain);
+                  // print(markedWrongMain);
+                  // print("Wrong $markedWrongMain");
                 }
 
-                if (markedWrong.contains(widget.itemNum.id)) {
-                  if (markedCorrect.contains((widget.itemNum.id))) {
-                    markedWrong.remove(widget.itemNum.id);
-                    markedWrongAnser.remove("$qId");
+                if (markedWrongMain.contains(widget.itemNum.id)) {
+                  if (markedCorrectMain.contains((widget.itemNum.id))) {
+                    markedWrongMain.remove(widget.itemNum.id);
+                    markedWrongAnserMain.remove("$qId");
                     // this.setState(() {
                     //   tapped.remove("$qId");
                     // });
                   }
                 }
                 // print("***************");
-                // print(tappedMap);
+                // print(tappedMapMain);
                 // print("***************");
 
                 // Option.isAnswered = true;
-                //     markedCorrect.contains(itemNum.id)) {
-                //   markedCorrect.remove(itemNum.id);
+                //     markedCorrectMain.contains(itemNum.id)) {
+                //   markedCorrectMain.remove(itemNum.id);
                 // }
               },
             ),

@@ -1,4 +1,4 @@
-import 'package:engg_chemistry_study_assist/units/CombinedQuiz/Quiz_2.0/QuizScreen1Main.dart';
+import '/units/Quiz_2.0/QuizScreen1Main.dart';
 
 import '../units/unit1/unit1.dart';
 import '../units/unit2/unit2.dart';
@@ -25,7 +25,7 @@ List itemsList = [
       func: "UT5", title: "Unit-5", chapter: "Spectroscopic Techniques"),
   ListdisplayText(func: "UT6", title: "Unit-6", chapter: "Corrosion Science"),
   ListdisplayText(
-      func: "QUIZ", title: "Quizes", chapter: "MCQS on Combined Syllabus"),
+      func: "QUIZ", title: "Quizes", chapter: "MCQS on combined syllabus"),
 ];
 
 List funcList = [

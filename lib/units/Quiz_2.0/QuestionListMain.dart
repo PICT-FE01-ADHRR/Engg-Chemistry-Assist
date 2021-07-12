@@ -1,10 +1,11 @@
-import 'package:engg_chemistry_study_assist/units/unit1/Content_Data/QuizQuestionList.dart';
-import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/QuizScreen2.dart';
+import 'Data/QuizQuestionListMain.dart';
+
+import 'QuizScreen2Main.dart';
 // import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/ScoreScreen.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class AttemptedList extends StatelessWidget {
+class AttemptedListMain extends StatelessWidget {
   PageController pageController = PageController(initialPage: 0);
 
   @override
@@ -70,7 +71,7 @@ class AttemptedList extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    if (tappedMap.length == questionList.length) {
+                    if (tappedMapMain.length == questionListMain.length) {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -112,7 +113,7 @@ class AttemptedList extends StatelessWidget {
             Expanded(
               //When clicked on question number it pops a page
               child: ListView.builder(
-                itemCount: questionList.length,
+                itemCount: questionListMain.length,
                 itemBuilder: (context, index) => DisplayAllQuestions(index, () {
                   var count = 0;
                   print(index);
@@ -134,7 +135,7 @@ class DisplayAllQuestions extends StatelessWidget {
   DisplayAllQuestions(this.itemIndex, this.goBackToQuestions);
 
   String otherThanMarked() {
-    if (tappedMap.containsKey(itemIndex)) {
+    if (tappedMapMain.containsKey(itemIndex)) {
       return "Answered";
     } else {
       return "Not Answered";
@@ -142,7 +143,7 @@ class DisplayAllQuestions extends StatelessWidget {
   }
 
   Gradient getColor() {
-    if (!tappedMap.containsKey(itemIndex)) {
+    if (!tappedMapMain.containsKey(itemIndex)) {
       return LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
@@ -193,7 +194,7 @@ class DisplayAllQuestions extends StatelessWidget {
                   // width: deviceWidth,
                   color: Colors.white,
                   child: Text(
-                    "Question - ${questionList[itemIndex].id}",
+                    "Question - ${questionListMain[itemIndex].id}",
                     style: TextStyle(fontSize: deviceHeight * 0.027),
                   ),
                   margin: EdgeInsets.only(left: deviceHeight * 0.04),

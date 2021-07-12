@@ -1,15 +1,14 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:engg_chemistry_study_assist/Database/database.dart';
-import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/QuestionList.dart';
+import 'QuestionListMain.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'QuestionSet.dart';
-import '../Content_Data/QuizQuestionList.dart';
+import 'QuestionSetMain.dart';
+import 'Data/QuizQuestionListMain.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-import 'ScoreScreen.dart';
+import 'ScoreScreenMain.dart';
 
 class QuizScreen2 extends StatefulWidget {
   const QuizScreen2({Key? key}) : super(key: key);
@@ -22,9 +21,9 @@ class _QuizScreen2State extends State<QuizScreen2> {
   PageController pageController = PageController(initialPage: 0);
   int pageChanged = 0;
   int gotoFirstPage = 0;
-  int timeToNavigate = questionList.length * 15;
+  int timeToNavigate = questionListMain.length * 15;
   // int timeToNavigate = 15;
-  int gotoLastPage = questionList.length;
+  int gotoLastPage = questionListMain.length;
 
   Timer? timer;
   @override
@@ -32,7 +31,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: questionList.length * 15), () {
+    Future.delayed(Duration(seconds: questionListMain.length * 15), () {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => ScoreScreen()));
     });
@@ -71,7 +70,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
 
   void fillSet() {
     // skippedQues.addAll()
-    for (var i = 0; i < questionList.length; i++) {
+    for (var i = 0; i < questionListMain.length; i++) {
       skippedQues.add(i);
     }
     print(skippedQues);
@@ -102,7 +101,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
                   backgroundColor: Colors.deepPurpleAccent,
                   progressColor: getTimerColor(),
                   lineWidth: deviceWidth * 0.012,
-                  percent: timeToNavigate / (questionList.length * 15),
+                  percent: timeToNavigate / (questionListMain.length * 15),
                   center: Text(
                     timeToNavigate.toString(),
                     style: TextStyle(
@@ -135,9 +134,9 @@ class _QuizScreen2State extends State<QuizScreen2> {
                   controller: pageController,
                   itemBuilder: (context, index) => QuestionSet(
                     itemIndex: index,
-                    itemNum: questionList[index],
+                    itemNum: questionListMain[index],
                   ),
-                  itemCount: questionList.length,
+                  itemCount: questionListMain.length,
                 ),
               ),
               SizedBox(
@@ -177,7 +176,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
                   GestureDetector(
                     onTap: () {
                       fillSet();
-                      if (pageChanged + 1 >= questionList.length) {
+                      if (pageChanged + 1 >= questionListMain.length) {
                         showDialog(
                             context: context,
                             builder: (context) {
@@ -188,7 +187,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
                             });
                       }
                       //else {
-                      if (pageChanged + 1 < questionList.length) {
+                      if (pageChanged + 1 < questionListMain.length) {
                         pageController.animateToPage(++pageChanged,
                             duration: Duration(milliseconds: 250),
                             curve: Curves.ease);
@@ -213,11 +212,11 @@ class _QuizScreen2State extends State<QuizScreen2> {
                   //WOrking of submit button
                   GestureDetector(
                     onTap: () {
-                      // if (pageChanged + 1 == questionList.length) {
+                      // if (pageChanged + 1 == questionListMain.length) {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => AttemptedList()));
+                              builder: (context) => AttemptedListMain()));
                       // }
                     },
                     child: Container(
@@ -338,7 +337,7 @@ class CustomDialogBox extends StatelessWidget {
                     onTap: () {
                       // final submission by the user
                       // add database score check logic here
-                      var currectScore = markedCorrect.length;
+                      var currectScore = markedCorrectMain.length;
                       // FirebaseAuth auth = FirebaseAuth.instance;
                       // String uid = auth.currentUser!.uid.toString();
                       gethighSCoreFuncFirebase();

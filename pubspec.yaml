@@ -18,7 +18,6 @@ dependencies:
   firebase_core: ^1.0.1
   firebase_auth: ^1.0.1
   google_sign_in: ^5.0.0
-  back_button_interceptor: ^5.0.1
   url_launcher: ^6.0.9
   mailto: ^2.0.0
   cloud_firestore: ^2.3.0
@@ -44,7 +43,6 @@ flutter:
   assets:
     - assets/images/
     - assets/
-    # - assets/unit1/
     - assets/unit2/
     - assets/unit3/
     - assets/unit4/
