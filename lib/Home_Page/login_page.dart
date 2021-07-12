@@ -7,8 +7,6 @@ import '/Google_Login/res/custom_colors.dart';
 import '/Google_Login/utils/authentication.dart';
 import '/Google_Login/widgets/google_sign_in_button.dart';
 
-
-
 class Loginpage extends StatefulWidget {
   @override
   _LoginpageState createState() => _LoginpageState();
@@ -20,7 +18,6 @@ class _LoginpageState extends State<Loginpage> {
   var name = "";
   @override
   Widget build(BuildContext context) {
-
     // final ref = fb.reference().child("User Name");
     // final dbref = fb.instance.reference();
     var size = MediaQuery.of(context).size;
@@ -49,7 +46,8 @@ class _LoginpageState extends State<Loginpage> {
                     color: Colors.white),
               ),
               Text(
-                'Chemistry Assist',
+                'Engineering Chemistry Study Assist',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.normal,
@@ -59,7 +57,7 @@ class _LoginpageState extends State<Loginpage> {
             ],
           ),
           SizedBox(
-            height: 30,
+            height: size.height*0.15,
           ),
           // Text(
           //   'Please Enter Your Name',
@@ -137,20 +135,30 @@ class _LoginpageState extends State<Loginpage> {
           //   ),
           // )
           FutureBuilder(
-                future: Authentication.initializeFirebase(context: context),
-                builder: (context, snapshot) {
-                  if (snapshot.hasError) {
-                    return Text('Error initializing Firebase');
-                  } else if (snapshot.connectionState == ConnectionState.done) {
-                    return GoogleSignInButton();
-                  }
-                  return CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      CustomColors.firebaseOrange,
-                    ),
-                  );
-                },
-              ),
+            future: Authentication.initializeFirebase(context: context),
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return Text('Error initializing Firebase');
+              } else if (snapshot.connectionState == ConnectionState.done) {
+                return GoogleSignInButton();
+              }
+              return CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  CustomColors.firebaseOrange,
+                ),
+              );
+            },
+          ),
+          SizedBox(
+            height: size.height * 0.05,
+          ),
+          Container(
+            height: size.height * .15,
+            child: Image.asset(
+              "assets/images/logo.png",
+              fit: BoxFit.cover,
+            ),
+          ),
         ],
       ),
     );
