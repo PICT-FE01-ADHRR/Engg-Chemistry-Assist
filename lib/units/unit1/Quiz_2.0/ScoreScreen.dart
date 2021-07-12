@@ -1,6 +1,6 @@
 // import 'package:engg_chemistry_study_assist/units/unit1/unit1.dart';
 import 'package:flutter/material.dart';
-import './Data/QuizQuestionList.dart';
+import '../Content_Data/QuizQuestionList.dart';
 // import 'QuestionSet.dart';
 
 // ignore: must_be_immutable
