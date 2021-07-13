@@ -1,6 +1,6 @@
+import 'package:engg_chemistry_study_assist/units/unit2/Quiz_2.0/QuizInstructionScreen.dart';
 
 import '../QuestionBanks/QuestionBankCardUnit2.dart';
-import '../Quiz_2.0/QuizScreen1Unit2.dart';
 import '../QuestionBanks/QuestionBankUnit2.dart';
 
 class ListViewUnit2 {
@@ -21,5 +21,5 @@ List funcList = [
   QuestionBankUnit2(),
   // NumericalSolver(),
   QuestionBankCardUnit2(),
-  QuizScreen1(),
+  QuizInstructionScreen(),
 ];

@@ -18,15 +18,18 @@ class _QuizScreen1State extends State<QuizScreen1> {
     // TODO: implement initState
     super.initState();
     _startTimer();
-    Future.delayed(Duration(seconds: 5), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => QuizScreen2()));
-    });
+    Future.delayed(
+      Duration(seconds: 5),
+      () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => QuizScreen2()));
+      },
+    );
   }
 
   @override
   void dispose() {
-    timer!.cancel();
+    timer?.cancel();
     _stopTimer();
     super.dispose();
   }
@@ -34,15 +37,18 @@ class _QuizScreen1State extends State<QuizScreen1> {
   void _startTimer() {
     timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
-        if (timeToNavigate != 0) {
+        if (timeToNavigate > 0) {
           timeToNavigate--;
           print(timeToNavigate);
+        } else {
+          timer.cancel();
         }
       });
     });
   }
 
   void _stopTimer() {
+    timer?.cancel();
     timeToNavigate = 0;
   }
 
