@@ -18,7 +18,7 @@ class QuizQuestionMain {
 List questionListMain = [
   QuizQuestionMain(
       id: 1,
-      question: "Hello?",
+      question: "Hello? main quiz here",
       options: ["Zeolite process", "Ion Exchange", "Filtration", "Osmosis"],
       correctAns: 3),
   QuizQuestionMain(

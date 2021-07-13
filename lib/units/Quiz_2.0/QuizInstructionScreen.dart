@@ -1,5 +1,5 @@
 //Code Written by Rohan Doshi
-import '../Quiz_2.0/QuizScreen1Unit3.dart';
+import '../Quiz_2.0/QuizScreen1Main.dart';
 import 'package:flutter/material.dart';
 
 class QuizInstructionScreen extends StatefulWidget {
@@ -14,7 +14,7 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
     var deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz Unit 3'),
+        title: Text('Quiz'),
         backgroundColor: Color(0xFF0a1931),
       ),
       body: Container(
@@ -69,7 +69,7 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
             ),
             GestureDetector(
               onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => QuizScreen1())),
+                  MaterialPageRoute(builder: (context) => QuizScreen1Main())),
               child: Container(
                 alignment: Alignment.center,
                 width: deviceWidth * 0.5,

@@ -1,4 +1,4 @@
-import '/units/Quiz_2.0/QuizScreen1Main.dart';
+import 'package:engg_chemistry_study_assist/units/Quiz_2.0/QuizInstructionScreen.dart';
 
 import '../units/unit1/unit1.dart';
 import '../units/unit2/unit2.dart';
@@ -35,5 +35,5 @@ List funcList = [
   Unit4(),
   Unit5(),
   Unit6(),
-  QuizScreen1Main()
+  QuizInstructionScreen()
 ];

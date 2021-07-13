@@ -1,4 +1,5 @@
 //Code Written by Rohan Doshi
+import 'package:engg_chemistry_study_assist/units/unit6/Quiz_2.0/QuizScreen1Unit6.dart';
 import 'package:flutter/material.dart';
 
 class QuizInstructionScreen extends StatefulWidget {
@@ -66,26 +67,30 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
             SizedBox(
               height: 40,
             ),
-            Container(
-              alignment: Alignment.center,
-              width: deviceWidth * 0.5,
-              height: deviceHeight * 0.075,
-              margin: new EdgeInsets.only(left: 10, right: 10, bottom: 10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(80),
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xFF12c2e9),
-                    Color(0xFFc471ed),
-                    Color(0xFFf64f59)
-                  ],
-                  begin: FractionalOffset.centerLeft,
-                  end: FractionalOffset.centerRight,
+            GestureDetector(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => QuizScreen1())),
+              child: Container(
+                alignment: Alignment.center,
+                width: deviceWidth * 0.5,
+                height: deviceHeight * 0.075,
+                margin: new EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(80),
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xFF12c2e9),
+                      Color(0xFFc471ed),
+                      Color(0xFFf64f59)
+                    ],
+                    begin: FractionalOffset.centerLeft,
+                    end: FractionalOffset.centerRight,
+                  ),
                 ),
-              ),
-              child: Text(
-                "Start Quiz",
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                child: Text(
+                  "Start Quiz",
+                  style: TextStyle(fontSize: 25, color: Colors.white),
+                ),
               ),
             ),
           ],
