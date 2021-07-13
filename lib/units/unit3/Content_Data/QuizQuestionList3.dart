@@ -18,8 +18,8 @@ class QuizQuestionUnit3 {
 List questionListUnit3 = [
   QuizQuestionUnit3(
       id: 1,
-      question: "Unit 3",
-      options: ["Zeolite process", "Ion Exchange", "Filtration", "Osmosis"],
+      question: "The word ‘polymer’ meant for material made from ",
+      options: ["A.	Single entity", "B.	Two entities", "Filtration", "Osmosis"],
       correctAns: 3),
   QuizQuestionUnit3(
       id: 2,
