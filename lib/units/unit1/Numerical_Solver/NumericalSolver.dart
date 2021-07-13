@@ -390,7 +390,7 @@ class ZeoliteCalculatorCall extends StatelessWidget {
                   children: [
                     GestureDetector(
                       child: Text(
-                        "Alkalinity Numerical Solver",
+                        "Zeoloite Numerical Solver",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
                       onTap: () {

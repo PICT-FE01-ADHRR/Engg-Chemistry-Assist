@@ -106,12 +106,16 @@ class _HomepageState extends State<Homepage> {
                     'Log Out',
                     style: TextStyle(color: Colors.white),
                   ),
-                  onTap: () async {
+                  // onTap: () async {
+                  //   await Authentication.signOut(context: context);
+                  //   Navigator.push(
+                  //     context,
+                  //      MaterialPageRoute(builder: (context) => Loginpage()),
+                  //   );
+                  // },
+                  onTap: () async{
                     await Authentication.signOut(context: context);
-                    Navigator.push(
-                      context,
-                       MaterialPageRoute(builder: (context) => Loginpage()),
-                    );
+                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Loginpage()));
                   },
                 ),
                 ListTile(
