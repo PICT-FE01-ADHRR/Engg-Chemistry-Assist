@@ -1,4 +1,5 @@
-import '../Quiz_2.0/QuizScreen1Unit3.dart';
+import '../Quiz_2.0/QuizInstructionScreen.dart';
+
 import '../QuestionBanks/QuestionBankCardUnit3.dart';
 import '../QuestionBanks/QuestionBankUnit3.dart';
 
@@ -20,5 +21,5 @@ List funcList = [
   QuestionBankUnit3(),
   // NumericalSolver(),
   QuestionBankCardUnit3(),
-  QuizScreen1(),
+  QuizInstructionScreen(),
 ];
