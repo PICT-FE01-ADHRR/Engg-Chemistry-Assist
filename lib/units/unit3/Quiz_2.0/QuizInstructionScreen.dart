@@ -35,7 +35,7 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
                 ),
               ),
               child: Text(
-                "This is mcq-based quiz containing 25 questions. Each question has a 4 options out of which only 1 is correct. ALL THE BEST!!",
+                "This is mcq-based quiz containing 20 questions. Each question has a 4 options out of which only 1 is correct. ALL THE BEST!!",
                 style: TextStyle(fontSize: 20, color: Colors.white),
                 textAlign: TextAlign.center,
               ),

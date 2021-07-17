@@ -49,7 +49,7 @@ class _StudyMaterialUnit1State extends State<StudyMaterialUnit1> {
       ),
       body: Container(
         child: SfPdfViewer.network(
-          'https://firebasestorage.googleapis.com/v0/b/chemistry-study-assist.appspot.com/o/StudyMaterialUnit1.pdf?alt=media&token=ef7c0cbf-7173-4b95-b6d1-0b4ff7559a18',
+          'https://firebasestorage.googleapis.com/v0/b/engg-chemistry-assist.appspot.com/o/StudyMaterialUnit1.pdf?alt=media&token=e77340b0-3e76-492b-91a5-af5d7192e848',
           controller: _pdfViewerController,
           onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
             print("FAIL");

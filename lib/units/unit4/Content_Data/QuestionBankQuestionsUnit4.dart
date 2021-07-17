@@ -1,8 +1,3 @@
-// import 'dart:async';
-
-// import 'package:flutter/material.dart';
-// Bituminous coal is also called as industrial coal.
-
 class QuizQuestionUnit4 {
   int id;
   String question;
@@ -63,7 +58,7 @@ List questionListUnit4 = [
   QuizQuestionUnit4(
       id: 7,
       question: "Which of the following has the highest-octane no.?",
-      options: ["Iso-octane", "Cyclohexane", "Toulene", "n-Heptane"],
+      options: ["Iso-octane", "Cyclohexane", "Toulene", "n=Heptane "],
       correctAns: 1),
   QuizQuestionUnit4(
       id: 8,
@@ -145,7 +140,7 @@ List questionListUnit4 = [
       options: [
         "Long smoky flame",
         " Smoky yellow flame",
-        "Short non-smoky blue",
+        "Short non-  smoky blue",
         "None of the above"
       ],
       correctAns: 2),
@@ -157,13 +152,9 @@ List questionListUnit4 = [
   // change question
   QuizQuestionUnit4(
       id: 23,
-      question: "Proximate analysis involves _______ of coal",
-      options: [
-        "% Ash + % VM + % moisture",
-        "% C + %H + % O",
-        "% C ",
-        "% VM + % moisture + %FC"
-      ],
+      question:
+          "Which decomposition process produces carbon dioxide and ammonia?",
+      options: ["Aerobic", " Anaerobic", "Thermolysis", "Thermal"],
       correctAns: 1),
   QuizQuestionUnit4(
       id: 24,
@@ -181,10 +172,35 @@ List questionListUnit4 = [
           "Unit of Calorific value of a solid fuel in MKS system is________.",
       options: ['Cal/g', 'Kcal/Kg', 'J/Kg', ' Cal/lit'],
       correctAns: 2),
+  QuizQuestionUnit4(
+      id: 26,
+      question: "Bituminous coal is also called as _______.",
+      options: [
+        "Pure Coal",
+        "Industrial Coal",
+        "Domestic Coal",
+        "Golden Coal "
+      ],
+      correctAns: 2),
+  QuizQuestionUnit4(
+      id: 27,
+      question: "Calorific value of a good fuel is_______.",
+      options: ["High", "Low", "Medium", "None of these"],
+      correctAns: 1),
+  QuizQuestionUnit4(
+      id: 28,
+      question:
+          "Calorific value of a typical dry anthracite coal may be around ______ Kcal/kg",
+      options: ["1000", "4000", "8000", "15000"],
+      correctAns: 3),
+  QuizQuestionUnit4(
+      id: 29,
+      question: "Biodiesel is obtained from _______.",
+      options: ["Mineral Oil", "Crude Oil", "Vegetable Oil", "None of these"],
+      correctAns: 3),
+  QuizQuestionUnit4(
+      id: 30,
+      question: "Octane no. of iso-octane is _______.",
+      options: ["20", "90", "0", "100"],
+      correctAns: 4),
 ];
-
-Set markedWrongUnit4 = {};
-Set markedCorrectUnit4 = {};
-Map markedWrongAnserUnit4 = {};
-Map<int, int> tappedMapUnit4 = {};
-Set skippedQues = {};

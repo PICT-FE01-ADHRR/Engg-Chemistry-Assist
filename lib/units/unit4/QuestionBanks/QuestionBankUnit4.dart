@@ -1,5 +1,3 @@
-// QuestionBankUnit1
-
 //Code Written by Rohan Doshi
 import 'package:flutter/material.dart';
 import 'studymaterial.dart';
@@ -9,7 +7,7 @@ import 'QuestionBankUnit4_2.dart';
 List functioncalls = [
   StudyMaterialCall1(),
   QuestionBankCall1(),
-  QuestionBankCall2(),
+  // QuestionBankCall2(),
 ];
 
 class QuestionBankUnit4 extends StatelessWidget {
@@ -34,7 +32,7 @@ class QuestionBankUnit4 extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.all(8),
                   child: Text(
-                    "Contents: ",
+                    "Contents:",
                     style: TextStyle(color: Colors.white, fontSize: 23),
                   ),
                 ),
