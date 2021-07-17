@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:mailto/mailto.dart';
+
 class Developer {
   final String name;
   final String image;
@@ -33,7 +34,7 @@ const developerList = [
       color: Colors.transparent),
   const Developer(
       name: 'Dinesh Nehete',
-      image: 'assets/images/Dinesh.jpeg',
+      image: 'assets/images/Dinesh.jpg',
       gitHubUrl: "https://github.com/dineshNehete",
       linkedUrl: "https://www.linkedin.com/in/dinesh-nehete/",
       emailUrl: "dinesh.g.nehete@gmail.com",
@@ -54,6 +55,14 @@ const developerList = [
       linkedUrl: "https://www.linkedin.com/in/rohit-bhise-803b07216/",
       emailUrl: "rohitbhise2704@gmail.com",
       instagramUrl: "https://www.instagram.com/rohitbhise2704/",
+      color: Colors.transparent),
+  const Developer(
+      name: 'Arnav Waghulade',
+      image: 'assets/images/Arnav.jpeg',
+      gitHubUrl: "https://github.com/arnav55555",
+      linkedUrl: "https://www.linkedin.com/in/arnav-waghulade-473788206/",
+      emailUrl: "arnav.waghulade@gmail.com",
+      instagramUrl: "https://www.instagram.com/_arnav_5/",
       color: Colors.transparent),
 ];
 
