@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.first_app">
+    package="com.pbl2b12021.engg_Chemistry_assist">
    <application
-        android:label="Chemistry Study Assist"
+        android:label="Engg Chemistry Assist"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

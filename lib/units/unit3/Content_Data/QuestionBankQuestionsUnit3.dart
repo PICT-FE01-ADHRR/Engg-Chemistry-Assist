@@ -1,6 +1,3 @@
-// import 'dart:async';
-// import 'package:flutter/material.dart';
-
 class QuizQuestionUnit3 {
   int id;
   String question;
@@ -133,10 +130,35 @@ List questionListUnit3 = [
       question: "Solution of pure buckminsterfullerene has a colour of ",
       options: ["Green", "Purple", "Pink", "Yellow"],
       correctAns: 2),
+  QuizQuestionUnit3(
+      id: 21,
+      question: "Zero dimensional nanomaterials are--",
+      options: ["CNT", "Quantum dots", "C60", "all of these"],
+      correctAns: 2),
+  QuizQuestionUnit3(
+      id: 22,
+      question:
+          "A single layer of carbon atoms organized in a hexagonal lattice is called ",
+      options: ["Graphite", "CNT", "Fullerene ", "Graphene "],
+      correctAns: 4),
+  QuizQuestionUnit3(
+      id: 23,
+      question: "The colour of the nano gold particles is",
+      options: ["Yellow", "Orange", "Red", "Variable"],
+      correctAns: 4),
+  QuizQuestionUnit3(
+      id: 24,
+      question: "Quantum dots can be used in ________",
+      options: [
+        "Crystallography",
+        "Optoelectronics",
+        "Mechanics",
+        "Quantum physics"
+      ],
+      correctAns: 2),
+  QuizQuestionUnit3(
+      id: 25,
+      question: "How many C=C are present in polyacetylene?",
+      options: ["1", "2", "3", "4"],
+      correctAns: 3),
 ];
-
-Set markedWrongUnit3 = {};
-Set markedCorrectUnit3 = {};
-Map markedWrongAnserUnit3 = {};
-Map<int, int> tappedMapUnit3 = {};
-Set skippedQues = {};
