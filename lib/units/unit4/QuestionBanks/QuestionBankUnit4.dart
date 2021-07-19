@@ -128,7 +128,7 @@ class StudyMaterialCall1 extends StatelessWidget {
                   children: [
                     GestureDetector(
                       child: Text(
-                        "Study Material",
+                        "Notes",
                         style: TextStyle(fontSize: 25, color: Colors.white),
                       ),
                       onTap: () {

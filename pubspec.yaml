@@ -2,7 +2,7 @@ name: engg_chemistry_study_assist
 description: An app that will be helpful in studying engineering chemistry
 
 publish_to: 'none' 
-version: 1.2.0+3
+version: 1.2.1+4
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
