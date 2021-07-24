@@ -1,12 +1,15 @@
 // import 'package:engg_chemistry_study_assist/units/unit1/unit1.dart';
 import 'package:flutter/material.dart';
 import '../Content_Data/QuizQuestionList.dart';
+import 'package:engg_chemistry_study_assist/Database/database.dart';
+// import '/lib/Database/database.dart';
 // import 'QuestionSet.dart';
 
 // ignore: must_be_immutable
 class ScoreScreen extends StatefulWidget {
   // const ScoreScreen({Key? key}) : super(key: key);
   var score = markedCorrect.length;
+
   // var score = 5;
 
   @override
@@ -21,7 +24,6 @@ class _ScoreScreenState extends State<ScoreScreen>
     // TODO: implement initState
     super.initState();
   }
-
   Text greetUser() {
     if (widget.score > questionList.length * 0.8) {
       var deviceHeight = MediaQuery.of(context).size.height;
@@ -37,6 +39,7 @@ class _ScoreScreenState extends State<ScoreScreen>
   // var score = 5;
   @override
   Widget build(BuildContext context) {
+    quizUnit1scoredb(markedCorrect.length);
     var deviceHeight = MediaQuery.of(context).size.height;
     var deviceWidth = MediaQuery.of(context).size.width;
     return WillPopScope(
