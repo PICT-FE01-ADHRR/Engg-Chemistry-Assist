@@ -76,3 +76,33 @@ Future<void> quizUnit4scoredb(unit4Quiz) async {
       .catchError((error) => print("Failed to add user: $error"));
   return;
 }
+
+Future<void> quizUnit5scoredb(unit5Quiz) async {
+  final CollectionReference usercollection =
+      FirebaseFirestore.instance.collection('Users');
+  FirebaseAuth auth = FirebaseAuth.instance;
+  String uid = auth.currentUser!.uid.toString();
+  usercollection
+      .doc(uid)
+      .set({
+        "Unit5Quiz": unit5Quiz,
+      }, SetOptions(merge: true))
+      .then((value) => print("User Added"))
+      .catchError((error) => print("Failed to add user: $error"));
+  return;
+}
+
+Future<void> quizUnit6scoredb(unit6Quiz) async {
+  final CollectionReference usercollection =
+      FirebaseFirestore.instance.collection('Users');
+  FirebaseAuth auth = FirebaseAuth.instance;
+  String uid = auth.currentUser!.uid.toString();
+  usercollection
+      .doc(uid)
+      .set({
+        "Unit6Quiz": unit6Quiz,
+      }, SetOptions(merge: true))
+      .then((value) => print("User Added"))
+      .catchError((error) => print("Failed to add user: $error"));
+  return;
+}

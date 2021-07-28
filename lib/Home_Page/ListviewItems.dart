@@ -21,9 +21,9 @@ List itemsList = [
   ListdisplayText(
       func: "UT3", title: "Unit-3", chapter: "Engineering Materials"),
   ListdisplayText(func: "UT4", title: "Unit-4", chapter: "Fuels"),
-  // ListdisplayText(
-  //     func: "UT5", title: "Unit-5", chapter: "Spectroscopic Techniques"),
-  // ListdisplayText(func: "UT6", title: "Unit-6", chapter: "Corrosion Science"),
+  ListdisplayText(
+      func: "UT5", title: "Unit-5", chapter: "Spectroscopic Techniques"),
+  ListdisplayText(func: "UT6", title: "Unit-6", chapter: "Corrosion Science"),
   // ListdisplayText(
   //     func: "QUIZ", title: "Quizes", chapter: "MCQS on combined syllabus"),
 ];
@@ -33,7 +33,7 @@ List funcList = [
   Unit2(),
   Unit3(),
   Unit4(),
-  // Unit5(),
-  // Unit6(),
+  Unit5(),
+  Unit6(),
   // QuizInstructionScreen()
 ];
