@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:firebase_auth_ui/firebase_auth_ui.dart';
 
 Future<void> addUser() async {
   final CollectionReference usercollection =

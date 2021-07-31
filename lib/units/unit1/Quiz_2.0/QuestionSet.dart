@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Content_Data/QuizQuestionList.dart';
-// import 'userAnswer.dart';
+
 
 // ignore: must_be_immutable
 class QuestionSet extends StatefulWidget {
@@ -51,17 +51,14 @@ class _QuestionSetState extends State<QuestionSet> {
               themecolor: tappedMap[widget.itemIndex] == index
                   ? Color(0xFFFF8303)
                   : Colors.grey,
-              // working
-              // tapped.contains(index) ? Color(0xFFFF8303) : Colors.grey,
+          
               press: () {
                 isTapped = true;
                 if (!tapped.contains(index)) {
                   this.setState(() {
                     tappedMap.remove(widget.itemIndex);
                     tappedMap[widget.itemIndex] = index;
-                    // working
-                    // tapped.clear();
-                    // tapped.add(index);
+                    
                   });
                 }
                 // code when a box is clicked
@@ -72,28 +69,16 @@ class _QuestionSetState extends State<QuestionSet> {
                   qId = widget.itemNum.id;
                   markedWrong.add(qId);
                   markedWrongAnser["$qId"] = index + 1;
-                  // print(markedWrongAnser);
-                  // print(markedWrong);
-                  // print("Wrong $markedWrong");
                 }
 
                 if (markedWrong.contains(widget.itemNum.id)) {
                   if (markedCorrect.contains((widget.itemNum.id))) {
                     markedWrong.remove(widget.itemNum.id);
                     markedWrongAnser.remove("$qId");
-                    // this.setState(() {
-                    //   tapped.remove("$qId");
-                    // });
+
                   }
                 }
-                // print("***************");
-                // print(tappedMap);
-                // print("***************");
-
-                // Option.isAnswered = true;
-                //     markedCorrect.contains(itemNum.id)) {
-                //   markedCorrect.remove(itemNum.id);
-                // }
+                
               },
             ),
           ),

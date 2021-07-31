@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Content_Data/ListViewUnit1.dart';
 
-
 class Unit1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -50,7 +49,7 @@ class Unit1 extends StatelessWidget {
               ),
             ),
             Expanded(
-              //Main bottom container containing the contents of unit-3
+              //Main bottom container containing the contents of unit-1
               child: Stack(
                 children: [
                   Container(
@@ -58,10 +57,6 @@ class Unit1 extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Color(0xFFfdfaf6),
-                        // gradient: LinearGradient(colors: [
-                        //   Colors.white.withOpacity(0.65),
-                        //   Colors.white.withOpacity(0.65),
-                        // ]),
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(40),
                             topRight: Radius.circular(40))),
@@ -102,12 +97,8 @@ class MyListUnit1 extends StatelessWidget {
           Container(
             width: size.width * 0.88,
             height: size.height * 0.18,
-            // decoration: BoxDecoration(
-            //     // color: Colors.blue,
-            //     borderRadius: BorderRadius.circular(40)),
             child: GestureDetector(
               onTap: () {
-                // print("tapped in unit3 listitem");
                 Navigator.push(
                   context,
                   MaterialPageRoute(

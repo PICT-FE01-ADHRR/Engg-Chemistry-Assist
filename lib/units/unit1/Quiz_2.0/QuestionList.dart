@@ -1,6 +1,5 @@
 import 'package:engg_chemistry_study_assist/units/unit1/Content_Data/QuizQuestionList.dart';
 import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/QuizScreen2.dart';
-// import 'package:engg_chemistry_study_assist/units/unit1/Quiz_2.0/ScoreScreen.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -110,7 +109,7 @@ class AttemptedList extends StatelessWidget {
               ],
             ),
             Expanded(
-              //When clicked on question number it pops a page
+
               child: ListView.builder(
                 itemCount: questionList.length,
                 itemBuilder: (context, index) => DisplayAllQuestions(index, () {
@@ -149,9 +148,7 @@ class DisplayAllQuestions extends StatelessWidget {
           colors: [
             Color(0xFFED213A),
             Colors.redAccent,
-            // Color(0xFF0A043C).withOpacity(0.8),
             Color(0xFF93291E),
-            // Color(0xFF150E56),
           ]);
     } else {
       return LinearGradient(
@@ -159,11 +156,9 @@ class DisplayAllQuestions extends StatelessWidget {
           end: Alignment.bottomLeft,
           colors: [
             Color(0xFF11998e),
-            // Color(0xFF0A043C).withOpacity(0.8),
             Colors.greenAccent,
             Color(0xFF38ef7d),
             Color(0xFF11998e),
-            // Color(0xFF150E56),
           ]);
     }
   }

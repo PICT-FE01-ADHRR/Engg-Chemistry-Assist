@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'ListviewItems.dart';
 import '/Google_Login/utils/authentication.dart';
 import 'login_page.dart';
-// import 'login_page.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key, required User user})
@@ -42,7 +41,6 @@ class _HomepageState extends State<Homepage> {
   //     },
   //   );
   // }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -154,8 +152,6 @@ class _HomepageState extends State<Homepage> {
             Container(
               height: size.height * .27,
               width: double.infinity,
-              // margin: EdgeInsets.only(top: 50),
-              // color: Colors.grey,
               child: Stack(
                 alignment: Alignment.bottomRight,
                 children: [
@@ -163,7 +159,6 @@ class _HomepageState extends State<Homepage> {
                     top: 38,
                     left: 20,
                     child: Container(
-                      // color: Colors.black,
                       margin: EdgeInsets.all(8),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -179,12 +174,10 @@ class _HomepageState extends State<Homepage> {
                     top: 93,
                     left: 20,
                     child: Container(
-                      // color: Colors.black,
                       margin: EdgeInsets.all(8),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Wrap(direction: Axis.horizontal, children: [
-                          //Stackoverflow
                           RichText(
                             textAlign: TextAlign.left,
                             softWrap: true,
@@ -282,10 +275,6 @@ class _HomepageState extends State<Homepage> {
                 margin: EdgeInsets.only(top: 70),
                 decoration: BoxDecoration(
                     color: Color(0xFFf9f3f3),
-                    // gradient: LinearGradient(colors: [
-                    //   Colors.white.withOpacity(0.65),
-                    //   Colors.white.withOpacity(0.65),
-                    // ]),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40))),
@@ -311,37 +300,23 @@ class MyList extends StatelessWidget {
   final ListdisplayText itemNum;
 
   MyList({required this.itemIndex, required this.itemNum});
-  // void printinfo() {
-  //   print(size.height);
-  // }
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    // var padding?_required = size.height;
-    // ignore: unused_element
-    void printinfo() {
-      print(size.height);
-    }
 
     return Container(
       margin: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
-      // color: Colors.blueAccent,
       height: size.height * 0.2,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           Container(
             width: size.width * 0.88,
-            // width: double.infinity,
             height: size.height * 0.18,
-            decoration: BoxDecoration(
-                // color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(40)),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
             child: GestureDetector(
               onTap: () {
-                // print(size.height);
-                // print(size.width);
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -355,7 +330,6 @@ class MyList extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40),
                   boxShadow: [
                     BoxShadow(
-                      // color: Color(0xFFff7b54),
                       color: Colors.black,
                       offset: const Offset(
                         5.0,
@@ -370,8 +344,6 @@ class MyList extends StatelessWidget {
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
-                      // Color(0xFFf64f59),
-                      // Color(0xFF21094e),
                     ],
                     begin: FractionalOffset.centerLeft,
                     end: FractionalOffset.centerRight,
@@ -384,10 +356,8 @@ class MyList extends StatelessWidget {
             bottom: -size.height * 0.0311,
             left: 0,
             child: Container(
-              // alignment: Alignment.centerLeft,
               height: size.height * 0.17,
               width: size.width * 0.85,
-
               child: Column(
                 children: [
                   GestureDetector(
@@ -396,7 +366,6 @@ class MyList extends StatelessWidget {
                       style: TextStyle(fontSize: 25, color: Colors.white),
                     ),
                     onTap: () {
-                      // print('tapped');
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -414,7 +383,6 @@ class MyList extends StatelessWidget {
                           style: TextStyle(fontSize: 16, color: Colors.white),
                         ),
                         onTap: () {
-                          // print('tapped');
                           Navigator.push(
                             context,
                             MaterialPageRoute(

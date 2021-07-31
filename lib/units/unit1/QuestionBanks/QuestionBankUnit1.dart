@@ -120,7 +120,6 @@ class StudyMaterialCall1 extends StatelessWidget {
             top: size.height * 0.0711,
             left: 0,
             child: Container(
-              // color: Colors.deepOrangeAccent,
               child: SizedBox(
                 height: size.height * 0.17,
                 width: size.width * 0.85,
