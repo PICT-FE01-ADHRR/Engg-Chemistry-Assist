@@ -81,7 +81,7 @@ class Authentication {
               // user!.sendEmailVerification();
               user = userCredential.user;
               if (userCredential.additionalUserInfo!.isNewUser){
-                addUser(0);
+                addUser();
                 user!.sendEmailVerification();
         }
         } on FirebaseAuthException catch (e) {

@@ -1,4 +1,3 @@
-// written by Rohan
 import 'package:flutter/material.dart';
 import 'ListViewFlashCards.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,7 +32,6 @@ class FlashCard extends StatelessWidget {
           itemCount: content.length,
           itemBuilder: (context, index) {
             return Container(
-              // color: Colors.lightBlue[100],
               margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
               height: size.height * 0.4,
               child: Stack(
@@ -45,10 +43,8 @@ class FlashCard extends StatelessWidget {
                     margin: EdgeInsets.only(bottom: 10),
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      // color: Color(0xFF1089FF),
                       gradient: LinearGradient(colors: [
                         Color(0xFF1089FF).withOpacity(0.9),
-                        // Color(0xFF0575E6),
                         Color(0xFF021B79),
                       ]),
                       borderRadius: BorderRadius.circular(40),
@@ -65,9 +61,7 @@ class FlashCard extends StatelessWidget {
                       ],
                     ),
                     child: Container(
-                      // alignment: Align,
                       width: double.infinity,
-                      // height: size.height * 0.1,
                       child: Text(
                         content[index].title,
                         textAlign: TextAlign.center,
@@ -76,10 +70,6 @@ class FlashCard extends StatelessWidget {
                             fontSize: size.height * 0.032,
                             ),
                         ),
-                        // style: TextStyle(
-                        //   color: Colors.yellow[50],
-                        //   fontSize: size.height * 0.032,
-                        // ),
                       ),
                     ),
                   ),

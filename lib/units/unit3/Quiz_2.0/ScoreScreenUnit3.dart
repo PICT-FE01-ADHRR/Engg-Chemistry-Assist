@@ -1,4 +1,5 @@
 // import '../unit3.dart';
+import 'package:engg_chemistry_study_assist/Database/database.dart';
 import 'package:flutter/material.dart';
 import '../Content_Data/QuizQuestionList3.dart';
 // import 'QuestionSet.dart';
@@ -37,6 +38,7 @@ class _ScoreScreenState extends State<ScoreScreen>
   // var score = 5;
   @override
   Widget build(BuildContext context) {
+    quizUnit3scoredb(markedCorrectUnit3.length);
     var deviceHeight = MediaQuery.of(context).size.height;
     var deviceWidth = MediaQuery.of(context).size.width;
     return WillPopScope(

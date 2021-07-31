@@ -1,7 +1,3 @@
-// import 'dart:async';
-
-// import 'package:flutter/material.dart';
-
 class QuizQuestionUnit6 {
   int id;
   String question;
@@ -30,12 +26,12 @@ List questionListUnit6 = [
   QuizQuestionUnit6(
       id: 3,
       question:
-          " Chemical action of flowing liquid metal at high temperatures is __________",
+          "Chemical action of flowing liquid metal at high temperatures is _____  corrosion",
       options: [
-        "Corrosion by other gases ",
-        " Oxidation corrosion ",
-        "Wet corrosion",
-        "Liquid metal corrosion",
+        "gaseous",
+        "Oxidation",
+        "Wet",
+        "Liquid metal",
       ],
       correctAns: 4),
   QuizQuestionUnit6(
@@ -52,14 +48,8 @@ List questionListUnit6 = [
       correctAns: 3),
   QuizQuestionUnit6(
       id: 6,
-      question:
-          "Which of the following type of corrosion comes under the wet corrosion?",
-      options: [
-        "Oxidation",
-        "Liquid metal",
-        "Gaseous corrosion",
-        "Concentration cell"
-      ],
+      question: "Which of the following comes under the wet corrosion?",
+      options: ["Oxidation", "Liquid metal", "Gaseous", "Concentration"],
       correctAns: 4),
   QuizQuestionUnit6(
       id: 7,
@@ -81,14 +71,9 @@ List questionListUnit6 = [
   QuizQuestionUnit6(
       id: 9,
       question:
-          "Which of the following does not promote the differential aeration corrosion?",
-      options: [
-        "Accumulation of dirt",
-        "Partially covering metals",
-        "Wire fence kind of structures",
-        "Accumulation of oxygen"
-      ],
-      correctAns: 4),
+          "Phosphate coating and Chromate coating are classifications of ______ coatings.",
+      options: ["anodic", "cathodic", "chemical", "vitreous"],
+      correctAns: 3),
   QuizQuestionUnit6(
       id: 10,
       question: "Which code is followed by the corrosion of metals?",
@@ -198,10 +183,42 @@ List questionListUnit6 = [
           "The specific volume ratios of W, Cr and Ni are 3.6, 2.0 and 1.6 respectively. Which of them will have the least rate of corrosion?",
       options: ["Ni", "Cr", "W", "Same"],
       correctAns: 3),
+  QuizQuestionUnit6(
+      id: 26,
+      question: "Which of the following medium is most corrosive?",
+      options: ["Acidic", "Alkaline", "Neutral", "Both A & B"],
+      correctAns: 1),
+  QuizQuestionUnit6(
+      id: 27,
+      question:
+          "Corrosion of zinc can be minimized by increasing the pH to _____",
+      options: ["9", "10", "11", "12"],
+      correctAns: 3),
+  QuizQuestionUnit6(
+      id: 28,
+      question:
+          "Poorly oxygenated part becomes ___ whereas well oxygenated part becomes ___ in the differential aeration corrosion.",
+      options: [
+        "anode, cathode",
+        "cathode, anode",
+        "anode, anode,",
+        "cathode, cathode",
+      ],
+      correctAns: 1),
+  QuizQuestionUnit6(
+      id: 29,
+      question:
+          "Which of the following cathodic reaction does not occur due to release of electrons at the anode?",
+      options: [
+        "Oxygen absorption",
+        "Hydrogen evolution",
+        "Electrodialysis",
+        "Electroplating"
+      ],
+      correctAns: 3),
+  QuizQuestionUnit6(
+      id: 30,
+      question: "Where does corrosion occurs in the rusting of iron?",
+      options: ["Cathode", "Anode", "Solution", "None of these"],
+      correctAns: 2),
 ];
-
-Set markedWrongUnit6 = {};
-Set markedCorrectUnit6 = {};
-Map markedWrongAnserUnit6 = {};
-Map<int, int> tappedMapUnit6 = {};
-Set skippedQues = {};

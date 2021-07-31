@@ -119,7 +119,6 @@ class _DevelopersState extends State<Developers> {
 
   ListView builder() {
     final size = MediaQuery.of(context).size;
-    // const marginCenter = EdgeInsets.symmetric(horizontal: 20, vertical: 200);
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       controller: _pageController,
@@ -156,12 +155,7 @@ class _DevelopersState extends State<Developers> {
                     Column(
                       children: [
                         Container(
-                          decoration: BoxDecoration(
-                              // image: DecorationImage(
-                              // image:
-                              //     NetworkImage("add you image URL here "),
-                              // fit: BoxFit.cover)
-                              ),
+                          decoration: BoxDecoration(),
                           child: Container(
                             width: double.infinity,
                             height: 150,
@@ -241,7 +235,6 @@ class _DevelopersState extends State<Developers> {
                                         },
                                         icon: Image.asset(
                                           "assets/images/github.png",
-                                          // color: Colors.white,
                                           height: 50,
                                         ),
                                       ),
@@ -261,7 +254,6 @@ class _DevelopersState extends State<Developers> {
                                         },
                                         icon: Image.asset(
                                           "assets/images/instagram.png",
-                                          // color: Colors.white,
                                           height: 50,
                                         ),
                                       ),

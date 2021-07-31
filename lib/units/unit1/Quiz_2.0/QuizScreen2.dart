@@ -23,14 +23,11 @@ class _QuizScreen2State extends State<QuizScreen2> {
   int pageChanged = 0;
   int gotoFirstPage = 0;
   int timeToNavigate = questionList.length * 15;
-  // int timeToNavigate = 15;
   int gotoLastPage = questionList.length;
 
   Timer? timer;
   @override
   void initState() {
-    // ignore: todo
-    // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: questionList.length * 15), () {
       Navigator.push(
@@ -51,7 +48,6 @@ class _QuizScreen2State extends State<QuizScreen2> {
       setState(() {
         if (timeToNavigate != 0) {
           timeToNavigate--;
-          // print(timeToNavigate);
         }
       });
     });
@@ -70,7 +66,6 @@ class _QuizScreen2State extends State<QuizScreen2> {
   }
 
   void fillSet() {
-    // skippedQues.addAll()
     for (var i = 0; i < questionList.length; i++) {
       skippedQues.add(i);
     }
@@ -420,10 +415,6 @@ class CustomDialogBox2 extends StatelessWidget {
 
   dialogContent(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
-
-    // var deviceWidth = MediaQuery.of(context).size.width;
-
-    // var deviceWidth = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -442,12 +433,6 @@ class CustomDialogBox2 extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-
-              // Text(
-              //   title,
-              //   style: TextStyle(fontSize: 24),
-              // ),
-
               SizedBox(
                 height: 15,
               ),
@@ -477,12 +462,10 @@ class CustomDialogBox2 extends StatelessWidget {
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,
                         colors: [
-                          // Color(0xFF0A1931),
                           Color(0xFF16222A),
                           Color(0xFF161D6F),
                           Color(0xFF3A6073),
                           Color(0xFF150E56),
-                          // Color(0xFF0A043C),
                         ]),
                   ),
                   child: Text(
@@ -520,7 +503,6 @@ class CustomDialogBox3 extends StatelessWidget {
 
   dialogContent(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
-    // var deviceWidth = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
@@ -539,10 +521,6 @@ class CustomDialogBox3 extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              // Text(
-              //   title,
-              //   style: TextStyle(fontSize: 24),
-              // ),
               SizedBox(
                 height: 15,
               ),

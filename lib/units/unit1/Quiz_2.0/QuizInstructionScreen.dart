@@ -17,8 +17,7 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
         title: Text('Quiz Unit 1'),
         backgroundColor: Color(0xFF0a1931),
       ),
-      body: Container(
-        // color: Color.fromRGBO(1, 84, 154, 1),
+     body: Container(
         color: Colors.black,
         child: Column(
           children: [
@@ -36,7 +35,8 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
               ),
               child: Text(
                 "This is mcq-based quiz containing 25 questions. Each question has a 4 options out of which only 1 is correct. ALL THE BEST!!",
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                style: TextStyle(
+                    fontSize: deviceHeight * 0.025, color: Colors.white),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -47,15 +47,15 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
-                // color: Colors.green,
                 color: Color(0xFF0a1931),
               ),
               child: Text(
                 "ALL THE QUESTIONS ARE COMPULSORY !",
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: deviceHeight * 0.025,
                     fontWeight: FontWeight.w600,
                     color: Colors.white),
+                    textAlign: TextAlign.center,
               ),
             ),
             Container(
@@ -65,14 +65,11 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: deviceHeight * 0.05,
             ),
             GestureDetector(
-              onTap: () => {
-                print("fd"),
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => QuizScreen1())),
-              },
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => QuizScreen1())),
               child: Container(
                 alignment: Alignment.center,
                 width: deviceWidth * 0.5,
@@ -92,7 +89,8 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
                 ),
                 child: Text(
                   "Start Quiz",
-                  style: TextStyle(fontSize: 25, color: Colors.white),
+                  style: TextStyle(
+                      fontSize: deviceHeight * 0.03, color: Colors.white),
                 ),
               ),
             ),

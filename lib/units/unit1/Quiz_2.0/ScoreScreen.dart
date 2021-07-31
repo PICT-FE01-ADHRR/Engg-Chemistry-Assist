@@ -1,13 +1,10 @@
-// import 'package:engg_chemistry_study_assist/units/unit1/unit1.dart';
 import 'package:flutter/material.dart';
 import '../Content_Data/QuizQuestionList.dart';
-// import 'QuestionSet.dart';
+import 'package:engg_chemistry_study_assist/Database/database.dart';
 
 // ignore: must_be_immutable
 class ScoreScreen extends StatefulWidget {
-  // const ScoreScreen({Key? key}) : super(key: key);
   var score = markedCorrect.length;
-  // var score = 5;
 
   @override
   _ScoreScreenState createState() => _ScoreScreenState();
@@ -17,15 +14,12 @@ class _ScoreScreenState extends State<ScoreScreen>
     with TickerProviderStateMixin {
   @override
   void initState() {
-    // ignore: todo
-    // TODO: implement initState
     super.initState();
   }
 
   Text greetUser() {
     if (widget.score > questionList.length * 0.8) {
       var deviceHeight = MediaQuery.of(context).size.height;
-      // var deviceWidth = MediaQuery.of(context).size.width;
       return Text(
         "Congratulations! ",
         style: TextStyle(fontSize: deviceHeight * 0.035, color: Colors.white),
@@ -34,9 +28,9 @@ class _ScoreScreenState extends State<ScoreScreen>
     return Text("");
   }
 
-  // var score = 5;
   @override
   Widget build(BuildContext context) {
+    quizUnit1scoredb(markedCorrect.length);
     var deviceHeight = MediaQuery.of(context).size.height;
     var deviceWidth = MediaQuery.of(context).size.width;
     return WillPopScope(
@@ -62,15 +56,6 @@ class _ScoreScreenState extends State<ScoreScreen>
           body: Column(
             children: [
               SizedBox(height: deviceHeight * 0.15),
-              // Container(
-              //   alignment: Alignment.center,
-              //   height: deviceHeight * 0.065,
-              //   width: deviceWidth * 0.4,
-              //   color: Colors.red,
-              //   child: Text("Score: $score",
-              //       style: TextStyle(
-              //           color: Colors.white, fontSize: deviceHeight * 0.035)),
-              // ),
               Column(
                 children: [
                   SizedBox(height: deviceHeight * 0.02),
@@ -121,19 +106,10 @@ class _ScoreScreenState extends State<ScoreScreen>
                   style: TextStyle(fontSize: 20.0),
                 ),
                 onPressed: () {
-                  // var count = 0;
                   tappedMap.clear();
                   markedWrong.clear();
                   markedCorrect.clear();
                   markedWrongAnser.clear();
-                  // UserAnsweredData.deleteData();
-                  // Navigator.popUntil(
-                  //   context,
-                  //   (route) {
-                  //     // return count++ ==53;
-                  //     return count++ == 5;
-                  //   },
-                  // );
                   Navigator.of(context).popUntil((route) => route.isFirst);
                 },
               ),
@@ -161,31 +137,13 @@ class _ScoreScreenState extends State<ScoreScreen>
 
 // ignore: must_be_immutable
 class DisplayWrongQuestions extends StatelessWidget {
-  // var itemNum;
   var itemIndex;
-  // Set temp = {2, 4, 3};
   DisplayWrongQuestions({
     this.itemIndex,
   });
-  // List key_list = [];
-  // markedWrongAnser.forEach((key, value) => key_list.add()
-
-  // })
 
   final _listvalues = markedWrongAnser.values.toList();
   final _listkeys = markedWrongAnser.keys.toList();
-
-  // void getWrongIndex() {
-  //   // for (var num in temp) {
-  //   //   print(num - 1);
-  //   //   // print(questionList[num - 1].question);
-  //   // }
-
-  //   temp.forEach((element) {
-  //     print(element);
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     final correctAnswers =
@@ -208,14 +166,7 @@ class DisplayWrongQuestions extends StatelessWidget {
             width: deviceWidth,
             child: Column(
               children: [
-                // Text(
-                //   displayMissedQuestions(),
-                //   style: TextStyle(color: Colors.white),
-                // ),
                 Text(
-                  // itemIndex.toString(),
-                  // code for question display
-
                   questionList[int.parse(_listkeys[itemIndex]) - 1].question,
                 ),
                 SizedBox(
@@ -232,15 +183,7 @@ class DisplayWrongQuestions extends StatelessWidget {
                     color: Colors.red,
                   ),
                   child: Text(
-                    // itemIndex.toString(),
-
-                    // code for wrong answer marked
-
                     "Your Answer: ${questionList[int.parse(_listkeys[itemIndex]) - 1].options[_listvalues[itemIndex] - 1]}",
-
-                    // style: TextStyle(
-                    //     fontSize: deviceHeight * 0.019,
-                    //     color: Colors.black),
                   ),
                 ),
                 SizedBox(
@@ -257,12 +200,7 @@ class DisplayWrongQuestions extends StatelessWidget {
                     color: Colors.green,
                   ),
                   child: Text(
-                    // correct code for correct answer
                     "Correct Answer: ${questionList[int.parse(_listkeys[itemIndex]) - 1].options[correctAnswers - 1]}",
-
-                    // style: TextStyle(
-                    //     fontSize: deviceHeight * 0.025,
-                    //     color: Colors.black),
                   ),
                 ),
               ],

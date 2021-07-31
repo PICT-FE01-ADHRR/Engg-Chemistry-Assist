@@ -1,4 +1,5 @@
 // import '../Unit5.dart';
+import 'package:engg_chemistry_study_assist/Database/database.dart';
 import 'package:flutter/material.dart';
 import '../Content_Data/QuizQuestionList5.dart';
 // import 'QuestionSet.dart';
@@ -17,15 +18,13 @@ class _ScoreScreenState extends State<ScoreScreen>
     with TickerProviderStateMixin {
   @override
   void initState() {
-    // ignore: todo
-    // TODO: implement initState
     super.initState();
   }
 
   Text greetUser() {
+    /// This function greets the user.
     if (widget.score > questionListUnit5.length * 0.8) {
       var deviceHeight = MediaQuery.of(context).size.height;
-      // var deviceWidth = MediaQuery.of(context).size.width;
       return Text(
         "Congratulations! ",
         style: TextStyle(fontSize: deviceHeight * 0.035, color: Colors.white),
@@ -34,9 +33,9 @@ class _ScoreScreenState extends State<ScoreScreen>
     return Text("");
   }
 
-  // var score = 5;
   @override
   Widget build(BuildContext context) {
+    quizUnit5scoredb(markedCorrectUnit5.length);
     var deviceHeight = MediaQuery.of(context).size.height;
     var deviceWidth = MediaQuery.of(context).size.width;
     return WillPopScope(
@@ -45,12 +44,10 @@ class _ScoreScreenState extends State<ScoreScreen>
         height: deviceHeight,
         width: deviceWidth,
         decoration: BoxDecoration(
-          gradient:
-              // LinearGradient(colors: [Color(0xFF4b6cb7), Color(0xFF182848)])),
-              LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
+          gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
                 Color(0xFF0A1931),
                 Color(0xFF150E56),
                 Color(0xFF0A043C),
@@ -62,15 +59,6 @@ class _ScoreScreenState extends State<ScoreScreen>
           body: Column(
             children: [
               SizedBox(height: deviceHeight * 0.15),
-              // Container(
-              //   alignment: Alignment.center,
-              //   height: deviceHeight * 0.065,
-              //   width: deviceWidth * 0.4,
-              //   color: Colors.red,
-              //   child: Text("Score: $score",
-              //       style: TextStyle(
-              //           color: Colors.white, fontSize: deviceHeight * 0.035)),
-              // ),
               Column(
                 children: [
                   SizedBox(height: deviceHeight * 0.02),
@@ -121,19 +109,10 @@ class _ScoreScreenState extends State<ScoreScreen>
                   style: TextStyle(fontSize: 20.0),
                 ),
                 onPressed: () {
-                  // var count = 0;
                   tappedMapUnit5.clear();
                   markedWrongUnit5.clear();
                   markedCorrectUnit5.clear();
                   markedWrongAnserUnit5.clear();
-                  // UserAnsweredData.deleteData();
-                  // Navigator.popUntil(
-                  //   context,
-                  //   (route) {
-                  //     // return count++ ==53;
-                  //     return count++ == 5;
-                  //   },
-                  // );
                   Navigator.of(context).popUntil((route) => route.isFirst);
                 },
               ),
@@ -144,7 +123,6 @@ class _ScoreScreenState extends State<ScoreScreen>
               Expanded(
                 child: ListView.builder(
                     itemCount: markedWrongUnit5.length,
-                    // itemCount: 5,
                     itemBuilder: (context, index) {
                       return DisplayWrongQuestions(
                         itemIndex: index,
@@ -161,30 +139,13 @@ class _ScoreScreenState extends State<ScoreScreen>
 
 // ignore: must_be_immutable
 class DisplayWrongQuestions extends StatelessWidget {
-  // var itemNum;
   var itemIndex;
-  // Set temp = {2, 4, 3};
   DisplayWrongQuestions({
     this.itemIndex,
   });
-  // List key_list = [];
-  // markedWrongAnser.forEach((key, value) => key_list.add()
-
-  // })
 
   final _listvalues = markedWrongAnserUnit5.values.toList();
   final _listkeys = markedWrongAnserUnit5.keys.toList();
-
-  // void getWrongIndex() {
-  //   // for (var num in temp) {
-  //   //   print(num - 1);
-  //   //   // print(questionListUnit5[num - 1].question);
-  //   // }
-
-  //   temp.forEach((element) {
-  //     print(element);
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -208,14 +169,7 @@ class DisplayWrongQuestions extends StatelessWidget {
             width: deviceWidth,
             child: Column(
               children: [
-                // Text(
-                //   displayMissedQuestions(),
-                //   style: TextStyle(color: Colors.white),
-                // ),
                 Text(
-                  // itemIndex.toString(),
-                  // code for question display
-
                   questionListUnit5[int.parse(_listkeys[itemIndex]) - 1]
                       .question,
                 ),
@@ -233,15 +187,7 @@ class DisplayWrongQuestions extends StatelessWidget {
                     color: Colors.red,
                   ),
                   child: Text(
-                    // itemIndex.toString(),
-
-                    // code for wrong answer marked
-
                     "Your Answer: ${questionListUnit5[int.parse(_listkeys[itemIndex]) - 1].options[_listvalues[itemIndex] - 1]}",
-
-                    // style: TextStyle(
-                    //     fontSize: deviceHeight * 0.019,
-                    //     color: Colors.black),
                   ),
                 ),
                 SizedBox(
@@ -258,12 +204,7 @@ class DisplayWrongQuestions extends StatelessWidget {
                     color: Colors.green,
                   ),
                   child: Text(
-                    // correct code for correct answer
                     "Correct Answer:  ${questionListUnit5[int.parse(_listkeys[itemIndex]) - 1].options[correctAnswers - 1]}",
-
-                    // style: TextStyle(
-                    //     fontSize: deviceHeight * 0.025,
-                    //     color: Colors.black),
                   ),
                 ),
               ],
