@@ -42,9 +42,11 @@ class _HomepageState extends State<Homepage> {
   //     },
   //   );
   // }
+  
 
   @override
   Widget build(BuildContext context) {
+    List firstname = _user.displayName!.split(" ").toList();
     var size = MediaQuery.of(context).size;
     return Container(
       height: size.height,
@@ -113,9 +115,12 @@ class _HomepageState extends State<Homepage> {
                   //      MaterialPageRoute(builder: (context) => Loginpage()),
                   //   );
                   // },
-                  onTap: () async{
+                  onTap: () async {
                     await Authentication.signOut(context: context);
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Loginpage()));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => Loginpage()));
                   },
                 ),
                 ListTile(
@@ -151,7 +156,6 @@ class _HomepageState extends State<Homepage> {
               width: double.infinity,
               // margin: EdgeInsets.only(top: 50),
               // color: Colors.grey,
-
               child: Stack(
                 alignment: Alignment.bottomRight,
                 children: [
@@ -164,7 +168,7 @@ class _HomepageState extends State<Homepage> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          'Welcome, ' + _user.displayName!,
+                          'Welcome, ' + firstname[0],
                           style:
                               TextStyle(color: Color(0xFFfdfaf6), fontSize: 25),
                         ),

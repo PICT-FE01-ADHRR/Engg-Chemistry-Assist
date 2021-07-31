@@ -9,7 +9,7 @@ import 'QuestionBankUnit5_2.dart';
 List functioncalls = [
   StudyMaterialCall1(),
   QuestionBankCall1(),
-  QuestionBankCall2(),
+  // QuestionBankCall2(),
 ];
 
 class QuestionBankUnit5 extends StatelessWidget {

@@ -49,7 +49,7 @@ class _StudyMaterialUnit6State extends State<StudyMaterialUnit6> {
       ),
       body: Container(
         child: SfPdfViewer.asset(
-          'assets/unit2/StudyMaterialUnit2.pdf',
+          'assets/unit6/StudyMaterialUnit6.pdf',
           controller: _pdfViewerController,
           onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
             print("FAIL");
