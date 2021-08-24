@@ -158,7 +158,7 @@ class QuestionBankCardUnit4 extends StatelessWidget {
                             ),
                             RichText(
                               text: TextSpan(
-                                text: "Correct Answer: ",
+                                text: "Answer: ",
                                 style: TextStyle(
                                   fontSize: size.height * 0.022,
                                   // color: Colors.redAccent[700],
@@ -169,9 +169,9 @@ class QuestionBankCardUnit4 extends StatelessWidget {
                                         questionListUnit4[index].correctAns -
                                             1],
                                     style: TextStyle(
-                                      fontSize: size.height * 0.0252,
+                                      fontSize: size.height * 0.0270,
                                       fontWeight: FontWeight.w800,
-                                      color: Colors.redAccent[700],
+                                      color: Color(0xFF5af024),
                                     ),
                                   ),
                                 ],
