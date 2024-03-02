@@ -17,8 +17,8 @@ List content = [
 ];
 
 List funcList = [
-  QuestionBankUnit6(),
+  const QuestionBankUnit6(),
   // NumericalSolver(),
-  QuestionBankCardUnit6(),
-  QuizInstructionScreen(),
+  const QuestionBankCardUnit6(),
+  const QuizInstructionScreen(),
 ];

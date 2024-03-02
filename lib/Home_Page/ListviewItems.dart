@@ -25,10 +25,10 @@ List itemsList = [
 ];
 
 List funcList = [
-  Unit1(),
-  Unit2(),
-  Unit3(),
-  Unit4(),
-  Unit5(),
-  Unit6(),
+  const Unit1(),
+  const Unit2(),
+  const Unit3(),
+  const Unit4(),
+  const Unit5(),
+  const Unit6(),
 ];

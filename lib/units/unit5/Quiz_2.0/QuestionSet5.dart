@@ -7,7 +7,7 @@ class QuestionSet extends StatefulWidget {
   var itemIndex;
   var itemNum;
 
-  QuestionSet({this.itemIndex, this.itemNum});
+  QuestionSet({super.key, this.itemIndex, this.itemNum});
 
   @override
   _QuestionSetState createState() => _QuestionSetState();
@@ -21,10 +21,10 @@ class _QuestionSetState extends State<QuestionSet> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20),
-      padding: EdgeInsets.all(20),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [
@@ -39,9 +39,9 @@ class _QuestionSetState extends State<QuestionSet> {
         children: [
           Text(
             widget.itemNum.question,
-            style: TextStyle(fontSize: 18, color: Colors.white),
+            style: const TextStyle(fontSize: 18, color: Colors.white),
           ),
-          SizedBox(height: 20 / 2),
+          const SizedBox(height: 20 / 2),
           ...List.generate(
             questionListUnit5[0].options.length,
             (index) => Option(
@@ -49,14 +49,14 @@ class _QuestionSetState extends State<QuestionSet> {
               text: widget.itemNum.options[index],
               rightanserimport: widget.itemNum.correctAns,
               themecolor: tappedMapUnit5[widget.itemIndex] == index
-                  ? Color(0xFFFF8303)
+                  ? const Color(0xFFFF8303)
                   : Colors.grey,
               // working
               // tapped.contains(index) ? Color(0xFFFF8303) : Colors.grey,
               press: () {
                 isTapped = true;
                 if (!tapped.contains(index)) {
-                  this.setState(() {
+                  setState(() {
                     tappedMapUnit5.remove(widget.itemIndex);
                     tappedMapUnit5[widget.itemIndex] = index;
                     // working
@@ -111,6 +111,7 @@ class Option extends StatefulWidget {
   Color themecolor;
   final VoidCallback press;
   Option({
+    super.key,
     required this.index1,
     required this.text,
     required this.rightanserimport,
@@ -134,8 +135,8 @@ class _OptionState extends State<Option> {
     return GestureDetector(
       onTap: widget.press,
       child: Container(
-        margin: EdgeInsets.only(top: 20),
-        padding: EdgeInsets.all(20),
+        margin: const EdgeInsets.only(top: 20),
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           border: Border.all(color: widget.themecolor),
           borderRadius: BorderRadius.circular(15),

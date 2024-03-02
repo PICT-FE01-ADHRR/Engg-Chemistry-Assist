@@ -1,0 +1,123 @@
+{
+  "project_info": {
+    "project_number": "271363378599",
+    "firebase_url": "https://engg-chemistry-assist-default-rtdb.firebaseio.com",
+    "project_id": "engg-chemistry-assist",
+    "storage_bucket": "engg-chemistry-assist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271363378599:android:720412d5671809868a3a82",
+        "android_client_info": {
+          "package_name": "com.pbl2b12021.engg_Chemistry_assist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271363378599-0h232ta0qi3kq10floi1sj4cm1vria37.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pbl2b12021.engg_Chemistry_assist",
+            "certificate_hash": "74df6727b96c46721718faf2534f78675bba0f88"
+          }
+        },
+        {
+          "client_id": "271363378599-0lkl4knhls15d5994fffok3noone7194.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pbl2b12021.engg_Chemistry_assist",
+            "certificate_hash": "6f9248dff2bbbff009339251b27e85061b1c611b"
+          }
+        },
+        {
+          "client_id": "271363378599-ci7fvlv3u70glgphgckf5mp4so9pv4rf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pbl2b12021.engg_Chemistry_assist",
+            "certificate_hash": "1b9f7646632fe60fce0b2c61db0ee3eee873393f"
+          }
+        },
+        {
+          "client_id": "271363378599-eqqs4sc5hbvkvnu10cp5klqjpqgoau7g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pbl2b12021.engg_Chemistry_assist",
+            "certificate_hash": "d8c638b11ffc348482f96cf380c06f7fa6d1806c"
+          }
+        },
+        {
+          "client_id": "271363378599-q5cdnteottl25jc376oes5beno1vrd9t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pbl2b12021.engg_Chemistry_assist",
+            "certificate_hash": "c731150a2f520a9dcffd865b49a6c734ff09cdd3"
+          }
+        },
+        {
+          "client_id": "271363378599-d13mro2mgpmkvkn8neaapjmhh9kn519j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhXqKjND0qpIvZFHyz5NqUSfvh2ROzK4Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271363378599-d13mro2mgpmkvkn8neaapjmhh9kn519j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "271363378599-9lecrfandlk7m95io5rujopojp6b4hft.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pbl2b12021.enggChemistryStudyAssist"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271363378599:android:d2055460a73b98d58a3a82",
+        "android_client_info": {
+          "package_name": "com.pbl2b12021.engg_chemistry_study_assist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271363378599-d13mro2mgpmkvkn8neaapjmhh9kn519j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhXqKjND0qpIvZFHyz5NqUSfvh2ROzK4Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271363378599-d13mro2mgpmkvkn8neaapjmhh9kn519j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "271363378599-9lecrfandlk7m95io5rujopojp6b4hft.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pbl2b12021.enggChemistryStudyAssist"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

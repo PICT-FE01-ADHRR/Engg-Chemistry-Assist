@@ -3,32 +3,34 @@ import 'studymaterial.dart';
 import 'QuestionBankUnit5_1.dart';
 
 List functioncalls = [
-  StudyMaterialCall1(),
-  QuestionBankCall1(),
+  const StudyMaterialCall1(),
+  const QuestionBankCall1(),
 ];
 
 class QuestionBankUnit5 extends StatelessWidget {
+  const QuestionBankUnit5({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFF0a1931),
+      backgroundColor: const Color(0xFF0a1931),
       appBar: AppBar(
         elevation: 20,
         shadowColor: Colors.black,
-        title: Text('Study Material Unit 5'),
-        backgroundColor: Color(0xFF0a1931),
+        title: const Text('Study Material Unit 5'),
+        backgroundColor: const Color(0xFF0a1931),
       ),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             height: size.height * 0.10,
             width: double.infinity,
             child: Stack(
               children: [
                 Container(
-                  margin: EdgeInsets.all(8),
-                  child: Text(
+                  margin: const EdgeInsets.all(8),
+                  child: const Text(
                     "Contents: ",
                     style: TextStyle(color: Colors.white, fontSize: 23),
                   ),
@@ -40,9 +42,9 @@ class QuestionBankUnit5 extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 50),
+                  margin: const EdgeInsets.only(top: 50),
                   width: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Color(0xFFfdfaf6),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
@@ -62,16 +64,18 @@ class QuestionBankUnit5 extends StatelessWidget {
 }
 
 class StudyMaterialCall1 extends StatelessWidget {
+  const StudyMaterialCall1({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
       height: size.height * 0.2,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          Container(
+          SizedBox(
             width: size.width * 0.88,
             height: size.height * 0.18,
             child: GestureDetector(
@@ -79,17 +83,17 @@ class StudyMaterialCall1 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => StudyMaterialUnit5(),
+                    builder: (context) => const StudyMaterialUnit5(),
                   ),
                 );
               },
               child: Container(
                 width: size.height * 0.18,
                 height: size.width * 0.923,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -98,10 +102,10 @@ class StudyMaterialCall1 extends StatelessWidget {
                     end: FractionalOffset.centerRight,
                   ),
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -124,7 +128,7 @@ class StudyMaterialCall1 extends StatelessWidget {
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Text(
+                      child: const Text(
                         "Notes",
                         style: TextStyle(fontSize: 25, color: Colors.white),
                       ),
@@ -132,7 +136,7 @@ class StudyMaterialCall1 extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => StudyMaterialUnit5()),
+                              builder: (context) => const StudyMaterialUnit5()),
                         );
                       },
                     ),
@@ -148,16 +152,18 @@ class StudyMaterialCall1 extends StatelessWidget {
 }
 
 class QuestionBankCall1 extends StatelessWidget {
+  const QuestionBankCall1({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
       height: size.height * 0.2,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          Container(
+          SizedBox(
             width: size.width * 0.88,
             height: size.height * 0.18,
             child: GestureDetector(
@@ -165,17 +171,17 @@ class QuestionBankCall1 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => QuestionBankUnit51(),
+                    builder: (context) => const QuestionBankUnit51(),
                   ),
                 );
               },
               child: Container(
                 width: size.height * 0.18,
                 height: size.width * 0.923,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -184,10 +190,10 @@ class QuestionBankCall1 extends StatelessWidget {
                     end: FractionalOffset.centerRight,
                   ),
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -210,7 +216,7 @@ class QuestionBankCall1 extends StatelessWidget {
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Text(
+                      child: const Text(
                         "MCQ Bank 1",
                         style: TextStyle(fontSize: 25, color: Colors.white),
                       ),
@@ -218,7 +224,7 @@ class QuestionBankCall1 extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => QuestionBankUnit51()),
+                              builder: (context) => const QuestionBankUnit51()),
                         );
                       },
                     ),

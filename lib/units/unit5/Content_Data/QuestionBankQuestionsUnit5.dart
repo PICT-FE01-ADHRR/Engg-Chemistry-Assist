@@ -29,7 +29,7 @@ List questionListUnit5 = [
           "UV-Visible spectroscopy is a analytical technique which uses the electromagnetic spectrum in the range",
       options: ["200-350nm", "350-800 nm", "200-800 nm", "400-4000 cm-1"],
       correctAns: 3),
-      QuizQuestionUnit5(
+  QuizQuestionUnit5(
       id: 3,
       question:
           "In case of UV-Visible spectroscopy red shift is also called as____ shift",
@@ -60,25 +60,28 @@ List questionListUnit5 = [
       correctAns: 1),
   QuizQuestionUnit5(
       id: 8,
-      question:
-          "Visible spectrophotometer has operational range…………nm",
+      question: "Visible spectrophotometer has operational range…………nm",
       options: ["400-800", "200-400", "200-800", "500-1500"],
       correctAns: 1),
   QuizQuestionUnit5(
       id: 9,
-      question:
-          "IR spectroscopy measures",
-      options: ["Molecular Rotation", "Electronic Excitation", "Nuclear excitation", "Molecular vibrations"],
+      question: "IR spectroscopy measures",
+      options: [
+        "Molecular Rotation",
+        "Electronic Excitation",
+        "Nuclear excitation",
+        "Molecular vibrations"
+      ],
       correctAns: 4),
   QuizQuestionUnit5(
       id: 10,
-      question:
-          "KBr is used in IR spectroscopy because it is/has",
+      question: "KBr is used in IR spectroscopy because it is/has",
       options: ["dipole moment", "diatomic salt", "transparent to IR", "All"],
       correctAns: 3),
   QuizQuestionUnit5(
       id: 11,
-      question: "Shifting of maximum absorption wavelength towards shorter wavelength region is ____ shift",
+      question:
+          "Shifting of maximum absorption wavelength towards shorter wavelength region is ____ shift",
       options: ["Bathochromic", "Hypochromic", "Hyperchromic", "Hypsochromic"],
       correctAns: 4),
   QuizQuestionUnit5(
@@ -97,15 +100,24 @@ List questionListUnit5 = [
       id: 14,
       question:
           "In UV-Visible spectrophotometer wavelength selector used to obtain monochromatic light is",
-      options: ["Diffraction grating", "Prism", "Reflective grating", "All of the above"],
+      options: [
+        "Diffraction grating",
+        "Prism",
+        "Reflective grating",
+        "All of the above"
+      ],
       correctAns: 4),
   QuizQuestionUnit5(
       id: 15,
-      question:
-          "Sample cell in UV-Visible spectrophotometer is made of",
-      options: ["Glass", "Quartz", "Both glass and quartz", "Either glass or quartz"],
+      question: "Sample cell in UV-Visible spectrophotometer is made of",
+      options: [
+        "Glass",
+        "Quartz",
+        "Both glass and quartz",
+        "Either glass or quartz"
+      ],
       correctAns: 4),
-      QuizQuestionUnit5(
+  QuizQuestionUnit5(
       id: 16,
       question: "In electromagnetic spectrum IR radiations ranges(in cm-1)",
       options: ["4000 to 400", "14000 to 10", "400 to 10", "14000 to 4000"],

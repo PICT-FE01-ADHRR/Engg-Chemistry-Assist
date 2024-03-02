@@ -3,7 +3,7 @@ import 'dart:async';
 import 'QuizScreen2Unit4.dart';
 
 class QuizScreen1 extends StatefulWidget {
-  const QuizScreen1({Key? key}) : super(key: key);
+  const QuizScreen1({super.key});
 
   @override
   _QuizScreen1State createState() => _QuizScreen1State();
@@ -19,10 +19,10 @@ class _QuizScreen1State extends State<QuizScreen1> {
     super.initState();
     _startTimer();
     Future.delayed(
-      Duration(seconds: 5),
+      const Duration(seconds: 5),
       () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => QuizScreen2()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const QuizScreen2()));
       },
     );
   }
@@ -35,7 +35,7 @@ class _QuizScreen1State extends State<QuizScreen1> {
   }
 
   void _startTimer() {
-    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         if (timeToNavigate > 0) {
           timeToNavigate--;
@@ -61,7 +61,7 @@ class _QuizScreen1State extends State<QuizScreen1> {
       body: Container(
         height: deviceHeight,
         width: deviceWidth,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient:
               // LinearGradient(colors: [Color(0xFF4b6cb7), Color(0xFF182848)])),
               LinearGradient(
@@ -85,7 +85,7 @@ class _QuizScreen1State extends State<QuizScreen1> {
             child: Container(
               height: deviceHeight * 0.05,
               width: deviceWidth * 0.20,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(colors: [
                   Color.fromRGBO(25, 78, 24, 0.8),
@@ -100,7 +100,7 @@ class _QuizScreen1State extends State<QuizScreen1> {
             child: Container(
               height: deviceHeight * 0.03,
               width: deviceWidth * 0.10,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(colors: [
                   Color.fromRGBO(25, 78, 24, 0.8),
@@ -115,7 +115,7 @@ class _QuizScreen1State extends State<QuizScreen1> {
             child: Container(
               height: deviceHeight * 0.15,
               width: deviceWidth * 0.30,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(colors: [
                   Color.fromRGBO(52, 64, 245, 0.8),
@@ -132,7 +132,7 @@ class _QuizScreen1State extends State<QuizScreen1> {
             child: Container(
               height: deviceHeight * 0.15,
               width: deviceWidth * 0.30,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(colors: [
                   Color.fromRGBO(52, 64, 245, 0.8),
@@ -147,7 +147,7 @@ class _QuizScreen1State extends State<QuizScreen1> {
             child: Container(
               height: deviceHeight * 0.05,
               width: deviceWidth * 0.20,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(colors: [
                   Color.fromRGBO(25, 78, 24, 0.8),
@@ -162,7 +162,7 @@ class _QuizScreen1State extends State<QuizScreen1> {
             child: Container(
               height: deviceHeight * 0.03,
               width: deviceWidth * 0.10,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(colors: [
                   Color.fromRGBO(25, 78, 24, 0.8),
@@ -191,7 +191,7 @@ class _QuizScreen1State extends State<QuizScreen1> {
             child: Container(
               child: Text(
                 "STARTS IN $timeToNavigate SECONDS",
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color(0xFFFFFFF0),
                   fontSize: 22,
                 ),

@@ -6,12 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class QuestionBankUnit12 extends StatefulWidget {
+  const QuestionBankUnit12({super.key});
+
   @override
   _QuestionBankUnit12 createState() => _QuestionBankUnit12();
 }
 
 class _QuestionBankUnit12 extends State<QuestionBankUnit12> {
-  PdfViewerController _pdfViewerController = new PdfViewerController();
+  PdfViewerController _pdfViewerController = PdfViewerController();
   // final String _url =
   //     'https://firebasestorage.googleapis.com/v0/b/chemistry-study-assist.appspot.com/o/QuestionBankUnit11.pdf?alt=media&token=349f894c-1dee-49c9-9f43-d5638c422118';
   // late Uint8List _pdfBytes;
@@ -34,15 +36,15 @@ class _QuestionBankUnit12 extends State<QuestionBankUnit12> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0a1931),
+      backgroundColor: const Color(0xFF0a1931),
       appBar: AppBar(
         elevation: 20,
         shadowColor: Colors.black,
-        backgroundColor: Color(0xFF0a1931),
-        title: Text("Question Bank 2"),
+        backgroundColor: const Color(0xFF0a1931),
+        title: const Text("Question Bank 2"),
         actions: <Widget>[
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.keyboard_arrow_up,
               color: Colors.white,
             ),
@@ -51,7 +53,7 @@ class _QuestionBankUnit12 extends State<QuestionBankUnit12> {
             },
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.keyboard_arrow_down,
               color: Colors.white,
             ),

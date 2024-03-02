@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BoysCalorimeter extends StatefulWidget {
+  const BoysCalorimeter({super.key});
+
   @override
   _BoysCalorimeterState createState() => _BoysCalorimeterState();
 }
@@ -51,10 +53,8 @@ class _BoysCalorimeterState extends State<BoysCalorimeter> {
     ncvValue = gcvValue - steamCondesnedValue * 587 / gasBurnedValue;
 
     setState(() {
-      gcvText =
-          "GCV = " + gcvValue.toStringAsFixed(2) + " kcal/m^3";
-      ncvText =
-          "NCV = " + ncvValue.toStringAsFixed(2) + " kcal/m^3";
+      gcvText = "GCV = ${gcvValue.toStringAsFixed(2)} kcal/m^3";
+      ncvText = "NCV = ${ncvValue.toStringAsFixed(2)} kcal/m^3";
     });
   }
 
@@ -63,51 +63,51 @@ class _BoysCalorimeterState extends State<BoysCalorimeter> {
     return Scaffold(
       appBar: AppBar(
         elevation: 20,
-        title: Text(
+        title: const Text(
           "Boys Gas Calorimeter Numericals",
         ),
-        backgroundColor: Color(0xFF0a1931),
+        backgroundColor: const Color(0xFF0a1931),
       ),
       body: ListView(
         children: <Widget>[
           Column(
             children: [
-              Text(
+              const Text(
                 'Enter the required data to find the NCV & GCV',
                 style: TextStyle(fontSize: 18),
               ),
               TextField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     labelText: "Weight of cooling water used (kg)"),
                 keyboardType: TextInputType.number,
                 controller: coolingWater,
               ),
               TextField(
-                decoration:
-                    InputDecoration(labelText: "Volume of gas burnt (m^3)"),
+                decoration: const InputDecoration(
+                    labelText: "Volume of gas burnt (m^3)"),
                 keyboardType: TextInputType.number,
                 controller: gasBurned,
               ),
               TextField(
-                decoration:
-                    InputDecoration(labelText: "Rise in temperature (celcuis)"),
+                decoration: const InputDecoration(
+                    labelText: "Rise in temperature (celcuis)"),
                 keyboardType: TextInputType.number,
                 controller: riseInTemp,
               ),
               TextField(
-                decoration:
-                    InputDecoration(labelText: "Mass of steam condensed (kg)"),
+                decoration: const InputDecoration(
+                    labelText: "Mass of steam condensed (kg)"),
                 keyboardType: TextInputType.number,
                 controller: steamCondesned,
                 onSubmitted: (_) => NCV(),
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade900,
+                  backgroundColor: Colors.blue.shade900,
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(15))),
                 ),
-                child: Text(
+                child: const Text(
                   'Calculate',
                   style: TextStyle(fontSize: 20.0),
                 ),
@@ -122,11 +122,11 @@ class _BoysCalorimeterState extends State<BoysCalorimeter> {
               ),
               Text(
                 ncvText,
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
               Text(
                 gcvText,
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
             ],
           ),

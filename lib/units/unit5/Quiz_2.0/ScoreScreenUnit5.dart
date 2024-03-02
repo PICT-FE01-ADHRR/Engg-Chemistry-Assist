@@ -8,6 +8,8 @@ import '../Content_Data/QuizQuestionList5.dart';
 class ScoreScreen extends StatefulWidget {
   // const ScoreScreen({Key? key}) : super(key: key);
   var score = markedCorrectUnit5.length;
+
+  ScoreScreen({super.key});
   // var score = 5;
 
   @override
@@ -30,7 +32,7 @@ class _ScoreScreenState extends State<ScoreScreen>
         style: TextStyle(fontSize: deviceHeight * 0.035, color: Colors.white),
       );
     }
-    return Text("");
+    return const Text("");
   }
 
   @override
@@ -43,7 +45,7 @@ class _ScoreScreenState extends State<ScoreScreen>
       child: Container(
         height: deviceHeight,
         width: deviceWidth,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -64,22 +66,23 @@ class _ScoreScreenState extends State<ScoreScreen>
                   SizedBox(height: deviceHeight * 0.02),
                   greetUser(),
                   AnimatedContainer(
-                    duration: Duration(milliseconds: 500),
+                    duration: const Duration(milliseconds: 500),
                     child: Container(
                       alignment: Alignment.center,
                       height: deviceHeight * 0.2,
                       width: deviceWidth * 0.6,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(25)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(25)),
                         gradient: LinearGradient(
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
                             colors: [
-                              Color(0xFF0A1931).withOpacity(0.4),
-                              Color(0xFF161D6F).withOpacity(0.6),
-                              Color(0xFF5C33F6).withOpacity(0.2),
-                              Color(0xFFA239EA).withOpacity(0.5),
-                              Color(0xFF0A043C).withOpacity(0.8),
+                              const Color(0xFF0A1931).withOpacity(0.4),
+                              const Color(0xFF161D6F).withOpacity(0.6),
+                              const Color(0xFF5C33F6).withOpacity(0.2),
+                              const Color(0xFFA239EA).withOpacity(0.5),
+                              const Color(0xFF0A043C).withOpacity(0.8),
                             ]),
                       ),
                       child: Text(
@@ -100,11 +103,11 @@ class _ScoreScreenState extends State<ScoreScreen>
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade900,
+                  backgroundColor: Colors.blue.shade900,
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(15))),
                 ),
-                child: Text(
+                child: const Text(
                   'Next',
                   style: TextStyle(fontSize: 20.0),
                 ),
@@ -116,7 +119,7 @@ class _ScoreScreenState extends State<ScoreScreen>
                   Navigator.of(context).popUntil((route) => route.isFirst);
                 },
               ),
-              Text(
+              const Text(
                 "Here is the list of the wrong questions: ",
                 style: TextStyle(color: Colors.white),
               ),
@@ -141,6 +144,7 @@ class _ScoreScreenState extends State<ScoreScreen>
 class DisplayWrongQuestions extends StatelessWidget {
   var itemIndex;
   DisplayWrongQuestions({
+    super.key,
     this.itemIndex,
   });
 
@@ -164,7 +168,7 @@ class DisplayWrongQuestions extends StatelessWidget {
             // alignment: Alignment.center,
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(25)),
-            margin: EdgeInsets.only(bottom: 20),
+            margin: const EdgeInsets.only(bottom: 20),
             // height: deviceHeight * 0.18,
             width: deviceWidth,
             child: Column(
@@ -180,7 +184,7 @@ class DisplayWrongQuestions extends StatelessWidget {
                   alignment: Alignment.center,
                   padding: EdgeInsets.all(deviceHeight * 0.010),
                   width: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10)),
@@ -197,7 +201,7 @@ class DisplayWrongQuestions extends StatelessWidget {
                   alignment: Alignment.center,
                   padding: EdgeInsets.all(deviceHeight * 0.010),
                   width: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10)),

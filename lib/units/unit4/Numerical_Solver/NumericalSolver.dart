@@ -6,35 +6,37 @@ import 'BombCalorimeterCalculator.dart';
 import 'UltimateAnalysisNumercials.dart';
 
 List functioncalls = [
-  NCVCalculatorCall(),
-  BombCalorimeterCall(),
-  BoysCalorimeterCall(),
-  ProximateAnalysisCall(),
-  UltimateAnalysisCall(),
+  const NCVCalculatorCall(),
+  const BombCalorimeterCall(),
+  const BoysCalorimeterCall(),
+  const ProximateAnalysisCall(),
+  const UltimateAnalysisCall(),
 ];
 
 class NumericalSolver extends StatelessWidget {
+  const NumericalSolver({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFF0a1931),
+      backgroundColor: const Color(0xFF0a1931),
       appBar: AppBar(
         elevation: 20,
         shadowColor: Colors.black,
-        title: Text('Numerical Solver'),
-        backgroundColor: Color(0xFF0a1931),
+        title: const Text('Numerical Solver'),
+        backgroundColor: const Color(0xFF0a1931),
       ),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             height: size.height * 0.10,
             width: double.infinity,
             child: Stack(
               children: [
                 Container(
-                  margin: EdgeInsets.all(8),
-                  child: Text(
+                  margin: const EdgeInsets.all(8),
+                  child: const Text(
                     "Contents: ",
                     style: TextStyle(color: Colors.white, fontSize: 23),
                   ),
@@ -46,9 +48,9 @@ class NumericalSolver extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 50),
+                  margin: const EdgeInsets.only(top: 50),
                   width: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Color(0xFFfdfaf6),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
@@ -68,16 +70,18 @@ class NumericalSolver extends StatelessWidget {
 }
 
 class NCVCalculatorCall extends StatelessWidget {
+  const NCVCalculatorCall({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
       height: 160,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
+          SizedBox(
             width: size.width - 40,
             height: 145,
             child: GestureDetector(
@@ -85,17 +89,17 @@ class NCVCalculatorCall extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => NCVCalculator(),
+                    builder: (context) => const NCVCalculator(),
                   ),
                 );
               },
               child: Container(
                 width: size.width - 30,
                 height: 145,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -104,10 +108,10 @@ class NCVCalculatorCall extends StatelessWidget {
                     end: FractionalOffset.centerRight,
                   ),
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -130,7 +134,7 @@ class NCVCalculatorCall extends StatelessWidget {
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Text(
+                      child: const Text(
                         "NCV Calculator",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
@@ -138,7 +142,7 @@ class NCVCalculatorCall extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => NCVCalculator()),
+                              builder: (context) => const NCVCalculator()),
                         );
                       },
                     ),
@@ -154,16 +158,18 @@ class NCVCalculatorCall extends StatelessWidget {
 }
 
 class BombCalorimeterCall extends StatelessWidget {
+  const BombCalorimeterCall({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
       height: 160,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
+          SizedBox(
             width: size.width - 40,
             height: 145,
             child: GestureDetector(
@@ -172,17 +178,17 @@ class BombCalorimeterCall extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => BombCalorimeter(),
+                    builder: (context) => const BombCalorimeter(),
                   ),
                 );
               },
               child: Container(
                 width: size.width - 30,
                 height: 145,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -191,10 +197,10 @@ class BombCalorimeterCall extends StatelessWidget {
                     end: FractionalOffset.centerRight,
                   ),
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -217,7 +223,7 @@ class BombCalorimeterCall extends StatelessWidget {
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Text(
+                      child: const Text(
                         "Bomb Calorimeter",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
@@ -225,7 +231,7 @@ class BombCalorimeterCall extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => BombCalorimeter()),
+                              builder: (context) => const BombCalorimeter()),
                         );
                       },
                     ),
@@ -241,16 +247,18 @@ class BombCalorimeterCall extends StatelessWidget {
 }
 
 class BoysCalorimeterCall extends StatelessWidget {
+  const BoysCalorimeterCall({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
       height: 160,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
+          SizedBox(
             width: size.width - 40,
             height: 145,
             child: GestureDetector(
@@ -259,17 +267,17 @@ class BoysCalorimeterCall extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => BoysCalorimeter(),
+                    builder: (context) => const BoysCalorimeter(),
                   ),
                 );
               },
               child: Container(
                 width: size.width - 30,
                 height: 145,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -278,10 +286,10 @@ class BoysCalorimeterCall extends StatelessWidget {
                     end: FractionalOffset.centerRight,
                   ),
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -304,7 +312,7 @@ class BoysCalorimeterCall extends StatelessWidget {
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Text(
+                      child: const Text(
                         "Boys Gas Calorimeter",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
@@ -312,7 +320,7 @@ class BoysCalorimeterCall extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => BoysCalorimeter()),
+                              builder: (context) => const BoysCalorimeter()),
                         );
                       },
                     ),
@@ -328,16 +336,18 @@ class BoysCalorimeterCall extends StatelessWidget {
 }
 
 class ProximateAnalysisCall extends StatelessWidget {
+  const ProximateAnalysisCall({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
       height: 160,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
+          SizedBox(
             width: size.width - 40,
             height: 145,
             child: GestureDetector(
@@ -346,17 +356,17 @@ class ProximateAnalysisCall extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ProximateAnalysis(),
+                    builder: (context) => const ProximateAnalysis(),
                   ),
                 );
               },
               child: Container(
                 width: size.width - 30,
                 height: 145,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -365,10 +375,10 @@ class ProximateAnalysisCall extends StatelessWidget {
                     end: FractionalOffset.centerRight,
                   ),
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -391,7 +401,7 @@ class ProximateAnalysisCall extends StatelessWidget {
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Text(
+                      child: const Text(
                         "Proximate Analysis",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
@@ -399,7 +409,7 @@ class ProximateAnalysisCall extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProximateAnalysis()),
+                              builder: (context) => const ProximateAnalysis()),
                         );
                       },
                     ),
@@ -415,16 +425,18 @@ class ProximateAnalysisCall extends StatelessWidget {
 }
 
 class UltimateAnalysisCall extends StatelessWidget {
+  const UltimateAnalysisCall({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
       height: 160,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
+          SizedBox(
             width: size.width - 40,
             height: 145,
             child: GestureDetector(
@@ -433,17 +445,17 @@ class UltimateAnalysisCall extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => UltimateAnalysis(),
+                    builder: (context) => const UltimateAnalysis(),
                   ),
                 );
               },
               child: Container(
                 width: size.width - 30,
                 height: 145,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -452,10 +464,10 @@ class UltimateAnalysisCall extends StatelessWidget {
                     end: FractionalOffset.centerRight,
                   ),
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -478,7 +490,7 @@ class UltimateAnalysisCall extends StatelessWidget {
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Text(
+                      child: const Text(
                         "Ultimate Analysis",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
@@ -486,7 +498,7 @@ class UltimateAnalysisCall extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => UltimateAnalysis()),
+                              builder: (context) => const UltimateAnalysis()),
                         );
                       },
                     ),

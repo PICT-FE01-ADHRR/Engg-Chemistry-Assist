@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class QuestionBankUnit21 extends StatefulWidget {
+  const QuestionBankUnit21({super.key});
+
   @override
   _QuestionBankUnit21 createState() => _QuestionBankUnit21();
 }
 
 class _QuestionBankUnit21 extends State<QuestionBankUnit21> {
-  PdfViewerController _pdfViewerController = new PdfViewerController();
+  PdfViewerController _pdfViewerController = PdfViewerController();
 
   @override
   void initState() {
@@ -19,15 +21,15 @@ class _QuestionBankUnit21 extends State<QuestionBankUnit21> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0a1931),
+      backgroundColor: const Color(0xFF0a1931),
       appBar: AppBar(
         elevation: 20,
         shadowColor: Colors.black,
-        backgroundColor: Color(0xFF0a1931),
-        title: Text("Question Bank 1"),
+        backgroundColor: const Color(0xFF0a1931),
+        title: const Text("Question Bank 1"),
         actions: <Widget>[
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.keyboard_arrow_up,
               color: Colors.white,
             ),
@@ -36,7 +38,7 @@ class _QuestionBankUnit21 extends State<QuestionBankUnit21> {
             },
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.keyboard_arrow_down,
               color: Colors.white,
             ),

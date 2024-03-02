@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>271363378599-9lecrfandlk7m95io5rujopojp6b4hft.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.271363378599-9lecrfandlk7m95io5rujopojp6b4hft</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>271363378599-0h232ta0qi3kq10floi1sj4cm1vria37.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDge8zDDydxcx4sYNIx1iiPe4YDB4nEzqQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>271363378599</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pbl2b12021.enggChemistryStudyAssist</string>
+	<key>PROJECT_ID</key>
+	<string>engg-chemistry-assist</string>
+	<key>STORAGE_BUCKET</key>
+	<string>engg-chemistry-assist.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:271363378599:ios:fe6c126764ba973d8a3a82</string>
+	<key>DATABASE_URL</key>
+	<string>https://engg-chemistry-assist-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

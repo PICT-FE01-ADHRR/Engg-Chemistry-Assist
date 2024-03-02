@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 // import '../Content_Data/QuizQuestionList.dart';
 
 class QuestionBankCardUnit6 extends StatelessWidget {
+  const QuestionBankCardUnit6({super.key});
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -10,14 +12,14 @@ class QuestionBankCardUnit6 extends StatelessWidget {
       appBar: AppBar(
         elevation: 20,
         shadowColor: Colors.black,
-        title: Text(
+        title: const Text(
           'Question Bank',
           style: TextStyle(fontSize: 25),
         ),
-        backgroundColor: Color(0xFF0a1931),
+        backgroundColor: const Color(0xFF0a1931),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -33,7 +35,7 @@ class QuestionBankCardUnit6 extends StatelessWidget {
           itemBuilder: (context, index) {
             return Container(
               // color: Colors.lightBlue[100],
-              margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+              margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
               height: size.height * 0.4,
               child: Stack(
                 alignment: Alignment.center,
@@ -41,20 +43,20 @@ class QuestionBankCardUnit6 extends StatelessWidget {
                   Container(
                     width: size.width * 0.90,
                     height: size.height * 0.4,
-                    margin: EdgeInsets.only(bottom: 10),
-                    padding: EdgeInsets.all(20),
+                    margin: const EdgeInsets.only(bottom: 10),
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       // color: Color(0xFF1089FF),
                       gradient: LinearGradient(colors: [
-                        Color(0xFF1089FF).withOpacity(0.9),
-                        Color(0xFF0575E6),
-                        Color(0xFF021B79),
+                        const Color(0xFF1089FF).withOpacity(0.9),
+                        const Color(0xFF0575E6),
+                        const Color(0xFF021B79),
                       ]),
                       borderRadius: BorderRadius.circular(40),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Colors.black,
-                          offset: const Offset(
+                          offset: Offset(
                             5.0,
                             5.0,
                           ),
@@ -68,26 +70,26 @@ class QuestionBankCardUnit6 extends StatelessWidget {
                         Column(
                           children: [
                             Container(
-                              decoration: BoxDecoration(),
-                              child: Container(
+                              decoration: const BoxDecoration(),
+                              child: SizedBox(
                                 width: double.infinity,
                                 // height: size.height * 0.1,
                                 child: Container(
                                   // alignment: Alignment(0.0, 2.5),
                                   child: Text(
                                     questionListUnit6[index].question,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color: Colors.white, fontSize: 18),
                                   ),
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Card(
                               color: Colors.amber[50],
-                              margin: EdgeInsets.symmetric(
+                              margin: const EdgeInsets.symmetric(
                                   horizontal: 10.0, vertical: 8.0),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -100,7 +102,8 @@ class QuestionBankCardUnit6 extends StatelessWidget {
                                         children: [
                                           Text(
                                             questionListUnit6[index].options[0],
-                                            style: TextStyle(fontSize: 15),
+                                            style:
+                                                const TextStyle(fontSize: 15),
                                           )
                                         ],
                                       ),
@@ -111,7 +114,8 @@ class QuestionBankCardUnit6 extends StatelessWidget {
                                           Text(
                                               questionListUnit6[index]
                                                   .options[1],
-                                              style: TextStyle(fontSize: 15))
+                                              style:
+                                                  const TextStyle(fontSize: 15))
                                         ],
                                       ),
                                     ),
@@ -121,7 +125,7 @@ class QuestionBankCardUnit6 extends StatelessWidget {
                             ),
                             Card(
                               color: Colors.amber[50],
-                              margin: EdgeInsets.symmetric(
+                              margin: const EdgeInsets.symmetric(
                                   horizontal: 10.0, vertical: 8.0),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -134,7 +138,8 @@ class QuestionBankCardUnit6 extends StatelessWidget {
                                         children: [
                                           Text(
                                             questionListUnit6[index].options[2],
-                                            style: TextStyle(fontSize: 15),
+                                            style:
+                                                const TextStyle(fontSize: 15),
                                           )
                                         ],
                                       ),
@@ -145,7 +150,8 @@ class QuestionBankCardUnit6 extends StatelessWidget {
                                           Text(
                                               questionListUnit6[index]
                                                   .options[3],
-                                              style: TextStyle(fontSize: 15))
+                                              style:
+                                                  const TextStyle(fontSize: 15))
                                         ],
                                       ),
                                     ),

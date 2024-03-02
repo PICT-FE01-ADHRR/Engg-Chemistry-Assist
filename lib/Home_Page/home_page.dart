@@ -6,9 +6,7 @@ import '/Google_Login/utils/authentication.dart';
 import 'login_page.dart';
 
 class Homepage extends StatefulWidget {
-  const Homepage({Key? key, required User user})
-      : _user = user,
-        super(key: key);
+  const Homepage({super.key, required User user}) : _user = user;
 
   final User _user;
 
@@ -49,7 +47,7 @@ class _HomepageState extends State<Homepage> {
     return Container(
       height: size.height,
       width: size.width,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient:
             // LinearGradient(colors: [Color(0xFF4b6cb7), Color(0xFF182848)])),
             LinearGradient(
@@ -66,32 +64,32 @@ class _HomepageState extends State<Homepage> {
         backgroundColor: Colors.transparent,
         drawer: Drawer(
           child: Container(
-            color: Color(0xFF21096e),
+            color: const Color(0xFF21096e),
             child: ListView(
               children: [
                 DrawerHeader(
                   padding: EdgeInsets.zero,
                   child: Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Center(
                       child: Row(
                         children: [
                           CircleAvatar(
                               radius: 30,
                               backgroundImage: NetworkImage(_user.photoURL!)),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 _user.displayName!,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 18, color: Colors.white),
                               ),
                               Text(
                                 _user.email!,
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                               ),
                             ],
                           ),
@@ -101,8 +99,8 @@ class _HomepageState extends State<Homepage> {
                   ),
                 ),
                 ListTile(
-                  leading: Icon(Icons.login_sharp),
-                  title: Text(
+                  leading: const Icon(Icons.login_sharp),
+                  title: const Text(
                     'Log Out',
                     style: TextStyle(color: Colors.white),
                   ),
@@ -118,19 +116,21 @@ class _HomepageState extends State<Homepage> {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (BuildContext context) => Loginpage()));
+                            builder: (BuildContext context) =>
+                                const Loginpage()));
                   },
                 ),
                 ListTile(
-                  leading: Icon(Icons.amp_stories_rounded),
-                  title: Text(
+                  leading: const Icon(Icons.amp_stories_rounded),
+                  title: const Text(
                     'Developers',
                     style: TextStyle(color: Colors.white),
                   ),
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Developers()),
+                      MaterialPageRoute(
+                          builder: (context) => const Developers()),
                     );
                   },
                 ),
@@ -141,15 +141,15 @@ class _HomepageState extends State<Homepage> {
         appBar: AppBar(
           elevation: 20,
           shadowColor: Colors.black,
-          title: Text(
+          title: const Text(
             'ENGGChemAssist',
             style: TextStyle(fontSize: 25),
           ),
-          backgroundColor: Color(0xFF0a1931),
+          backgroundColor: const Color(0xFF0a1931),
         ),
         body: Column(
           children: [
-            Container(
+            SizedBox(
               height: size.height * .27,
               width: double.infinity,
               child: Stack(
@@ -159,13 +159,13 @@ class _HomepageState extends State<Homepage> {
                     top: 38,
                     left: 20,
                     child: Container(
-                      margin: EdgeInsets.all(8),
+                      margin: const EdgeInsets.all(8),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'Welcome, ' + firstname[0],
-                          style:
-                              TextStyle(color: Color(0xFFfdfaf6), fontSize: 25),
+                          style: const TextStyle(
+                              color: Color(0xFFfdfaf6), fontSize: 25),
                         ),
                       ),
                     ),
@@ -174,14 +174,14 @@ class _HomepageState extends State<Homepage> {
                     top: 93,
                     left: 20,
                     child: Container(
-                      margin: EdgeInsets.all(8),
+                      margin: const EdgeInsets.all(8),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Wrap(direction: Axis.horizontal, children: [
                           RichText(
                             textAlign: TextAlign.left,
                             softWrap: true,
-                            text: TextSpan(children: <TextSpan>[
+                            text: const TextSpan(children: <TextSpan>[
                               TextSpan(
                                   text:
                                       "Get the Unitwise study material & quizzes ",
@@ -272,8 +272,8 @@ class _HomepageState extends State<Homepage> {
             Expanded(
                 child: Stack(children: [
               Container(
-                margin: EdgeInsets.only(top: 70),
-                decoration: BoxDecoration(
+                margin: const EdgeInsets.only(top: 70),
+                decoration: const BoxDecoration(
                     color: Color(0xFFf9f3f3),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
@@ -299,14 +299,14 @@ class MyList extends StatelessWidget {
   final int itemIndex;
   final ListdisplayText itemNum;
 
-  MyList({required this.itemIndex, required this.itemNum});
+  const MyList({super.key, required this.itemIndex, required this.itemNum});
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
       height: size.height * 0.2,
       child: Stack(
         alignment: Alignment.bottomCenter,
@@ -325,13 +325,13 @@ class MyList extends StatelessWidget {
               child: Container(
                 height: size.height * 0.18,
                 width: size.width * 0.923,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -340,7 +340,7 @@ class MyList extends StatelessWidget {
                     ),
                   ],
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -355,7 +355,7 @@ class MyList extends StatelessWidget {
           Positioned(
             bottom: -size.height * 0.0311,
             left: 0,
-            child: Container(
+            child: SizedBox(
               height: size.height * 0.17,
               width: size.width * 0.85,
               child: Column(
@@ -363,7 +363,7 @@ class MyList extends StatelessWidget {
                   GestureDetector(
                     child: Text(
                       itemNum.title,
-                      style: TextStyle(fontSize: 25, color: Colors.white),
+                      style: const TextStyle(fontSize: 25, color: Colors.white),
                     ),
                     onTap: () {
                       Navigator.push(
@@ -380,7 +380,8 @@ class MyList extends StatelessWidget {
                       child: GestureDetector(
                         child: Text(
                           itemNum.chapter,
-                          style: TextStyle(fontSize: 16, color: Colors.white),
+                          style: const TextStyle(
+                              fontSize: 16, color: Colors.white),
                         ),
                         onTap: () {
                           Navigator.push(

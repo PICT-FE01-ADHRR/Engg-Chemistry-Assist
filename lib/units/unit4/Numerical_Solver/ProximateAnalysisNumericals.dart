@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProximateAnalysis extends StatefulWidget {
+  const ProximateAnalysis({super.key});
+
   @override
   _ProximateAnalysisState createState() => _ProximateAnalysisState();
 }
@@ -48,15 +50,16 @@ class _ProximateAnalysisState extends State<ProximateAnalysis> {
     var volatileMatterValueweight = moistureValue - volatileMatterValue;
 
     moistureValueweight = moistureValueweight * 100 / coalWeightValue;
-    volatileMatterValueweight = volatileMatterValueweight * 100 / coalWeightValue;
+    volatileMatterValueweight =
+        volatileMatterValueweight * 100 / coalWeightValue;
     ashValue = ashValue * 100 / coalWeightValue;
-    
 
     setState(() {
-      moisturepercent = "Moisture = " + moistureValueweight.toStringAsFixed(2) + "%";
-      vmpercent = "VM = " + volatileMatterValueweight.toStringAsFixed(2)+ "%";
-      ashpercent = "Ash = " + ashValue.toStringAsFixed(2)+ "%";
-      fcpercent = "FC = " + (100 - moistureValueweight - volatileMatterValueweight - ashValue).toStringAsFixed(2)+ "%";
+      moisturepercent = "Moisture = ${moistureValueweight.toStringAsFixed(2)}%";
+      vmpercent = "VM = ${volatileMatterValueweight.toStringAsFixed(2)}%";
+      ashpercent = "Ash = ${ashValue.toStringAsFixed(2)}%";
+      fcpercent =
+          "FC = ${(100 - moistureValueweight - volatileMatterValueweight - ashValue).toStringAsFixed(2)}%";
     });
   }
 
@@ -65,49 +68,51 @@ class _ProximateAnalysisState extends State<ProximateAnalysis> {
     return Scaffold(
       appBar: AppBar(
         elevation: 20,
-        title: Text(
+        title: const Text(
           "Proximate Analysis Numericals",
         ),
-        backgroundColor: Color(0xFF0a1931),
+        backgroundColor: const Color(0xFF0a1931),
       ),
       body: ListView(
         children: <Widget>[
           Column(
             children: [
-              Text(
+              const Text(
                 'This is proximate analysis! Enter required data to get Moisture, VM, Ash, FC%',
                 style: TextStyle(fontSize: 18),
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Weight of Coal (gm)"),
+                decoration:
+                    const InputDecoration(labelText: "Weight of Coal (gm)"),
                 keyboardType: TextInputType.number,
                 controller: coalWeight,
               ),
               TextField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     labelText: "residue after 1st heating at ~100c (gm)"),
                 keyboardType: TextInputType.number,
                 controller: moisture,
               ),
               TextField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     labelText: "residue after 2nd heating at ~950c (gm)"),
                 keyboardType: TextInputType.number,
                 controller: volatileMatter,
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Final residue (gm)"),
+                decoration:
+                    const InputDecoration(labelText: "Final residue (gm)"),
                 keyboardType: TextInputType.number,
                 controller: ash,
                 onSubmitted: (_) => Calculate(),
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade900,
+                  backgroundColor: Colors.blue.shade900,
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(15))),
                 ),
-                child: Text(
+                child: const Text(
                   'Calculate',
                   style: TextStyle(fontSize: 20.0),
                 ),
@@ -122,21 +127,20 @@ class _ProximateAnalysisState extends State<ProximateAnalysis> {
               ),
               Text(
                 moisturepercent,
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
               Text(
                 vmpercent,
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
               Text(
                 ashpercent,
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
               Text(
                 fcpercent,
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
-              
             ],
           ),
         ],

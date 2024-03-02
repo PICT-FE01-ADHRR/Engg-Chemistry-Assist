@@ -3,6 +3,8 @@ import 'package:engg_chemistry_study_assist/units/unit5/Quiz_2.0/QuizScreen1Unit
 import 'package:flutter/material.dart';
 
 class QuizInstructionScreen extends StatefulWidget {
+  const QuizInstructionScreen({super.key});
+
   @override
   _QuizInstructionScreenState createState() => _QuizInstructionScreenState();
 }
@@ -14,8 +16,8 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
     var deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz Unit 5'),
-        backgroundColor: Color(0xFF0a1931),
+        title: const Text('Quiz Unit 5'),
+        backgroundColor: const Color(0xFF0a1931),
       ),
       body: Container(
         color: Colors.black,
@@ -23,11 +25,11 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
           children: [
             Container(
               width: double.infinity,
-              padding: new EdgeInsets.all(5),
-              margin: new EdgeInsets.all(10),
+              padding: const EdgeInsets.all(5),
+              margin: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
-                color: Color(0xFF0a1931),
+                color: const Color(0xFF0a1931),
                 border: Border.all(
                   color: Colors.black,
                   width: 5,
@@ -47,7 +49,7 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
-                color: Color(0xFF0a1931),
+                color: const Color(0xFF0a1931),
               ),
               child: Text(
                 "ALL THE QUESTIONS ARE COMPULSORY !",
@@ -55,7 +57,7 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
                     fontSize: deviceHeight * 0.025,
                     fontWeight: FontWeight.w600,
                     color: Colors.white),
-                    textAlign: TextAlign.center,
+                textAlign: TextAlign.center,
               ),
             ),
             Container(
@@ -69,15 +71,15 @@ class _QuizInstructionScreenState extends State<QuizInstructionScreen> {
             ),
             GestureDetector(
               onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => QuizScreen1())),
+                  MaterialPageRoute(builder: (context) => const QuizScreen1())),
               child: Container(
                 alignment: Alignment.center,
                 width: deviceWidth * 0.5,
                 height: deviceHeight * 0.075,
-                margin: new EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                margin: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(80),
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFFc471ed),

@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class StudyMaterialUnit6 extends StatefulWidget {
+  const StudyMaterialUnit6({super.key});
+
   @override
   _StudyMaterialUnit6State createState() => _StudyMaterialUnit6State();
 }
 
 class _StudyMaterialUnit6State extends State<StudyMaterialUnit6> {
-  PdfViewerController _pdfViewerController = new PdfViewerController();
+  PdfViewerController _pdfViewerController = PdfViewerController();
 
   @override
   void initState() {
@@ -21,14 +23,14 @@ class _StudyMaterialUnit6State extends State<StudyMaterialUnit6> {
     return Scaffold(
       appBar: AppBar(
         elevation: 20,
-        title: Text(
+        title: const Text(
           "Study Material",
           //style: TextStyle(fontSize: 25),
         ),
-        backgroundColor: Color(0xFF0a1931),
+        backgroundColor: const Color(0xFF0a1931),
         actions: <Widget>[
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.keyboard_arrow_up,
               color: Colors.white,
             ),
@@ -37,7 +39,7 @@ class _StudyMaterialUnit6State extends State<StudyMaterialUnit6> {
             },
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.keyboard_arrow_down,
               color: Colors.white,
             ),

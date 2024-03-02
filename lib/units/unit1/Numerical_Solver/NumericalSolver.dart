@@ -5,34 +5,36 @@ import 'AlkalinityNumerical.dart';
 import 'ZeoliteNumerical.dart';
 
 List functioncalls = [
-  HardnessCalculatorCall(),
-  EdtaCalculatorCall(),
-  AlkalinityCalculatorCall(),
-  ZeoliteCalculatorCall(),
+  const HardnessCalculatorCall(),
+  const EdtaCalculatorCall(),
+  const AlkalinityCalculatorCall(),
+  const ZeoliteCalculatorCall(),
 ];
 
 class NumericalSolver extends StatelessWidget {
+  const NumericalSolver({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFF0a1931),
+      backgroundColor: const Color(0xFF0a1931),
       appBar: AppBar(
         elevation: 20,
         shadowColor: Colors.black,
-        title: Text('Numerical Solver'),
-        backgroundColor: Color(0xFF0a1931),
+        title: const Text('Numerical Solver'),
+        backgroundColor: const Color(0xFF0a1931),
       ),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             height: size.height * 0.10,
             width: double.infinity,
             child: Stack(
               children: [
                 Container(
-                  margin: EdgeInsets.all(8),
-                  child: Text(
+                  margin: const EdgeInsets.all(8),
+                  child: const Text(
                     "Contents: ",
                     style: TextStyle(color: Colors.white, fontSize: 23),
                   ),
@@ -44,9 +46,9 @@ class NumericalSolver extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 50),
+                  margin: const EdgeInsets.only(top: 50),
                   width: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Color(0xFFfdfaf6),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
@@ -66,16 +68,18 @@ class NumericalSolver extends StatelessWidget {
 }
 
 class HardnessCalculatorCall extends StatelessWidget {
+  const HardnessCalculatorCall({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
       height: 160,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
+          SizedBox(
             width: size.width - 40,
             height: 145,
             child: GestureDetector(
@@ -83,17 +87,17 @@ class HardnessCalculatorCall extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HardnessCalculator(),
+                    builder: (context) => const HardnessCalculator(),
                   ),
                 );
               },
               child: Container(
                 width: size.width - 30,
                 height: 145,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -102,10 +106,10 @@ class HardnessCalculatorCall extends StatelessWidget {
                     end: FractionalOffset.centerRight,
                   ),
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -128,7 +132,7 @@ class HardnessCalculatorCall extends StatelessWidget {
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Text(
+                      child: const Text(
                         "Hardness Calculator",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
@@ -136,7 +140,7 @@ class HardnessCalculatorCall extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HardnessCalculator()),
+                              builder: (context) => const HardnessCalculator()),
                         );
                       },
                     ),
@@ -152,16 +156,18 @@ class HardnessCalculatorCall extends StatelessWidget {
 }
 
 class EdtaCalculatorCall extends StatelessWidget {
+  const EdtaCalculatorCall({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
       height: 160,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
+          SizedBox(
             width: size.width - 40,
             height: 145,
             child: GestureDetector(
@@ -170,17 +176,17 @@ class EdtaCalculatorCall extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => EdtaCalculator(),
+                    builder: (context) => const EdtaCalculator(),
                   ),
                 );
               },
               child: Container(
                 width: size.width - 30,
                 height: 145,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -189,10 +195,10 @@ class EdtaCalculatorCall extends StatelessWidget {
                     end: FractionalOffset.centerRight,
                   ),
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -215,7 +221,7 @@ class EdtaCalculatorCall extends StatelessWidget {
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Text(
+                      child: const Text(
                         "Edta Numerical Solver",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
@@ -223,7 +229,7 @@ class EdtaCalculatorCall extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => EdtaCalculator()),
+                              builder: (context) => const EdtaCalculator()),
                         );
                       },
                     ),
@@ -239,16 +245,18 @@ class EdtaCalculatorCall extends StatelessWidget {
 }
 
 class AlkalinityCalculatorCall extends StatelessWidget {
+  const AlkalinityCalculatorCall({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
       height: 160,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
+          SizedBox(
             width: size.width - 40,
             height: 145,
             child: GestureDetector(
@@ -257,17 +265,17 @@ class AlkalinityCalculatorCall extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => AlkalinityCalculator(),
+                    builder: (context) => const AlkalinityCalculator(),
                   ),
                 );
               },
               child: Container(
                 width: size.width - 30,
                 height: 145,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -276,10 +284,10 @@ class AlkalinityCalculatorCall extends StatelessWidget {
                     end: FractionalOffset.centerRight,
                   ),
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -302,7 +310,7 @@ class AlkalinityCalculatorCall extends StatelessWidget {
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Text(
+                      child: const Text(
                         "Alkalinity Numerical Solver",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
@@ -310,7 +318,8 @@ class AlkalinityCalculatorCall extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => AlkalinityCalculator()),
+                              builder: (context) =>
+                                  const AlkalinityCalculator()),
                         );
                       },
                     ),
@@ -326,16 +335,18 @@ class AlkalinityCalculatorCall extends StatelessWidget {
 }
 
 class ZeoliteCalculatorCall extends StatelessWidget {
+  const ZeoliteCalculatorCall({super.key});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
       height: 160,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
+          SizedBox(
             width: size.width - 40,
             height: 145,
             child: GestureDetector(
@@ -344,17 +355,17 @@ class ZeoliteCalculatorCall extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ZeoliteCalculator(),
+                    builder: (context) => const ZeoliteCalculator(),
                   ),
                 );
               },
               child: Container(
                 width: size.width - 30,
                 height: 145,
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  gradient: new LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xFF12c2e9),
                       Color(0xFF21096e),
@@ -363,10 +374,10 @@ class ZeoliteCalculatorCall extends StatelessWidget {
                     end: FractionalOffset.centerRight,
                   ),
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -389,7 +400,7 @@ class ZeoliteCalculatorCall extends StatelessWidget {
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Text(
+                      child: const Text(
                         "Zeoloite Numerical Solver",
                         style: TextStyle(fontSize: 23, color: Colors.white),
                       ),
@@ -397,7 +408,7 @@ class ZeoliteCalculatorCall extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ZeoliteCalculator()),
+                              builder: (context) => const ZeoliteCalculator()),
                         );
                       },
                     ),

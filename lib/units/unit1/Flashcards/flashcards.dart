@@ -3,6 +3,8 @@ import 'ListViewFlashCards.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FlashCard extends StatelessWidget {
+  const FlashCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -10,14 +12,14 @@ class FlashCard extends StatelessWidget {
       appBar: AppBar(
         elevation: 20,
         shadowColor: Colors.black,
-        title: Text(
+        title: const Text(
           'Flash Cards',
           style: TextStyle(fontSize: 25),
         ),
-        backgroundColor: Color(0xFF0a1931),
+        backgroundColor: const Color(0xFF0a1931),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -32,7 +34,7 @@ class FlashCard extends StatelessWidget {
           itemCount: content.length,
           itemBuilder: (context, index) {
             return Container(
-              margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+              margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
               height: size.height * 0.4,
               child: Stack(
                 alignment: Alignment.center,
@@ -40,18 +42,18 @@ class FlashCard extends StatelessWidget {
                   Container(
                     width: size.width * 0.90,
                     height: size.height * 0.4,
-                    margin: EdgeInsets.only(bottom: 10),
-                    padding: EdgeInsets.all(20),
+                    margin: const EdgeInsets.only(bottom: 10),
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
-                        Color(0xFF1089FF).withOpacity(0.9),
-                        Color(0xFF021B79),
+                        const Color(0xFF1089FF).withOpacity(0.9),
+                        const Color(0xFF021B79),
                       ]),
                       borderRadius: BorderRadius.circular(40),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Colors.black,
-                          offset: const Offset(
+                          offset: Offset(
                             5.0,
                             5.0,
                           ),
@@ -60,15 +62,16 @@ class FlashCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: Container(
+                    child: SizedBox(
                       width: double.infinity,
                       child: Text(
                         content[index].title,
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto( textStyle: TextStyle(
+                        style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
                             color: Colors.yellow[50],
                             fontSize: size.height * 0.032,
-                            ),
+                          ),
                         ),
                       ),
                     ),

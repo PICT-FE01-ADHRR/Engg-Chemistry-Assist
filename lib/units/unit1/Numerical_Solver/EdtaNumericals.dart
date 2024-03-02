@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class EdtaCalculator extends StatefulWidget {
+  const EdtaCalculator({super.key});
+
   @override
   _EdtaCalculatorState createState() => _EdtaCalculatorState();
 }
@@ -36,8 +38,7 @@ class _EdtaCalculatorState extends State<EdtaCalculator> {
     hardness = volumeEdtaValue * molarityEdtaValue * 100000 / volumeWaterValue;
 
     setState(() {
-      hardnessDisplay =
-          "Hardness of water = " + hardness.toStringAsFixed(2);
+      hardnessDisplay = "Hardness of water = ${hardness.toStringAsFixed(2)}";
     });
   }
 
@@ -46,68 +47,72 @@ class _EdtaCalculatorState extends State<EdtaCalculator> {
     return Scaffold(
       appBar: AppBar(
         elevation: 20,
-        title: Text(
+        title: const Text(
           "EDTA Numerical Solver",
         ),
-        backgroundColor: Color(0xFF0a1931),
+        backgroundColor: const Color(0xFF0a1931),
       ),
-      body: ListView(
-        children: <Widget>[
-          Column(
-            children: [
-              Text(
-                'Enter the required data to find the Hardness of Water',
-                style: TextStyle(fontSize: 18),
-              ),
-              // Text('Mg(HCO3)2'),
-              TextField(
-                decoration:
-                    InputDecoration(labelText: "Volume of Water Titrated"),
-                keyboardType: TextInputType.number,
-                controller: volumeWater,
-              ),
-              // Text('Ca(HCO3)2'),
-              TextField(
-                decoration:
-                    InputDecoration(labelText: "Volume of EDTA consumed"),
-                keyboardType: TextInputType.number,
-                controller: volumeEdta,
-              ),
-              // Text('MgCl2'),
-              TextField(
-                decoration: InputDecoration(labelText: "Molarity of EDTA"),
-                keyboardType: TextInputType.number,
-                controller: molarityEdta,
-                onSubmitted: (_) => Hardness(),
-              ),
-              // Text('MgSO4'),
-
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade900,
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: <Widget>[
+            Column(
+              children: [
+                const Text(
+                  'Enter the required data to find the Hardness of Water',
+                  style: TextStyle(fontSize: 18),
                 ),
-                child: Text(
-                  'Calculate',
-                  style: TextStyle(fontSize: 20.0),
+                // Text('Mg(HCO3)2'),
+                TextField(
+                  decoration: const InputDecoration(
+                      labelText: "Volume of Water Titrated"),
+                  keyboardType: TextInputType.number,
+                  controller: volumeWater,
                 ),
-                onPressed: () {
-                  FocusScopeNode currentFocus = FocusScope.of(context);
+                // Text('Ca(HCO3)2'),
+                TextField(
+                  decoration: const InputDecoration(
+                      labelText: "Volume of EDTA consumed"),
+                  keyboardType: TextInputType.number,
+                  controller: volumeEdta,
+                ),
+                // Text('MgCl2'),
+                TextField(
+                  decoration:
+                      const InputDecoration(labelText: "Molarity of EDTA"),
+                  keyboardType: TextInputType.number,
+                  controller: molarityEdta,
+                  onSubmitted: (_) => Hardness(),
+                ),
+                // Text('MgSO4'),
 
-                  if (!currentFocus.hasPrimaryFocus) {
-                    currentFocus.unfocus();
-                  }
-                  Hardness();
-                },
-              ),
-              Text(
-                hardnessDisplay + " ppm",
-                style: TextStyle(fontSize: 20),
-              ),
-            ],
-          ),
-        ],
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue.shade900,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                  ),
+                  child: const Text(
+                    'Calculate',
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                  onPressed: () {
+                    FocusScopeNode currentFocus = FocusScope.of(context);
+
+                    if (!currentFocus.hasPrimaryFocus) {
+                      currentFocus.unfocus();
+                    }
+                    Hardness();
+                  },
+                ),
+                Text(
+                  "$hardnessDisplay ppm",
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

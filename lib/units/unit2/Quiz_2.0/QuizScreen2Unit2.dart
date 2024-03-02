@@ -11,7 +11,7 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'ScoreScreenUnit2.dart';
 
 class QuizScreen2 extends StatefulWidget {
-  const QuizScreen2({Key? key}) : super(key: key);
+  const QuizScreen2({super.key});
 
   @override
   _QuizScreen2State createState() => _QuizScreen2State();
@@ -46,7 +46,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
   }
 
   void _startTimer() {
-    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         if (timeToNavigate != 0) {
           timeToNavigate--;
@@ -87,7 +87,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
         height: deviceHeight,
         width: deviceWidth,
         decoration: BoxDecoration(
-          color: Color(0xFF0A1931).withOpacity(0.85),
+          color: const Color(0xFF0A1931).withOpacity(0.85),
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
@@ -123,7 +123,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
               //Pages of the Quiz
               Expanded(
                 child: PageView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   onPageChanged: (index) {
                     setState(() {
                       pageChanged = index;
@@ -139,7 +139,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
                   itemCount: questionListUnit2.length,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
@@ -153,7 +153,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
                         pageController.jumpToPage(gotoLastPage);
                       } else {
                         pageController.animateToPage(--pageChanged,
-                            duration: Duration(milliseconds: 250),
+                            duration: const Duration(milliseconds: 250),
                             curve: Curves.ease);
                       }
                     },
@@ -162,11 +162,11 @@ class _QuizScreen2State extends State<QuizScreen2> {
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.black),
                         borderRadius: BorderRadius.circular(25),
-                        color: Color(0xFFCE1212),
+                        color: const Color(0xFFCE1212),
                       ),
                       height: 45,
                       width: 100,
-                      child: Text(
+                      child: const Text(
                         "Previous",
                         style: TextStyle(fontSize: 18),
                       ),
@@ -180,7 +180,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
                         showDialog(
                             context: context,
                             builder: (context) {
-                              return CustomDialogBox2(
+                              return const CustomDialogBox2(
                                 description: "Press Submit Button",
                                 buttonText: "OK",
                               );
@@ -189,7 +189,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
                       //else {
                       if (pageChanged + 1 < questionListUnit2.length) {
                         pageController.animateToPage(++pageChanged,
-                            duration: Duration(milliseconds: 250),
+                            duration: const Duration(milliseconds: 250),
                             curve: Curves.ease);
                       }
 
@@ -200,11 +200,11 @@ class _QuizScreen2State extends State<QuizScreen2> {
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.black),
                           borderRadius: BorderRadius.circular(25),
-                          color: Color(0xFF81B214),
+                          color: const Color(0xFF81B214),
                         ),
                         height: 45,
                         width: 100,
-                        child: Text(
+                        child: const Text(
                           "Next",
                           style: TextStyle(fontSize: 18),
                         )),
@@ -228,14 +228,14 @@ class _QuizScreen2State extends State<QuizScreen2> {
                         ),
                         height: 45,
                         width: 100,
-                        child: Text(
+                        child: const Text(
                           "Submit",
                           style: TextStyle(fontSize: 18),
                         )),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               )
             ],
@@ -248,8 +248,9 @@ class _QuizScreen2State extends State<QuizScreen2> {
 
 class CustomDialogBox extends StatelessWidget {
   final String description, buttonText, button2Text;
-  CustomDialogBox(
-      {required this.description,
+  const CustomDialogBox(
+      {super.key,
+      required this.description,
       required this.buttonText,
       required this.button2Text});
 
@@ -268,26 +269,27 @@ class CustomDialogBox extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          padding: EdgeInsets.only(top: 100, bottom: 16, left: 16, right: 16),
+          padding:
+              const EdgeInsets.only(top: 100, bottom: 16, left: 16, right: 16),
           decoration: BoxDecoration(
-            color: Color(0xFFF9F9F9).withOpacity(0.8),
+            color: const Color(0xFFF9F9F9).withOpacity(0.8),
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(17),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(color: Colors.black, offset: Offset(0.0, 16.0)),
             ],
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               // Text(
               //   title,
               //   style: TextStyle(fontSize: 24),
               // ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
@@ -295,10 +297,10 @@ class CustomDialogBox extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(
                   description,
-                  style: TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 26,
               ),
               Row(
@@ -315,7 +317,7 @@ class CustomDialogBox extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
                         // color: Colors.orange,
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
                             colors: [
@@ -329,7 +331,8 @@ class CustomDialogBox extends StatelessWidget {
                       ),
                       child: Text(
                         button2Text,
-                        style: TextStyle(fontSize: 18, color: Colors.white),
+                        style:
+                            const TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
                   ),
@@ -364,7 +367,7 @@ class CustomDialogBox extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
                         // color: Colors.orange,
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
                             colors: [
@@ -378,7 +381,8 @@ class CustomDialogBox extends StatelessWidget {
                       ),
                       child: Text(
                         buttonText,
-                        style: TextStyle(fontSize: 18, color: Colors.white),
+                        style:
+                            const TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
                   ),
@@ -403,7 +407,8 @@ class CustomDialogBox extends StatelessWidget {
 
 class CustomDialogBox2 extends StatelessWidget {
   final String description, buttonText;
-  CustomDialogBox2({
+  const CustomDialogBox2({
+    super.key,
     required this.description,
     required this.buttonText,
   });
@@ -426,19 +431,20 @@ class CustomDialogBox2 extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          padding: EdgeInsets.only(top: 100, bottom: 16, left: 16, right: 16),
+          padding:
+              const EdgeInsets.only(top: 100, bottom: 16, left: 16, right: 16),
           decoration: BoxDecoration(
-            color: Color(0xFFF9F9F9).withOpacity(0.8),
+            color: const Color(0xFFF9F9F9).withOpacity(0.8),
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(17),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(color: Colors.black, offset: Offset(0.0, 16.0)),
             ],
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
 
@@ -447,7 +453,7 @@ class CustomDialogBox2 extends StatelessWidget {
               //   style: TextStyle(fontSize: 24),
               // ),
 
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
@@ -455,10 +461,10 @@ class CustomDialogBox2 extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(
                   description,
-                  style: TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 26,
               ),
               GestureDetector(
@@ -472,7 +478,7 @@ class CustomDialogBox2 extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
                     // color: Colors.orange,
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,
                         colors: [
@@ -486,7 +492,7 @@ class CustomDialogBox2 extends StatelessWidget {
                   ),
                   child: Text(
                     buttonText,
-                    style: TextStyle(fontSize: 18, color: Colors.white),
+                    style: const TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 ),
               ),
@@ -508,6 +514,8 @@ class CustomDialogBox2 extends StatelessWidget {
 }
 
 class CustomDialogBox3 extends StatelessWidget {
+  const CustomDialogBox3({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -523,37 +531,38 @@ class CustomDialogBox3 extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          padding: EdgeInsets.only(top: 100, bottom: 16, left: 16, right: 16),
+          padding:
+              const EdgeInsets.only(top: 100, bottom: 16, left: 16, right: 16),
           decoration: BoxDecoration(
-            color: Color(0xFFF9F9F9).withOpacity(0.8),
+            color: const Color(0xFFF9F9F9).withOpacity(0.8),
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(17),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(color: Colors.black, offset: Offset(0.0, 16.0)),
             ],
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               // Text(
               //   title,
               //   style: TextStyle(fontSize: 24),
               // ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: deviceHeight * 0.02),
                 alignment: Alignment.center,
-                child: Text(
+                child: const Text(
                   "heeo",
                   style: TextStyle(fontSize: 18),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 26,
               ),
 
@@ -569,7 +578,7 @@ class CustomDialogBox3 extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
                     // color: Colors.orange,
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,
                         colors: [
@@ -581,7 +590,7 @@ class CustomDialogBox3 extends StatelessWidget {
                           // Color(0xFF0A043C),
                         ]),
                   ),
-                  child: Text(
+                  child: const Text(
                     "heloo",
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),

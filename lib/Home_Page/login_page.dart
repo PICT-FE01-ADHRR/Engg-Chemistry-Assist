@@ -5,6 +5,8 @@ import '/Google_Login/utils/authentication.dart';
 import '/Google_Login/widgets/google_sign_in_button.dart';
 
 class Loginpage extends StatefulWidget {
+  const Loginpage({super.key});
+
   @override
   _LoginpageState createState() => _LoginpageState();
 }
@@ -22,17 +24,17 @@ class _LoginpageState extends State<Loginpage> {
       color: Colors.black,
       child: Column(
         children: [
-          Container(
+          SizedBox(
             height: size.height * .35,
             child: Image.asset(
               "assets/images/chem.jpg",
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Column(
+          const Column(
             children: [
               Text(
                 'Welcome To',
@@ -54,17 +56,17 @@ class _LoginpageState extends State<Loginpage> {
             ],
           ),
           SizedBox(
-            height: size.height*0.15,
+            height: size.height * 0.15,
           ),
           FutureBuilder(
             future: Authentication.initializeFirebase(context: context),
             builder: (context, snapshot) {
               if (snapshot.hasError) {
-                return Text('Error initializing Firebase');
+                return const Text('Error initializing Firebase');
               } else if (snapshot.connectionState == ConnectionState.done) {
-                return GoogleSignInButton();
+                return const GoogleSignInButton();
               }
-              return CircularProgressIndicator(
+              return const CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(
                   CustomColors.firebaseOrange,
                 ),
@@ -74,7 +76,7 @@ class _LoginpageState extends State<Loginpage> {
           SizedBox(
             height: size.height * 0.05,
           ),
-          Container(
+          SizedBox(
             height: size.height * .15,
             child: Image.asset(
               "assets/images/logo.png",

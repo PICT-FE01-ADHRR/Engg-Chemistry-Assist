@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BombCalorimeter extends StatefulWidget {
+  const BombCalorimeter({super.key});
+
   @override
   _BombCalorimeterState createState() => _BombCalorimeterState();
 }
@@ -67,7 +69,7 @@ class _BombCalorimeterState extends State<BombCalorimeter> {
             (acidCorrectionValue + fuseWireCorrectionValue)) /
         fuelWeightValue;
     setState(() {
-      gcvDisplay = "Gross Calorific value is " + gcvvalue.toStringAsFixed(2);
+      gcvDisplay = "Gross Calorific value is ${gcvvalue.toStringAsFixed(2)}";
     });
   }
 
@@ -76,63 +78,69 @@ class _BombCalorimeterState extends State<BombCalorimeter> {
     return Scaffold(
       appBar: AppBar(
         elevation: 20,
-        title: Text(
+        title: const Text(
           "Bomb Calorimeter Numericals",
         ),
-        backgroundColor: Color(0xFF0a1931),
+        backgroundColor: const Color(0xFF0a1931),
       ),
       body: ListView(
         children: <Widget>[
           Column(
             children: [
-              Text(
+              const Text(
                 'GCV of the fuel is calculated in Bomb Calorimeter experiment in cal/gm',
                 style: TextStyle(fontSize: 18),
               ),
               TextField(
-                decoration:
-                    InputDecoration(labelText: "Weight of fuel burned (gm)"),
+                decoration: const InputDecoration(
+                    labelText: "Weight of fuel burned (gm)"),
                 keyboardType: TextInputType.number,
                 controller: fuelweight,
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Weight of water (gm)"),
+                decoration:
+                    const InputDecoration(labelText: "Weight of water (gm)"),
                 keyboardType: TextInputType.number,
                 controller: waterweight,
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Water equilavent (gm)"),
+                decoration:
+                    const InputDecoration(labelText: "Water equilavent (gm)"),
                 keyboardType: TextInputType.number,
                 controller: waterEquivalent,
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Rise in temperature (celcuis)"),
+                decoration: const InputDecoration(
+                    labelText: "Rise in temperature (celcuis)"),
                 keyboardType: TextInputType.number,
                 controller: riseInTemp,
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Cooling correction (celcuis)"),
+                decoration: const InputDecoration(
+                    labelText: "Cooling correction (celcuis)"),
                 keyboardType: TextInputType.number,
                 controller: coolingCorrection,
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Fuse wire correction (cal)"),
+                decoration: const InputDecoration(
+                    labelText: "Fuse wire correction (cal)"),
                 keyboardType: TextInputType.number,
                 controller: fuseWireCorrection,
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Acid correction (cal)"),
+                decoration:
+                    const InputDecoration(labelText: "Acid correction (cal)"),
                 keyboardType: TextInputType.number,
                 controller: acidCorrection,
                 onSubmitted: (_) => GCV(),
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade900,
+                  backgroundColor: Colors.blue.shade900,
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(15))),
                 ),
-                child: Text(
+                child: const Text(
                   'Calculate',
                   style: TextStyle(fontSize: 20.0),
                 ),
@@ -146,8 +154,8 @@ class _BombCalorimeterState extends State<BombCalorimeter> {
                 },
               ),
               Text(
-                gcvDisplay + " cal/gm",
-                style: TextStyle(fontSize: 20),
+                "$gcvDisplay cal/gm",
+                style: const TextStyle(fontSize: 20),
               ),
             ],
           ),

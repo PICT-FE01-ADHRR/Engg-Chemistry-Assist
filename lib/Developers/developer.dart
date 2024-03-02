@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:mailto/mailto.dart';
@@ -24,7 +23,7 @@ class Developer {
 }
 
 const developerList = [
-  const Developer(
+  Developer(
       name: 'Rohan Doshi',
       image: 'assets/images/Rohan.jpg',
       gitHubUrl: "https://github.com/RohanDoshi21",
@@ -32,7 +31,7 @@ const developerList = [
       emailUrl: "rohan.doshi02@gmail.com",
       instagramUrl: "https://www.instagram.com/rohan.doshi02",
       color: Colors.transparent),
-  const Developer(
+  Developer(
       name: 'Dinesh Nehete',
       image: 'assets/images/Dinesh.jpg',
       gitHubUrl: "https://github.com/dineshNehete",
@@ -40,7 +39,7 @@ const developerList = [
       emailUrl: "dinesh.g.nehete@gmail.com",
       instagramUrl: "http://instagram.com/dinesh.nehete_/",
       color: Colors.transparent),
-  const Developer(
+  Developer(
       name: 'Harsh Bhat',
       image: 'assets/images/Harsh.jpeg',
       gitHubUrl: "https://github.com/Harususan",
@@ -48,7 +47,7 @@ const developerList = [
       emailUrl: "harshbhat83@gmail.com",
       instagramUrl: "https://www.instagram.com/_harusu_san_/",
       color: Colors.transparent),
-  const Developer(
+  Developer(
       name: 'Rohit Bhise',
       image: 'assets/images/Rohit.jpg',
       gitHubUrl: "https://github.com/rohitbhise",
@@ -56,7 +55,7 @@ const developerList = [
       emailUrl: "rohitbhise2704@gmail.com",
       instagramUrl: "https://www.instagram.com/rohitbhise2704/",
       color: Colors.transparent),
-  const Developer(
+  Developer(
       name: 'Arnav Waghulade',
       image: 'assets/images/Arnav.jpeg',
       gitHubUrl: "https://github.com/arnav55555",
@@ -67,6 +66,8 @@ const developerList = [
 ];
 
 class Developers extends StatefulWidget {
+  const Developers({super.key});
+
   @override
   _DevelopersState createState() => _DevelopersState();
 }
@@ -82,7 +83,7 @@ class _DevelopersState extends State<Developers> {
 
   @override
   void initState() {
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _pageController.addListener(_listener);
     });
     super.initState();
@@ -103,15 +104,15 @@ class _DevelopersState extends State<Developers> {
       appBar: AppBar(
         elevation: 20,
         shadowColor: Colors.black,
-        title: Text(
+        title: const Text(
           'Developers',
           style: TextStyle(fontSize: 25),
         ),
         // color: Color(0xFF21096e),
-        backgroundColor: Color(0xFF21096e),
+        backgroundColor: const Color(0xFF21096e),
       ),
       body: Container(
-        color: Color(0xFF21096e),
+        color: const Color(0xFF21096e),
         child: builder(),
       ),
     );
@@ -125,7 +126,7 @@ class _DevelopersState extends State<Developers> {
       itemCount: developerList.length,
       itemBuilder: (context, index) {
         return Container(
-          margin: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+          margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
           height: size.height * 0.7,
           child: Stack(
             alignment: Alignment.center,
@@ -133,15 +134,15 @@ class _DevelopersState extends State<Developers> {
               Container(
                 width: size.width * 0.90,
                 height: size.height * 0.7,
-                margin: EdgeInsets.only(bottom: 10),
-                padding: EdgeInsets.all(20),
+                margin: const EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(40),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black,
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
@@ -155,12 +156,12 @@ class _DevelopersState extends State<Developers> {
                     Column(
                       children: [
                         Container(
-                          decoration: BoxDecoration(),
-                          child: Container(
+                          decoration: const BoxDecoration(),
+                          child: SizedBox(
                             width: double.infinity,
                             height: 150,
                             child: Container(
-                              alignment: Alignment(0.0, 2.5),
+                              alignment: const Alignment(0.0, 2.5),
                               child: CircleAvatar(
                                 backgroundImage:
                                     AssetImage(developerList[index].image),
@@ -169,21 +170,21 @@ class _DevelopersState extends State<Developers> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 60,
                         ),
                         Text(
                           developerList[index].name,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 25.0,
                               color: Colors.blueGrey,
                               letterSpacing: 2.0,
                               fontWeight: FontWeight.w400),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        Text(
+                        const Text(
                           "PICT, Pune",
                           style: TextStyle(
                               fontSize: 18.0,
@@ -191,10 +192,10 @@ class _DevelopersState extends State<Developers> {
                               letterSpacing: 2.0,
                               fontWeight: FontWeight.w300),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        Text(
+                        const Text(
                           "FE01",
                           style: TextStyle(
                               fontSize: 15.0,
@@ -202,10 +203,10 @@ class _DevelopersState extends State<Developers> {
                               letterSpacing: 2.0,
                               fontWeight: FontWeight.w300),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        Text(
+                        const Text(
                           "App Developer",
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -215,7 +216,7 @@ class _DevelopersState extends State<Developers> {
                               fontWeight: FontWeight.w300),
                         ),
                         Card(
-                          margin: EdgeInsets.symmetric(
+                          margin: const EdgeInsets.symmetric(
                               horizontal: 20.0, vertical: 8.0),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -225,7 +226,7 @@ class _DevelopersState extends State<Developers> {
                                 Expanded(
                                   child: Column(
                                     children: [
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 7,
                                       ),
                                       IconButton(
@@ -244,7 +245,7 @@ class _DevelopersState extends State<Developers> {
                                 Expanded(
                                   child: Column(
                                     children: [
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 7,
                                       ),
                                       IconButton(
@@ -263,7 +264,7 @@ class _DevelopersState extends State<Developers> {
                                 Expanded(
                                   child: Column(
                                     children: [
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 7,
                                       ),
                                       IconButton(
@@ -282,7 +283,7 @@ class _DevelopersState extends State<Developers> {
                                 Expanded(
                                   child: Column(
                                     children: [
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 7,
                                       ),
                                       IconButton(
@@ -302,7 +303,7 @@ class _DevelopersState extends State<Developers> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 50,
                         ),
                       ],

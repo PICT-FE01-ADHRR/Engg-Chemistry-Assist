@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AlkalinityCalculator extends StatefulWidget {
+  const AlkalinityCalculator({super.key});
+
   @override
   _AlkalinityCalculatorState createState() => _AlkalinityCalculatorState();
 }
@@ -87,11 +89,11 @@ class _AlkalinityCalculatorState extends State<AlkalinityCalculator> {
     }
     setState(() {
       hydroxideAlkalinityText =
-          "OH - Akalinity = " + hydroxideAlkalinity.toStringAsFixed(2);
+          "OH - Akalinity = ${hydroxideAlkalinity.toStringAsFixed(2)}";
       carbonateAlkalinityText =
-          "CO3 2- Akalinity = " + carbonateAlkalinity.toStringAsFixed(2);
+          "CO3 2- Akalinity = ${carbonateAlkalinity.toStringAsFixed(2)}";
       bicarbonateAlkalinityText =
-          "HCO3 - Akalinity = " + bicarbonateAlkalinity.toStringAsFixed(2);
+          "HCO3 - Akalinity = ${bicarbonateAlkalinity.toStringAsFixed(2)}";
     });
   }
 
@@ -100,83 +102,87 @@ class _AlkalinityCalculatorState extends State<AlkalinityCalculator> {
     return Scaffold(
       appBar: AppBar(
         elevation: 20,
-        title: Text(
+        title: const Text(
           "Alkalinity Numericals",
         ),
-        backgroundColor: Color(0xFF0a1931),
+        backgroundColor: const Color(0xFF0a1931),
       ),
-      body: ListView(
-        children: <Widget>[
-          Column(
-            children: [
-              Text(
-                'Enter the required data to find amounts of Alkalinities in Water',
-                style: TextStyle(fontSize: 18),
-              ),
-              // Text('Mg(HCO3)2'),
-              TextField(
-                decoration:
-                    InputDecoration(labelText: "Volume of Water Titrated"),
-                keyboardType: TextInputType.number,
-                controller: volumeWater,
-              ),
-              // Text('Ca(HCO3)2'),
-              TextField(
-                decoration: InputDecoration(labelText: "Normality of H2So4"),
-                keyboardType: TextInputType.number,
-                controller: normality,
-              ),
-              // Text('MgCl2'),
-              TextField(
-                decoration: InputDecoration(
-                    labelText: "Amount H2SO4 till Phenolphthalein end point"),
-                keyboardType: TextInputType.number,
-                controller: reading_1,
-              ),
-              // Text('MgSO4'),
-              TextField(
-                decoration: InputDecoration(
-                    labelText: "Amount H2SO4 till Methyl Orange end point"),
-                keyboardType: TextInputType.number,
-                controller: reading_2,
-                onSubmitted: (_) => TotalHardness(),
-              ),
-              // Text('Mg(NO3)2'),
-
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade900,
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: <Widget>[
+            Column(
+              children: [
+                const Text(
+                  'Enter the required data to find amounts of Alkalinities in Water',
+                  style: TextStyle(fontSize: 18),
                 ),
-                child: Text(
-                  'Calculate',
-                  style: TextStyle(fontSize: 20.0),
+                // Text('Mg(HCO3)2'),
+                TextField(
+                  decoration: const InputDecoration(
+                      labelText: "Volume of Water Titrated"),
+                  keyboardType: TextInputType.number,
+                  controller: volumeWater,
                 ),
-                onPressed: () {
-                  FocusScopeNode currentFocus = FocusScope.of(context);
+                // Text('Ca(HCO3)2'),
+                TextField(
+                  decoration:
+                      const InputDecoration(labelText: "Normality of H2So4"),
+                  keyboardType: TextInputType.number,
+                  controller: normality,
+                ),
+                // Text('MgCl2'),
+                TextField(
+                  decoration: const InputDecoration(
+                      labelText: "Amount H2SO4 till Phenolphthalein end point"),
+                  keyboardType: TextInputType.number,
+                  controller: reading_1,
+                ),
+                // Text('MgSO4'),
+                TextField(
+                  decoration: const InputDecoration(
+                      labelText: "Amount H2SO4 till Methyl Orange end point"),
+                  keyboardType: TextInputType.number,
+                  controller: reading_2,
+                  onSubmitted: (_) => TotalHardness(),
+                ),
+                // Text('Mg(NO3)2'),
 
-                  if (!currentFocus.hasPrimaryFocus) {
-                    currentFocus.unfocus();
-                  }
-                  TotalHardness();
-                },
-              ),
-              Text(
-                hydroxideAlkalinityText,
-                style: TextStyle(fontSize: 20),
-              ),
-              Text(
-                carbonateAlkalinityText,
-                style: TextStyle(fontSize: 20),
-              ),
-              Text(
-                bicarbonateAlkalinityText,
-                style: TextStyle(fontSize: 20),
-              ),
-            ],
-          ),
-        ],
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue.shade900,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                  ),
+                  child: const Text(
+                    'Calculate',
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                  onPressed: () {
+                    FocusScopeNode currentFocus = FocusScope.of(context);
+
+                    if (!currentFocus.hasPrimaryFocus) {
+                      currentFocus.unfocus();
+                    }
+                    TotalHardness();
+                  },
+                ),
+                Text(
+                  hydroxideAlkalinityText,
+                  style: const TextStyle(fontSize: 20),
+                ),
+                Text(
+                  carbonateAlkalinityText,
+                  style: const TextStyle(fontSize: 20),
+                ),
+                Text(
+                  bicarbonateAlkalinityText,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

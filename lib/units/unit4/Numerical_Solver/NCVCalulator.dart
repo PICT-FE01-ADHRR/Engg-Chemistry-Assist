@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NCVCalculator extends StatefulWidget {
+  const NCVCalculator({super.key});
+
   @override
   _NCVCalculatorState createState() => _NCVCalculatorState();
 }
@@ -36,7 +38,7 @@ class _NCVCalculatorState extends State<NCVCalculator> {
     ncvvalue = gcvvalue - (9 * hydrogenvalue * 24.50);
 
     setState(() {
-      netncv = "The Net Calorific value is " + ncvvalue.toStringAsFixed(2);
+      netncv = "The Net Calorific value is ${ncvvalue.toStringAsFixed(2)}";
     });
   }
 
@@ -45,34 +47,35 @@ class _NCVCalculatorState extends State<NCVCalculator> {
     return Scaffold(
       appBar: AppBar(
         elevation: 20,
-        title: Text(
+        title: const Text(
           "Net Calorific Value Numericals",
         ),
-        backgroundColor: Color(0xFF0a1931),
+        backgroundColor: const Color(0xFF0a1931),
       ),
       body: ListView(
         children: <Widget>[
           Column(
             children: [
-              Text(
+              const Text(
                 'Enter the required values in kJ/kg',
                 style: TextStyle(fontSize: 18),
               ),
               // Text('Mg(HCO3)2'),
               TextField(
-                decoration: InputDecoration(labelText: "Dry Hydrogen (%)"),
+                decoration:
+                    const InputDecoration(labelText: "Dry Hydrogen (%)"),
                 keyboardType: TextInputType.number,
                 controller: hydrogen,
               ),
               // Text('Ca(HCO3)2'),
               TextField(
-                decoration: InputDecoration(labelText: "Moisture (%)"),
+                decoration: const InputDecoration(labelText: "Moisture (%)"),
                 keyboardType: TextInputType.number,
                 controller: moisture,
               ),
               // Text('MgCl2'),
               TextField(
-                decoration: InputDecoration(labelText: "GCV (kJ/kg)"),
+                decoration: const InputDecoration(labelText: "GCV (kJ/kg)"),
                 keyboardType: TextInputType.number,
                 controller: gcv,
                 onSubmitted: (_) => NCV(),
@@ -80,11 +83,11 @@ class _NCVCalculatorState extends State<NCVCalculator> {
 
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade900,
+                  backgroundColor: Colors.blue.shade900,
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(15))),
                 ),
-                child: Text(
+                child: const Text(
                   'Calculate',
                   style: TextStyle(fontSize: 20.0),
                 ),
@@ -98,8 +101,8 @@ class _NCVCalculatorState extends State<NCVCalculator> {
               ),
 
               Text(
-                netncv + " kJ/kg",
-                style: TextStyle(fontSize: 20),
+                "$netncv kJ/kg",
+                style: const TextStyle(fontSize: 20),
               ),
             ],
           ),

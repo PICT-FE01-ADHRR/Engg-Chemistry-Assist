@@ -6,13 +6,9 @@ Future<void> addUser() async {
       FirebaseFirestore.instance.collection('Users');
   FirebaseAuth auth = FirebaseAuth.instance;
   String uid = auth.currentUser!.uid.toString();
-  usercollection
-      .doc(uid)
-      .set({
-        "Name": auth.currentUser!.displayName,
-      }, SetOptions(merge: true))
-      .then((value) => print("User Added"))
-      .catchError((error) => print("Failed to add user: $error"));
+  usercollection.doc(uid).set({
+    "Name": auth.currentUser!.displayName,
+  }, SetOptions(merge: true));
   return;
 }
 
@@ -21,13 +17,9 @@ Future<void> quizUnit1scoredb(unit1Quiz) async {
       FirebaseFirestore.instance.collection('Users');
   FirebaseAuth auth = FirebaseAuth.instance;
   String uid = auth.currentUser!.uid.toString();
-  usercollection
-      .doc(uid)
-      .set({
-        "Unit1Quiz": unit1Quiz,
-      }, SetOptions(merge: true))
-      .then((value) => print("User Added"))
-      .catchError((error) => print("Failed to add user: $error"));
+  usercollection.doc(uid).set({
+    "Unit1Quiz": unit1Quiz,
+  }, SetOptions(merge: true));
   return;
 }
 
@@ -36,13 +28,9 @@ Future<void> quizUnit2scoredb(unit2Quiz) async {
       FirebaseFirestore.instance.collection('Users');
   FirebaseAuth auth = FirebaseAuth.instance;
   String uid = auth.currentUser!.uid.toString();
-  usercollection
-      .doc(uid)
-      .set({
-        "Unit2Quiz": unit2Quiz,
-      }, SetOptions(merge: true))
-      .then((value) => print("User Added"))
-      .catchError((error) => print("Failed to add user: $error"));
+  usercollection.doc(uid).set({
+    "Unit2Quiz": unit2Quiz,
+  }, SetOptions(merge: true));
   return;
 }
 
@@ -51,13 +39,9 @@ Future<void> quizUnit3scoredb(unit3Quiz) async {
       FirebaseFirestore.instance.collection('Users');
   FirebaseAuth auth = FirebaseAuth.instance;
   String uid = auth.currentUser!.uid.toString();
-  usercollection
-      .doc(uid)
-      .set({
-        "Unit3Quiz": unit3Quiz,
-      }, SetOptions(merge: true))
-      .then((value) => print("User Added"))
-      .catchError((error) => print("Failed to add user: $error"));
+  usercollection.doc(uid).set({
+    "Unit3Quiz": unit3Quiz,
+  }, SetOptions(merge: true));
   return;
 }
 
@@ -66,13 +50,9 @@ Future<void> quizUnit4scoredb(unit4Quiz) async {
       FirebaseFirestore.instance.collection('Users');
   FirebaseAuth auth = FirebaseAuth.instance;
   String uid = auth.currentUser!.uid.toString();
-  usercollection
-      .doc(uid)
-      .set({
-        "Unit4Quiz": unit4Quiz,
-      }, SetOptions(merge: true))
-      .then((value) => print("User Added"))
-      .catchError((error) => print("Failed to add user: $error"));
+  usercollection.doc(uid).set({
+    "Unit4Quiz": unit4Quiz,
+  }, SetOptions(merge: true));
   return;
 }
 
@@ -81,13 +61,9 @@ Future<void> quizUnit5scoredb(unit5Quiz) async {
       FirebaseFirestore.instance.collection('Users');
   FirebaseAuth auth = FirebaseAuth.instance;
   String uid = auth.currentUser!.uid.toString();
-  usercollection
-      .doc(uid)
-      .set({
-        "Unit5Quiz": unit5Quiz,
-      }, SetOptions(merge: true))
-      .then((value) => print("User Added"))
-      .catchError((error) => print("Failed to add user: $error"));
+  usercollection.doc(uid).set({
+    "Unit5Quiz": unit5Quiz,
+  }, SetOptions(merge: true));
   return;
 }
 
@@ -96,12 +72,8 @@ Future<void> quizUnit6scoredb(unit6Quiz) async {
       FirebaseFirestore.instance.collection('Users');
   FirebaseAuth auth = FirebaseAuth.instance;
   String uid = auth.currentUser!.uid.toString();
-  usercollection
-      .doc(uid)
-      .set({
-        "Unit6Quiz": unit6Quiz,
-      }, SetOptions(merge: true))
-      .then((value) => print("User Added"))
-      .catchError((error) => print("Failed to add user: $error"));
+  usercollection.doc(uid).set({
+    "Unit6Quiz": unit6Quiz,
+  }, SetOptions(merge: true));
   return;
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HardnessCalculator extends StatefulWidget {
+  const HardnessCalculator({super.key});
+
   @override
   _HardnessCalculatorState createState() => _HardnessCalculatorState();
 }
@@ -71,10 +73,10 @@ class _HardnessCalculatorState extends State<HardnessCalculator> {
 
     setState(() {
       tempoutput =
-          "Temporary hardness = " + temporaryHardness.toStringAsFixed(2);
+          "Temporary hardness = ${temporaryHardness.toStringAsFixed(2)}";
       permoutput =
-          "Permanent hardness = " + permanentHardness.toStringAsFixed(2);
-      totoutput = "Total hardness = " + totalHardness.toStringAsFixed(2);
+          "Permanent hardness = ${permanentHardness.toStringAsFixed(2)}";
+      totoutput = "Total hardness = ${totalHardness.toStringAsFixed(2)}";
     });
   }
 
@@ -83,90 +85,93 @@ class _HardnessCalculatorState extends State<HardnessCalculator> {
     return Scaffold(
       appBar: AppBar(
         elevation: 20,
-        title: Text(
+        title: const Text(
           "Hardness Numericals",
         ),
-        backgroundColor: Color(0xFF0a1931),
+        backgroundColor: const Color(0xFF0a1931),
       ),
-      body: ListView(
-        children: <Widget>[
-          Column(
-            children: [
-              Text(
-                'Enter the values of hardness causng substances in ppm to find out the temporary, permanent and total hardness',
-                style: TextStyle(fontSize: 18),
-              ),
-              // Text('Mg(HCO3)2'),
-              TextField(
-                decoration: InputDecoration(labelText: "Mg(HCO3)2"),
-                keyboardType: TextInputType.number,
-                controller: mghco32,
-              ),
-              // Text('Ca(HCO3)2'),
-              TextField(
-                decoration: InputDecoration(labelText: "Ca(HCO3)2"),
-                keyboardType: TextInputType.number,
-                controller: cahco32,
-              ),
-              // Text('MgCl2'),
-              TextField(
-                decoration: InputDecoration(labelText: "MgCl2"),
-                keyboardType: TextInputType.number,
-                controller: mgcl2,
-              ),
-              // Text('MgSO4'),
-              TextField(
-                decoration: InputDecoration(labelText: "MgSO4"),
-                keyboardType: TextInputType.number,
-                controller: mgso4,
-              ),
-              // Text('Mg(NO3)2'),
-              TextField(
-                decoration: InputDecoration(labelText: "Mg(NO3)2"),
-                keyboardType: TextInputType.number,
-                controller: mgno32,
-              ),
-              // Text('CaSO4'),
-              TextField(
-                decoration: InputDecoration(labelText: "CaSO4"),
-                keyboardType: TextInputType.number,
-                controller: caso4,
-                onSubmitted: (_) => TotalHardness(),
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade900,
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: <Widget>[
+            Column(
+              children: [
+                const Text(
+                  'Enter the values of hardness causng substances in ppm to find out the temporary, permanent and total hardness',
+                  style: TextStyle(fontSize: 18),
                 ),
-                child: Text(
-                  'Calculate',
-                  style: TextStyle(fontSize: 20.0),
+                // Text('Mg(HCO3)2'),
+                TextField(
+                  decoration: const InputDecoration(labelText: "Mg(HCO3)2"),
+                  keyboardType: TextInputType.number,
+                  controller: mghco32,
                 ),
-                onPressed: () {
-                  FocusScopeNode currentFocus = FocusScope.of(context);
+                // Text('Ca(HCO3)2'),
+                TextField(
+                  decoration: const InputDecoration(labelText: "Ca(HCO3)2"),
+                  keyboardType: TextInputType.number,
+                  controller: cahco32,
+                ),
+                // Text('MgCl2'),
+                TextField(
+                  decoration: const InputDecoration(labelText: "MgCl2"),
+                  keyboardType: TextInputType.number,
+                  controller: mgcl2,
+                ),
+                // Text('MgSO4'),
+                TextField(
+                  decoration: const InputDecoration(labelText: "MgSO4"),
+                  keyboardType: TextInputType.number,
+                  controller: mgso4,
+                ),
+                // Text('Mg(NO3)2'),
+                TextField(
+                  decoration: const InputDecoration(labelText: "Mg(NO3)2"),
+                  keyboardType: TextInputType.number,
+                  controller: mgno32,
+                ),
+                // Text('CaSO4'),
+                TextField(
+                  decoration: const InputDecoration(labelText: "CaSO4"),
+                  keyboardType: TextInputType.number,
+                  controller: caso4,
+                  onSubmitted: (_) => TotalHardness(),
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue.shade900,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                  ),
+                  child: const Text(
+                    'Calculate',
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                  onPressed: () {
+                    FocusScopeNode currentFocus = FocusScope.of(context);
 
-                  if (!currentFocus.hasPrimaryFocus) {
-                    currentFocus.unfocus();
-                  }
-                  TotalHardness();
-                },
-              ),
-              Text(
-                tempoutput + " ppm",
-                style: TextStyle(fontSize: 20),
-              ),
-              Text(
-                permoutput + " ppm",
-                style: TextStyle(fontSize: 20),
-              ),
-              Text(
-                totoutput + " ppm",
-                style: TextStyle(fontSize: 20),
-              ),
-            ],
-          ),
-        ],
+                    if (!currentFocus.hasPrimaryFocus) {
+                      currentFocus.unfocus();
+                    }
+                    TotalHardness();
+                  },
+                ),
+                Text(
+                  "$tempoutput ppm",
+                  style: const TextStyle(fontSize: 20),
+                ),
+                Text(
+                  "$permoutput ppm",
+                  style: const TextStyle(fontSize: 20),
+                ),
+                Text(
+                  "$totoutput ppm",
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 class AttemptedListUnit2 extends StatelessWidget {
   PageController pageController = PageController(initialPage: 0);
 
+  AttemptedListUnit2({super.key});
+
   @override
   Widget build(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
@@ -19,10 +21,10 @@ class AttemptedListUnit2 extends StatelessWidget {
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [
-              Color(0xFF0A1931),
-              Color(0xFF0A043C).withOpacity(0.8),
-              Color(0xFF161D6F),
-              Color(0xFF150E56),
+              const Color(0xFF0A1931),
+              const Color(0xFF0A043C).withOpacity(0.8),
+              const Color(0xFF161D6F),
+              const Color(0xFF150E56),
             ]),
       ),
       child: Scaffold(
@@ -59,13 +61,13 @@ class AttemptedListUnit2 extends StatelessWidget {
                           deviceWidth * 0.035,
                         ),
                         // color: Colors.white,
-                        gradient: LinearGradient(colors: [
+                        gradient: const LinearGradient(colors: [
                           Color(0xFF8e9eab),
                           Colors.white,
                           Color(0xFFeef2f3),
                           Colors.white,
                         ])),
-                    child: Text("Go Back"),
+                    child: const Text("Go Back"),
                   ),
                 ),
                 GestureDetector(
@@ -74,7 +76,7 @@ class AttemptedListUnit2 extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => CustomDialogBox(
+                              builder: (context) => const CustomDialogBox(
                                     description:
                                         "Are you sure you want to submit?",
                                     buttonText: "YES",
@@ -84,7 +86,7 @@ class AttemptedListUnit2 extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => CustomDialogBox2(
+                              builder: (context) => const CustomDialogBox2(
                                     description: "Complete the quiz first ",
                                     buttonText: "Ok",
                                   )));
@@ -99,12 +101,12 @@ class AttemptedListUnit2 extends StatelessWidget {
                           deviceWidth * 0.035,
                         ),
                         // color: Colors.white,
-                        gradient: LinearGradient(colors: [
+                        gradient: const LinearGradient(colors: [
                           Color(0xFF8e9eab),
                           Colors.white,
                           Color(0xFFeef2f3)
                         ])),
-                    child: Text("Submit"),
+                    child: const Text("Submit"),
                   ),
                 ),
               ],
@@ -131,7 +133,7 @@ class AttemptedListUnit2 extends StatelessWidget {
 class DisplayAllQuestions extends StatelessWidget {
   int itemIndex;
   final VoidCallback goBackToQuestions;
-  DisplayAllQuestions(this.itemIndex, this.goBackToQuestions);
+  DisplayAllQuestions(this.itemIndex, this.goBackToQuestions, {super.key});
 
   String otherThanMarked() {
     if (tappedMapUnit2.containsKey(itemIndex)) {
@@ -143,7 +145,7 @@ class DisplayAllQuestions extends StatelessWidget {
 
   Gradient getColor() {
     if (!tappedMapUnit2.containsKey(itemIndex)) {
-      return LinearGradient(
+      return const LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
           colors: [
@@ -154,7 +156,7 @@ class DisplayAllQuestions extends StatelessWidget {
             // Color(0xFF150E56),
           ]);
     } else {
-      return LinearGradient(
+      return const LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
           colors: [
@@ -182,7 +184,7 @@ class DisplayAllQuestions extends StatelessWidget {
           Container(
             height: 100,
             width: deviceWidth,
-            margin: EdgeInsets.only(bottom: 20),
+            margin: const EdgeInsets.only(bottom: 20),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(25)),
             child: Row(
@@ -192,11 +194,11 @@ class DisplayAllQuestions extends StatelessWidget {
                   // height: 200,
                   // width: deviceWidth,
                   color: Colors.white,
+                  margin: EdgeInsets.only(left: deviceHeight * 0.04),
                   child: Text(
                     "Question - ${questionListUnit2[itemIndex].id}",
                     style: TextStyle(fontSize: deviceHeight * 0.027),
                   ),
-                  margin: EdgeInsets.only(left: deviceHeight * 0.04),
                 ),
                 Container(
                   height: deviceHeight * 0.05,
@@ -206,8 +208,8 @@ class DisplayAllQuestions extends StatelessWidget {
                     borderRadius: BorderRadius.circular(deviceHeight * 0.035),
                     gradient: getColor(),
                   ),
-                  child: Text(otherThanMarked()),
                   margin: EdgeInsets.only(right: deviceHeight * 0.05),
+                  child: Text(otherThanMarked()),
                 )
               ],
             ),

@@ -4,6 +4,8 @@ import '../utils/authentication.dart';
 import '/Home_Page/home_page.dart';
 
 class GoogleSignInButton extends StatefulWidget {
+  const GoogleSignInButton({super.key});
+
   @override
   _GoogleSignInButtonState createState() => _GoogleSignInButtonState();
 }
@@ -16,7 +18,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16.0),
       child: _isSigningIn
-          ? CircularProgressIndicator(
+          ? const CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
             )
           : OutlinedButton(
@@ -34,9 +36,8 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 });
                 User? user =
                     await Authentication.signInWithGoogle(context: context);
-                    print(user!.emailVerified);
-                
-                
+                print(user!.emailVerified);
+
                 setState(() {
                   _isSigningIn = false;
                 });
@@ -52,8 +53,8 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                   );
                 }
               },
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: const Padding(
+                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -63,7 +64,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                       height: 35.0,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 10),
+                      padding: EdgeInsets.only(left: 10),
                       child: Text(
                         'Sign in with Google',
                         style: TextStyle(

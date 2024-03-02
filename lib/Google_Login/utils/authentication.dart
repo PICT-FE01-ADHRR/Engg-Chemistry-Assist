@@ -12,7 +12,7 @@ class Authentication {
       backgroundColor: Colors.black,
       content: Text(
         content,
-        style: TextStyle(color: Colors.redAccent, letterSpacing: 0.5),
+        style: const TextStyle(color: Colors.redAccent, letterSpacing: 0.5),
       ),
     );
   }
@@ -69,7 +69,7 @@ class Authentication {
         );
 
         // checks for a new user to create the test scores in the database to set to 0
-        // also it will send mail only once for a new user now 
+        // also it will send mail only once for a new user now
         // UserCredential authResult = await auth.signInWithCredential(credential);
         // if (authResult.additionalUserInfo!.isNewUser){
         //      addUser(0);
@@ -78,12 +78,12 @@ class Authentication {
         try {
           final UserCredential userCredential =
               await auth.signInWithCredential(credential);
-              // user!.sendEmailVerification();
-              user = userCredential.user;
-              if (userCredential.additionalUserInfo!.isNewUser){
-                addUser();
-                user!.sendEmailVerification();
-        }
+          // user!.sendEmailVerification();
+          user = userCredential.user;
+          if (userCredential.additionalUserInfo!.isNewUser) {
+            addUser();
+            user!.sendEmailVerification();
+          }
         } on FirebaseAuthException catch (e) {
           if (e.code == 'account-exists-with-different-credential') {
             ScaffoldMessenger.of(context).showSnackBar(
