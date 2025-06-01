@@ -3,7 +3,7 @@ description: "An app that will be helpful in studying engineering chemistry"
 
 publish_to: "none"
 
-version: 1.4.0+6
+version: 1.6.0+8
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -13,23 +13,23 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.6
-  syncfusion_flutter_pdfviewer: ^24.2.6
+  syncfusion_flutter_pdfviewer: ^29.2.7
   google_fonts: ^6.1.0
-  firebase_database: ^10.4.0
-  firebase_core: ^2.24.2
-  firebase_auth: ^4.16.0
+  firebase_database: ^11.3.6
+  firebase_core: ^3.13.1
+  firebase_auth: ^5.5.4
   google_sign_in: ^6.2.1
   url_launcher: ^6.2.4
   mailto: ^2.0.0
-  cloud_firestore: ^4.14.0
+  cloud_firestore: ^5.6.8
   percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.0
-  flutter_launcher_icons: "^0.13.1"
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.3
 
 flutter_launcher_icons:
   android: "launcher_icon"
